@@ -1,0 +1,1 @@
+<?$this->put_('as_tiles')?>

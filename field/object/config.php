@@ -1,0 +1,1 @@
+$x['<?=$this->name?>']-><?=$this->owner->relations[$this->name]['class']->getClassFor('Form',false)?>($this->model-><?=$this->nameFor('get')?>());

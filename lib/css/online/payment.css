@@ -1,0 +1,94 @@
+/**
+ * PAYMENT CONFIRM PAGE
+ */
+#body .payment-confirm
+{
+	width: 73%;
+}
+
+#body .payment-confirm .field .label
+{
+	font-weight: bold;
+}
+
+
+/**
+ * PAYMENT CREATE PAGE
+ */
+#body .payment-create h1
+{
+    font-size: 14px;
+    color: #13659a;
+    margin-bottom: 0.6em;
+}
+
+#body .payment-create .field .label
+{
+	width: 15%;
+}
+
+#body .payment-create #payment-type
+{
+	margin-bottom: 20px;
+}
+
+#body .payment-create .payment-account
+{
+	margin-bottom: 20px;
+}
+
+#body .payment-create .payment-profile
+{
+	margin-bottom: 30px;
+}
+
+#body .payment-create #document-id,
+#body .payment-create #payment-date
+{
+	width: 100px;
+}
+
+#body .payment-create #reciever-name,
+#body .payment-create #reciever-account,
+#body .payment-create #reciever-code,
+#body .payment-create #payment-description
+{
+	width: 300px;
+}
+
+#body .payment-create #account-balance
+{
+	width: 318px;
+}
+
+#body .payment-create #account-balance-value
+{
+	width: 60px;
+}
+
+#body .payment-create #reciever-bank,
+#body .payment-create #payment-account
+{
+	width: 293px;
+}
+
+#body .payment-create #payment-stash,
+#body .payment-create #payment-automize
+{
+	width: 240px;
+}
+
+#body .payment-create .payment-stash
+{
+	margin-right: 40px;
+}
+
+#body .payment-create .payment-automize .selectBox-dropdown .selectBox-label
+{
+	color: #0e3c57;
+}
+
+#body .payment-create #payment-value
+{
+	width: 100px;
+}

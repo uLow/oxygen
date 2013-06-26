@@ -1,0 +1,1 @@
+<img src="<?=$this->scope->assets->getIcon($args[0])?>">

@@ -1,0 +1,1392 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Arvids Brazevics</Author>
+  <LastAuthor>Arvids Brazevics</LastAuthor>
+  <Created>2011-11-07T16:01:18Z</Created>
+  <Version>14.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+  <Colors>
+   <Color>
+    <Index>47</Index>
+    <RGB>#A6A6A6</RGB>
+   </Color>
+  </Colors>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8190</WindowHeight>
+  <WindowWidth>16380</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <TabRatio>141</TabRatio>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial" x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21" ss:Name="Excel Built-in Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s23" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s24" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s25" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s26" ss:Parent="s21">
+   <Borders/>
+  </Style>
+  <Style ss:ID="s28" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+  </Style>
+  <Style ss:ID="s29" ss:Parent="s21">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s32" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"
+    ss:Bold="1" ss:Underline="Single"/>
+   <Interior ss:Color="#A6A6A6" ss:Pattern="Solid"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s33" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s34" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"
+    ss:Bold="1" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s35" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s36" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s37" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s39" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s40" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s41" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s42" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s43" ss:Parent="s21">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s44" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s45" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s46" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s48" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s49" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s50" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"
+    ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s51" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"
+    ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s53" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s54" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s58" ss:Parent="s21">
+   <Alignment ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="7" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s59" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s60" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s61" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s63" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s64" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s65" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Double" ss:Weight="3"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s66" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s67" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s68" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s69" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior ss:Color="#A6A6A6" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s70" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s71" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s73" ss:Parent="s21">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s74" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s75" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s76" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s78" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s80" ss:Parent="s21">
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="8" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s82" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s83" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s84" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s85" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="7" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s86" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="14" ss:Color="#000000"
+    ss:Bold="1" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s87" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="12" ss:Color="#000000"
+    ss:Bold="1" ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s89" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s91" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s92" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s93" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s94" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="9" ss:Color="#000000"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s95" ss:Parent="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="7.5" ss:Color="#000000"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s96" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s97" ss:Parent="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior ss:Color="#A6A6A6" ss:Pattern="Solid"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+  <Style ss:ID="s98" ss:Parent="s21">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s99" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="s100" ss:Parent="s21">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior ss:Color="#A6A6A6" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Fiz (Lat)">
+  <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="135" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s21" ss:DefaultColumnWidth="45.75"
+   ss:DefaultRowHeight="15">
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="11.25"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="196.5"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="73.5"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="33.75"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="9.75"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="33"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="9"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="175.5"/>
+   <Column ss:StyleID="s21" ss:AutoFitWidth="0" ss:Width="10.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625">
+    <Cell ss:Index="2" ss:StyleID="s23"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s24"/>
+    <Cell ss:StyleID="s25"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12">
+    <Cell ss:Index="2" ss:MergeAcross="6" ss:StyleID="s85"><Data ss:Type="String">Dokuments apstiprināts ar SIA &quot;Transact Pro&quot; 05.05.2011. valdes sēdes lēmumu, protokols Nr.V1/2011</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:Height="18.75" ss:StyleID="s29">
+    <Cell ss:Index="2" ss:MergeAcross="3" ss:StyleID="s86"><ss:Data
+      ss:Type="String" xmlns="http://www.w3.org/TR/REC-html40"><B><U><Font
+         html:Color="#000000">Pieteikums kartes izsniegšanai (</Font></U><I><U><Font
+          html:Color="#000000">fiziskai personai</Font></U></I><U><Font
+         html:Color="#000000">)</Font></U></B></ss:Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s87"><Data ss:Type="String">Nr.</Data></Cell>
+    <Cell ss:StyleID="s32"><Data ss:Type="String">{app_id_str}</Data></Cell>
+    <Cell ss:StyleID="s33"/>
+    <Cell ss:StyleID="s34"/>
+    <Cell ss:StyleID="s34"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="9.9375">
+    <Cell ss:Index="2" ss:MergeAcross="3" ss:StyleID="s35"><Data ss:Type="String">Ar zvaigznīti (*) ir atzīmēti obligāti aizpildāmie lauki</Data></Cell>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s37"><Data ss:Type="String">aizpilda SIA &quot;Transact Pro&quot;</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s36"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="13.5">
+    <Cell ss:Index="2" ss:MergeAcross="5" ss:StyleID="s89"><ss:Data
+      ss:Type="String" xmlns="http://www.w3.org/TR/REC-html40"><B><Font
+        html:Color="#000000">Iesniegšanas datums </Font></B><Font
+       html:Color="#000000">(DD/MM/GGGG)</Font></ss:Data></Cell>
+    <Cell ss:StyleID="s39"><Data ss:Type="String">{dt_created}</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s36"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625">
+    <Cell ss:Index="2" ss:StyleID="s35"/>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s37"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s36"/>
+    <Cell ss:StyleID="s36"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Kartes veids</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">Privātā karte</Data></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Kartes valūta</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{card_currency}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s45"><Data ss:Type="String">Klienta personīgie dati</Data></Cell>
+    <Cell ss:StyleID="s46"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Klienta vārds un uzvārds</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{customer_name}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Dzimšanas datums (DD/MM/GGGG)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s48"><Data ss:Type="String">{birth_day}</Data></Cell>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">/</Data></Cell>
+    <Cell ss:StyleID="s48"><Data ss:Type="String">{birth_month}</Data></Cell>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">/</Data></Cell>
+    <Cell ss:StyleID="s42"><Data ss:Type="String">{birth_year}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Personas kods</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{personal_id}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s49"/>
+    <Cell ss:StyleID="s49"/>
+    <Cell ss:StyleID="s49"/>
+    <Cell ss:StyleID="s49"/>
+    <Cell ss:StyleID="s49"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Klienta rezidences valsts</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{resident_country}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pases / ID dokumenta numurs</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{id_number}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pases / ID dokumenta izdošanas datums (DD/MM/GGGG)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s48"><Data ss:Type="String">{id_dt_issued_day}</Data></Cell>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">/</Data></Cell>
+    <Cell ss:StyleID="s48"><Data ss:Type="String">{id_dt_issued_month}</Data></Cell>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">/</Data></Cell>
+    <Cell ss:StyleID="s42"><Data ss:Type="String">{id_dt_issued_year}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pases / ID dokumenta izdošanas valsts un izdevējs</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{id_issued_by_where}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><ss:Data ss:Type="String"
+      xmlns="http://www.w3.org/TR/REC-html40"><Font html:Color="#000000">Parole attālinātai identifikācijai</Font><Font
+       html:Size="8" html:Color="#000000"> (ne garāka par 8 zīmēm)</Font></ss:Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{voice_pwd}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Kartes lietotāja vārds un uzvārds, kas rakstāms uz kartes</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{name_on_card}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="9.9375" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s50"/>
+    <Cell ss:StyleID="s51"/>
+    <Cell ss:StyleID="s51"><Data ss:Type="String">(bez garumzīmēm, starp vārdu un uzvārdu izlaižot vienu atstarpi)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s45"><Data ss:Type="String">Dzīvesvietas adrese</Data></Cell>
+    <Cell ss:StyleID="s46"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Iela, māja, dzīvokļa Nr.</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{addr_1}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pilsēta</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{city}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pasta indekss, valsts</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{zip}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Kontakttālrunis</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s92"><Data ss:Type="String">{phone}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">E-pasta adrese</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{email}</Data></Cell>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Izrakstu saņemšanas veids</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s91"><Data ss:Type="String">{delivery_of_statements}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s53"><Data ss:Type="String">Īsziņu saņemšanas veids</Data></Cell>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s93"><Data ss:Type="String">{delivery_sms}</Data></Cell>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s45"><ss:Data ss:Type="String"
+      xmlns="http://www.w3.org/TR/REC-html40"><B><Font html:Color="#000000">Adrese korespondencei</Font></B><Font
+       html:Color="#000000"> </Font><Font html:Size="8" html:Color="#000000">(t.sk. Kartes un PIN koda aploksnes nosūtīšanai, ja atšķiras no dzīvesvietas adreses)</Font></ss:Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Izgatavotu karti un PIN koda aploksni lūdzu</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s94"><Data ss:Type="String">{delivery_type}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Iela, māja, dzīvokļa Nr.</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{delivery_street}</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pilsēta</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{delivery_city}</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Pasta indekss, valsts</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{delivery_zip}</Data></Cell>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="2" ss:StyleID="s45"><Data ss:Type="String">Nodarbošanās</Data></Cell>
+    <Cell ss:StyleID="s46"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s26"/>
+    <Cell ss:StyleID="s28"/>
+    <Cell ss:StyleID="s26"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Darba vieta</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{employer}</Data></Cell>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Ieņemamais amats</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s42"><Data ss:Type="String">{position}</Data></Cell>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s45"><Data ss:Type="String">PIETEIKUMA APSTIPRINĀJUMS</Data></Cell>
+    <Cell ss:StyleID="s46"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="47.25" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:MergeAcross="6" ss:StyleID="s95"><Data ss:Type="String">Apliecinu, ka ar naudas līdzekļiem Kartes kontā nedarbošos citu personu uzdevumā un esmu šo naudas līdzekļu patiesais labuma guvējs. Apņemos nekavējoties ziņot par visām izmaiņām uzrādītajā informācijā. Ar savu parakstu apliecinu, ka manis sniegtā informācija ir patiesa un ka SIA &quot;Transact Pro&quot; Karšu apkalpošanas līguma noteikumi, kas ietver sevī SIA &quot;Transact Pro&quot; Norēķinu karšu lietošanas noteikumus, man ir zināmi, skaidri un saprotami, es piekrītu tiem un atzīstu tos par sev saistošiem. Ar savu parakstu izsaku savu vēlēšanos noslēgt ar SIA &quot;Transact Pro&quot; Karšu apkalpošanas līgumu.</Data></Cell>
+    <Cell ss:StyleID="s58"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s59"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s60"/>
+    <Cell ss:StyleID="s61"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">______________________________________________________________ (Paraksts)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">Vārds, uzvārds</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:MergeAcross="4" ss:StyleID="s96" ss:Formula="=R[-51]C"><Data
+      ss:Type="String">{customer_name}</Data></Cell>
+    <Cell ss:StyleID="s44"><Data ss:Type="String">*</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s63"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s64"/>
+    <Cell ss:StyleID="s65"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"><Data ss:Type="String">AIZPILDA SIA &quot;TRANSACT PRO&quot; DARBINIEKS</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s40"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Type="String">Apliecinu Klienta vai tā pilnvarotā pārstāvja personību un parakstu</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">___________________________ (Paraksts)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s68"><Data ss:Type="String">Datums (DD/MM/GGGG):</Data></Cell>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">Vārds, uzvārds</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s97"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s73">
+    <Cell ss:Index="2" ss:StyleID="s53"/>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s74"/>
+    <Cell ss:StyleID="s74"/>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s75"/>
+    <Cell ss:StyleID="s76"/>
+    <Cell ss:StyleID="s54"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12.75" ss:StyleID="s73">
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Type="String">Pārbaudīju iesniegtos dokumentus un akceptēju Karšu apkalpošanas līguma noslēgšanu</Data></Cell>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s74"/>
+    <Cell ss:StyleID="s74"/>
+    <Cell ss:StyleID="s41"><Data ss:Type="String">___________________________ (Paraksts)</Data></Cell>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s76"/>
+    <Cell ss:StyleID="s54"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="12.75" ss:StyleID="s73">
+    <Cell ss:Index="2" ss:StyleID="s68"><Data ss:Type="String">Datums (DD/MM/GGGG):</Data></Cell>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s54"/>
+    <Cell ss:StyleID="s74"/>
+    <Cell ss:StyleID="s71"><Data ss:Type="String">Vārds, uzvārds</Data></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s97"/>
+    <Cell ss:StyleID="s76"/>
+    <Cell ss:StyleID="s54"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:MergeAcross="5" ss:StyleID="s98"/>
+    <Cell ss:StyleID="s78"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:MergeDown="3" ss:StyleID="s99"><Data ss:Type="String">Zīmogs</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s78"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="3" ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s80"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="3" ss:StyleID="s70"><Data ss:Type="String">Klienta numurs</Data></Cell>
+    <Cell ss:MergeAcross="4" ss:StyleID="s100"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="3" ss:StyleID="s70"><Data ss:Type="String">Kartes numurs</Data></Cell>
+    <Cell ss:MergeAcross="4" ss:StyleID="s100"/>
+    <Cell ss:StyleID="s44"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="5.0625" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s82"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s83"/>
+    <Cell ss:StyleID="s84"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43">
+    <Cell ss:Index="2" ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+    <Cell ss:StyleID="s41"/>
+   </Row>
+   <Row ss:Height="12.75" ss:StyleID="s43" ss:Span="56"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:StartPageNumber="1"/>
+    <Header x:Margin="0.78749999999999998" x:Data="&amp;C&amp;A"/>
+    <Footer x:Margin="0.78749999999999998" x:Data="&amp;CPage &amp;P"/>
+    <PageMargins x:Bottom="1.0249999999999999" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="1.0249999999999999"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>23</ActiveRow>
+     <ActiveCol>15</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+   <EnableSelection>NoSelection</EnableSelection>
+  </WorksheetOptions>
+  <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R7C4:R7C8</Range>
+   <Type>List</Type>
+   <Qualifier>Equal</Qualifier>
+   <CellRangeList/>
+   <Min>&quot;Privātā karte,Algas karte,Dienesta karte (individuālajiem uzņēmējiem)&quot;</Min>
+   <Max>0</Max>
+   <ErrorMessage>Ievadītie dati ir kļūdaini! Lūdzu, mēģiniet vēlreiz.</ErrorMessage>
+  </DataValidation>
+  <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R9C4:R9C8</Range>
+   <Type>List</Type>
+   <Qualifier>Equal</Qualifier>
+   <CellRangeList/>
+   <Min>&quot;LVL (Latvijas lati),EUR (eiro),USD (ASV dolāri)&quot;</Min>
+   <Max>0</Max>
+   <ErrorMessage>Ievadītie dati ir kļūdaini! Lūdzu, mēģiniet vēlreiz.</ErrorMessage>
+  </DataValidation>
+  <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R41C4:R41C8</Range>
+   <Type>List</Type>
+   <Qualifier>Equal</Qualifier>
+   <CellRangeList/>
+   <Min>&quot;pa pastu,personīgi Transact Pro birojā,nevēlos saņemt&quot;</Min>
+   <Max>0</Max>
+   <ErrorMessage>Ievadītie dati ir kļūdaini! Lūdzu, mēģiniet vēlreiz.</ErrorMessage>
+  </DataValidation>
+  <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R43C4:R43C8</Range>
+   <Type>List</Type>
+   <Qualifier>Equal</Qualifier>
+   <CellRangeList/>
+   <Min>&quot;Par visām operācijām,Tikai par iemaksām kartē,Tikai par karšu darījumiem,nevēlos saņemt&quot;</Min>
+   <Max>0</Max>
+   <ErrorMessage>Ievadītie dati ir kļūdaini! Lūdzu, mēģiniet vēlreiz.</ErrorMessage>
+  </DataValidation>
+  <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R69C7</Range>
+   <Type>List</Type>
+   <Qualifier>Equal</Qualifier>
+   <CellRangeList/>
+   <Min>&quot;Darbinieks 1,Darbinieks 2&quot;</Min>
+   <Max>0</Max>
+  </DataValidation>
+ </Worksheet>
+</Workbook>

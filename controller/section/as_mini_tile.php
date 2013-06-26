@@ -1,0 +1,1 @@
+as_mini_tile.php

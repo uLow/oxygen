@@ -1,0 +1,1 @@
+<?=nl2br(htmlentities($args[0], ENT_QUOTES, 'UTF-8'))?>

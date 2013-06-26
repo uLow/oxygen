@@ -1,0 +1,2 @@
+<?o('header')?>
+<h1><?$this->put_icon()?><?=$this?></h1>

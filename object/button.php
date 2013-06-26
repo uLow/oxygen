@@ -1,0 +1,1 @@
+<a class="<?=$args[0]?>" href="<?=isset($args[3])?$args[3]:'javascript:void(0)'?>" alt="<?=(isset($args[1]))?$args[1]:""?>" title="<?=(isset($args[1]))?$args[1]:""?>"><img src="<?=$this->scope->assets->getIcon(isset($args[2])?$args[2]:'link')?>"><?=(isset($args[4]))?$args[4]:""?></a>

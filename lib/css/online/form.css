@@ -1,0 +1,661 @@
+/**
+* GLOBALS
+*/
+.textfield-a
+{
+
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    behavior: url('../../js/online/css3pie/PIE.php');  
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+    color: #4c4c4c;
+    font-size: 11px;
+
+    margin-bottom: 8px;	
+
+	-webkit-box-shadow: inset #D5D5D5 0px 0px 4px;
+    -moz-box-shadow: inset #D5D5D5 0px 0px 4px;
+    box-shadow: inset #D5D5D5 0px 0px 4px;
+}
+
+
+/**
+ * INPUT/OUTPUT
+ */
+.site-form-a input,
+.site-form-a textarea
+{
+	font-family: Tahoma, sans-serif; 
+}
+
+.site-form-a input[type="text"],
+.site-form-a input[type="number"],
+.site-form-a input[type="password"],
+.site-form-a textarea,
+.site-form-a .money-output
+{
+	border-radius: 4px;
+	position: relative;
+    behavior: url('../../js/online/css3pie/PIE.php');
+    border: 1px solid #c6c6c6;  
+    vertical-align: middle;
+    padding: 4px;
+}
+
+.site-form-a input[type="checkbox"],
+.site-form-a input[type="radio"]
+{
+	vertical-align: middle;
+}
+
+.site-form-a .money-output
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+}
+
+.site-form-a .money-output .value
+{
+	color: #13659a;
+}
+
+
+/* Error */
+
+.site-form-a .error-hint
+{
+	color: #AA0303;
+	font-size: 10px;
+	margin-left: 3px;
+	margin-top: 2px;
+}
+
+
+/**
+ * FIELD LIST A
+ */
+.field-list-a
+{
+
+}
+
+.field-list-a .field
+{
+	margin-bottom: 10px;
+}
+
+.field-list-a .field .label,
+.field-list-a .field .input,
+.field-list-a .field .hint
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;	
+}
+
+.field-list-a .field .label.top,
+.field-list-a .field .hint.top
+{
+	vertical-align: top;
+}
+
+.field-list-a .field .label
+{
+	font-size: 12px;
+	font-weight: bold;
+	width: 25%;
+	text-align: right;
+    margin-right: 5px;	
+}
+
+.field-list-a .field .hint
+{
+	margin-left: 5px;
+	*margin-left: 8px;
+}
+
+.field-list-a .field .input
+{
+	width: 40%;
+	text-align: right;
+}
+
+.field-list-a .field input[type="text"],
+.field-list-a .field input[type="number"],
+.field-list-a .field input[type="password"],
+.field-list-a .field textarea,
+.field-list-a .field .money-output
+{
+	width: 	   93%;
+	font-size: 11px;
+	padding:   5px;
+}
+
+.field-list-a .field .hint
+{
+	color: #919191;
+	font-size: 10px;
+}
+
+.field-list-a .field .hint a
+{
+	color: #919191;
+} 
+
+
+/**
+ * FIELD LIST B
+ */
+.field-list-b
+{
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.field-list-b .field
+{
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.field-list-b .field > .label,
+.field-list-b .field > .field-group,
+.field-list-b .field .input
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;	
+}
+
+.field-list-b .field > .field-group
+{
+	overflow: hidden;
+}
+
+.field-list-b .field .label
+{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.field-list-b .field .label.top
+{
+	vertical-align: top;
+	margin-top: 5px;
+}
+
+.field-list-b .field > .label
+{
+	width: 40%;
+	text-align: right;
+	margin-right: 1%;
+}
+
+.field-list-b .heading h1
+{
+	color: #13659a;
+	font-size: 15px;
+}
+
+.field-list-b .field.result .title
+{
+	font-size: 15px;
+	color: #13659a;
+	margin-bottom: 20px;
+	margin-top: 5px;
+}
+
+.field-list-b .field.result .advice
+{
+	font-size: 13px;
+	color: #252525;
+	font-weight: bold;
+}
+
+.field-list-b .field.submit .button
+{
+	margin-right: 10px;
+}
+
+.field-list-b .field.submit .cancel
+{
+	margin-left: 30px;
+}
+
+.field-list-b .field .radio-list
+{
+	overflow: hidden;
+}
+
+.field-list-b .field .radio-list .radio
+{
+	float: left;
+	margin-right: 25px;
+}
+
+.field-list-b input[type="text"],
+.field-list-b input[type="number"],
+.field-list-b input[type="password"],
+.field-list-b textarea,
+.field-list-b .field .money-output,
+.field-list-b .selectBox-dropdown .selectBox-label 
+{
+	padding: 4px 8px;
+	font-size: 13px;
+}
+
+.field-list-b .selectBox-dropdown .selectBox-label 
+{
+	color: #000;
+}
+
+
+/* Error */
+
+.field-list-b .field .error-msg
+{
+	position: absolute;
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    margin-left: 30px;
+    top: 3px;
+}
+
+.field-list-b .field .error-msg .corner
+{
+	width:  15px;
+	height: 24px;
+	background: url('../../images/cornder-a.png') no-repeat center left;
+	position: absolute;
+	left: -13px;
+}
+
+.field-list-b .field .error-msg .message
+{
+
+    background: #b20506; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e7686c 0%, #b20506 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7686c), color-stop(100%, #b20506)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e7686c 0%, #b20506 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e7686c 0%, #b20506 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e7686c 0%, #b20506 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e7686c 0%, #b20506 100%); /* W3C */
+    -pie-background: linear-gradient(#e7686c, #b20506);
+    
+    border-radius: 4px;
+    padding: 0px 15px;
+    color: #FFF;
+    line-height: 24px;
+    font-size: 11px;
+    position: relative;
+    left: -1px;
+    behavior: url('../../js/online/css3pie/PIE.php'); 	
+}
+
+
+/**
+ * FIELD LIST C
+ */
+.field-list-c
+{
+	/*margin-bottom: 15px;*/
+} 
+
+.field-list-c .field
+{
+	padding-bottom: 10px;
+} 
+
+.field-list-c .field > .label,
+.field-list-c .field > .input
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.field-list-c .field > .label
+{
+	width: 22%;
+}
+
+.field-list-c .field > .input
+{
+	width: 76%;
+	text-align: right;
+}
+
+.field-list-c .field > .input input[type="text"],
+.field-list-c .field > .input input[type="password"],
+.field-list-c .field > .input input[type="number"],
+.field-list-c .field > textarea
+{
+	width: 100%;
+}
+
+.field-list-c .field.submit
+{
+	text-align: right;
+}
+
+
+/**
+ * SELECT BOX
+ */
+.selectBox-dropdown 
+{
+	border: 1px solid #c1ced7;
+	border-radius: 4px;
+	padding-right: 23px;
+	position: relative;
+	background-position: bottom;
+	background-repeat: repeat-x;
+	outline: none;
+	font-size: 12px;
+	color: #919191;
+	vertical-align: middle;
+	cursor: pointer;
+
+    behavior: url('../../js/online/css3pie/PIE.php');      
+}
+
+.selectBox-dropdown .selectBox-label 
+{
+	cursor: default;
+	white-space: nowrap;
+	display: block;
+	padding: 5px;
+}
+
+.selectBox-dropdown .selectBox-arrow 
+{
+	position: absolute;
+
+	top:    0px;
+	right:  0px;
+	width:  23px;
+	height: 100%;
+
+	background: url('../../images/down-arr-g.png') no-repeat center center;
+}
+
+
+/* Dropdown menu */
+
+.selectBox-dropdown-menu 
+{
+	position: absolute;
+	z-index:    100;
+	max-height: 200px;
+	min-height: 1em;
+	border: 1px solid #c1ced7;	
+	overflow: auto;
+	background-color: #FFF;
+}
+
+
+/* Inline control */
+
+.selectBox-inline 
+{
+	min-width: 150px;
+	outline: none;
+	border: solid 1px transparent;
+	display: inline-block;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	overflow: auto;
+}
+
+.selectBox-inline:focus 
+{
+
+}
+
+
+/* Options */
+
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a 
+{
+	list-style: none;
+	display: block;
+	cursor: default;
+}
+
+.selectBox-options li a 
+{
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 3px 7px;
+}
+
+.selectBox-options li a:hover
+{
+	background-color: #F7F8F9;
+}
+
+.selectBox-options li.selectBox-disabled a 
+{
+	background-color: transparent;
+}
+
+.selectBox-options .selectBox-optgroup 
+{
+	font-weight: bold;
+	line-height: 1.5;
+	padding: 0 .3em;
+	white-space: nowrap;
+}
+
+
+/* Disabled state */
+
+.selectBox.selectBox-disabled 
+{
+	color: #888 !important;
+}
+
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow 
+{
+	opacity: .5;
+	filter: alpha(opacity=50);
+}
+
+.selectBox-inline.selectBox-disabled .selectBox-options a 
+{
+	background-color: transparent !important;
+} 
+
+
+/**
+ * SELECT BOX SMALL
+ */
+.selectBox-dropdown.small
+{
+	font-size: 11px;
+}
+
+.selectBox-dropdown.small .selectBox-label
+{
+	padding: 2px 5px 3px;
+}
+
+.selectBox-dropdown.small .selectBox-arrow
+{
+	background: url('../../images/down-arr-f.png') no-repeat center center;	
+} 
+
+
+.messages-table .table tr td p.operator 
+{
+    color: #0e9b04;
+}
+
+.messages-table .table tr th
+{
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.messages-table .table tr td 
+{
+    vertical-align: top;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    height: 25px;
+}
+
+.messages-table .table tr td.name 
+{
+    
+}
+
+.messages-table .table tr td span.msg-status
+{
+    background-image:    url('../images/messages.png');
+    background-repeat:   no-repeat;
+    background-position: left -1px;
+    line-height: 14px;
+    margin-left: 2px;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: bold;
+    color: #0e9b04;
+    display: block;
+}
+
+.messages-table .table tr td span.msg-status.read
+{
+    background-position: left -1px;
+    color: #0e9b04;
+}
+
+.messages-table .table tr td span.msg-status.inprocess
+{
+    background-position: left -16px;
+    color: #aa0303;
+}
+.messages-table .table tr td.msg-text 
+{
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.messages-table .table tr td.msg-text.closed 
+{   
+    line-height: 29px;
+}
+
+.messages-table .table tr td.msg-text p 
+{
+    width: 580px;
+}
+
+.messages-table .table tr td.msg-text.closed p 
+{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.messages-table .table tr td.msg-text.closed 
+{
+    line-height: normal;
+    white-space: normal;
+    vertical-align: middle;
+    overflow: auto;
+}
+
+/* messages block header */
+
+.site-block-c1 .header p.msg-count 
+{
+    color: #13659a;
+    font-size: 15px;
+    line-height: 24px;
+    float: left;
+    margin-right: 23px;
+}
+
+.site-block-c1 .header .type-list
+{
+    padding: 7px 0px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.site-block-c1 .header .type-list .type
+{
+    float: left;
+    border-left:  2px solid #9a9a9a;
+    text-align: center;
+    padding: 0px 22px;
+    height: 15px;
+}
+
+.site-block-c1 .header .type-list .type:first-child
+{
+    padding-left: 0px;  
+}
+
+.site-block-c1 .header .type-list .type > a
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 0 10px;
+    line-height: 24px;
+    margin-top: -7px;
+}
+
+.site-block-c1 .header .type-list .type > a > u
+{
+    text-decoration: none;
+    border-bottom: 1px dashed #acb9b8;
+}
+
+.site-block-c1 .header .type-list .type > a:hover > u
+{
+    border-bottom-color: transparent;
+}
+
+.site-block-c1 .header .type-list .type:first-child
+{
+    border-left-color: transparent;
+}
+
+.site-block-c1 .header .type-list .type.purple > a
+{
+    background: #D6D9EA;
+}
+
+.site-block-c1 .header .type-list .type.yellow > a
+{
+    background: #F1EEDF;
+}
+
+.site-block-c1 .header .type-list .type.gray > a
+{
+    background: #f6f6f6;
+    color: #919191;
+}

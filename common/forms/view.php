@@ -1,0 +1,7 @@
+<?o()?>
+<?if($this->child):?>
+<?$this->child->put_view()?>
+<?else:?>
+<?$this->put_search_nodes()?>
+<?$this->put_as_table()?>
+<?endif?>

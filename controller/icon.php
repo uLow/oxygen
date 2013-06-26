@@ -1,0 +1,1 @@
+<?if(isset($args[1]) and $args[1]==true){?><?$this->scope->assets->getIcon($args[0])?><?}else{?><img class="controller-icon" src="<?=$this->getIconSource()?>"><?}?>

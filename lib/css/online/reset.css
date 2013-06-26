@@ -1,0 +1,113 @@
+/**
+ * CSS RESET
+ */
+*
+{
+    margin:  0px;
+    padding: 0px;
+}
+
+a
+{
+    outline: none;
+}
+
+ul,
+menu
+{
+    list-style: none;
+}
+
+ol
+{
+    list-style-position: inside;
+}
+
+a img
+{
+    border: none;
+    outline: none;
+}
+
+html,
+body
+{
+	height: 100%;
+    cursor: default;
+}
+
+strong
+{
+    font-weight: bold; /* for IE */
+}
+
+.block
+{
+    display: block;
+}
+
+.inline
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.overflow,
+.wrapper
+{
+    overflow: hidden;
+}
+
+.hidden
+{
+    display: none !important;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.middle
+{
+    vertical-align: middle;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+textarea,
+select
+{
+    vertical-align: middle;
+    outline: none;
+}
+
+input[type="number"]
+{
+    text-align: left;
+}
+
+textarea
+{
+    resize: vertical;
+    overflow: auto;
+}

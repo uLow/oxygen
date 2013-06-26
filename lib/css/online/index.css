@@ -1,0 +1,171 @@
+body{
+	overflow-y: scroll;
+}
+
+/**
+ * LAYOUT
+ */
+#container
+{
+    margin: 0 auto -192px;
+}
+
+
+/**
+ * LOGIN BLOCK
+ */
+#body .content .login-block
+{
+	width: 500px;
+	margin: 0px auto;
+	margin-bottom: 10%;
+}
+
+#body .content .login-block .login-form
+{
+	width: 640px;
+	margin: 0px auto;
+}
+
+
+/**
+ * SITES BLOCK
+ */
+#body .content .sites-block
+{
+	padding-top: 10px;
+	height: 60px;
+	text-align: center;
+	/*margin-bottom: 0%;*/
+}
+
+#body .content .sites-block .sites-list
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;		
+}
+
+#body .content .sites-block .sites-list .site
+{
+	border-left: 1px solid #dedede;
+	float: left;
+	padding: 0px 80px;
+	height: 50px;
+}
+
+#body .content .sites-block .sites-list .site:first-child
+{
+	border-left: none;
+}
+
+#body .content .sites-block .sites-list .site a
+{
+	background: url('../../images/logos-sp.png') no-repeat;
+	height: 70px;
+	display: block;
+	margin-top: -10px;	
+}
+
+#body .content .sites-block .sites-list .site .tp {background-position: 0px 0px;   width: 71px;}
+#body .content .sites-block .sites-list .site .pc {background-position: -71px 0px;  width: 114px;}
+#body .content .sites-block .sites-list .site .idk{background-position: -186px 0px; width: 147px;}
+
+body{
+	position: relative;
+}
+
+#container{
+	height: 100%;
+}
+
+
+/**
+ * FOOTER
+ */
+#footer,
+#sf-push
+{
+    height: 192px;
+}
+
+#footer{
+	position: relative;
+	bottom: 0px;
+}
+
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url("../../images/title.gif") top repeat-x;
+	border: solid 1px #FFF;
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url("../../images/info.gif");
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background-image: url("../../images/info.gif");
+}
+
+#popup_content.confirm {
+	background-image: url("../../images/important.gif");
+}
+
+#popup_content.prompt {
+	background-image: url("../../images/help.gif");
+}
+
+#popup_message {
+	padding-left: 48px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+
+.hide{
+	display:none;
+}
+
+
+
+.site-block-c1.site-scroll .viewport { width: 100%; overflow: hidden; position: relative; }
+.site-block-c1.site-scroll .overview { width: 100%; list-style: none; position: absolute; left: 0; top: 0; }
+.site-block-c1.site-scroll .thumb .end,
+.site-block-c1.site-scroll .thumb { background-color: #82A8C1; }
+.site-block-c1.site-scroll .scrollbar { position: absolute; right: -3px; width: 5px; display: none;}
+.site-block-c1.site-scroll .track { background-color: #D8EEFD; height: 100%; width:100%; position: relative; }
+.site-block-c1.site-scroll .thumb { height: 20px; width: 100%; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
+.site-block-c1.site-scroll .thumb .end { overflow: hidden; height: 5px; width: 100%; }
+.site-block-c1.site-scroll .disable{ display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }

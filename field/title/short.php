@@ -1,0 +1,1 @@
+<a href="<?=$args[0]->go()?>"><?=$this[$args[0]->model]?></a>

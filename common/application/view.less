@@ -1,0 +1,200 @@
+font-family: Tahoma;
+min-height: 100%;
+width: 100%;
+float:left;
+height: 100%;
+
+.rounded(@radius: 8px) {
+	border-radius: @radius;
+}
+
+.ui-widget {
+	font-size: 12px;
+
+}
+
+.std-form {
+	margin: 20px;
+	padding: 20px;
+	.rounded;
+	background-color: #EEE;
+	box-shadow:inset 0px 0px 8px #CCC;
+}
+
+
+form.login-form {
+	margin-top: 10%;
+	margin-left: 10%;
+	float:left;
+	div.role {
+		float:left;
+		width: 100px;
+		height: 100px;
+		background-color: #C0C0C0;
+		border-radius: 8px;
+		margin-right:10px;
+		margin-bottom: 10px;
+		font-size: 20px;
+		vertical-align: middle;
+		text-align:center;
+	}
+
+	label {
+		float:left;
+		padding: 10px;
+		clear: both;
+		input {
+			float:right;
+			font-size: 20px;
+			border-radius: 5px;
+			border: 1px solid #789;
+			padding: 5px;
+			box-shadow: inset 1px 1px 2px #789;
+			background-color: #CDE;
+		}
+		span {
+			width: 100px;
+			float: left;
+			font-size: 22px;
+			text-align: right;
+			padding-right: 20px;
+		}
+
+	}
+	input[type="submit"] {
+		float:right;
+		clear: both;
+		margin-top: 20px;
+	}
+}
+
+div.warning {
+	margin: 20px;
+	border-radius: 8px;
+	background-color: #FED;
+	padding: 20px;
+	box-shadow: inset 0px 0px 10px #DCB;
+}
+
+div.lorem-ipsum {
+	margin:20px;
+	max-width: 700px;
+	font-family: Georgia;
+	text-align: justify;
+	h1 {
+		text-align: center;
+		font-size: 40px;
+		margin-bottom: 30px;
+		margin-top: 40px;
+		color: #800000;
+		font-weight: bold;
+	}
+	p {
+		margin-bottom: 8px;
+		&:first-letter {
+			color: #C00000;
+			font-weight: bold;
+			font-size: 20px;
+			padding-top: 6px;
+			padding-right: 2px;
+			display: block;
+			float: left;
+		}
+	}
+
+}
+
+img.controller-icon {
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.trans(@seconds: 0.3s) {
+	-webkit-transition: @seconds;
+	   -moz-transition: @seconds;
+}
+
+
+
+a:active {
+	color: #C00;
+}
+
+
+input[type=button],input[type=submit],button{
+	padding: 2px 4px 2px 4px;
+	border-radius: 4px;
+	font-size: 14px;
+	text-shadow: 1px 1px 1px #8AC;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.7);
+	background-color: #38C;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #579 #357 #357 #579;
+	color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	margin: 1px 0px 1px 8px;
+}
+input[type=button]:hover,input[type=submit]:hover,button:hover{
+	cursor: pointer;
+}
+input[type=button]:active,input[type=submit]:active,button:active{
+	box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.3);
+	border-color: #357 #579 #579 #357;
+}
+
+button.addUser, input[type=button].addUser,input[type=submit].addUser{
+	padding-left: 22px;
+	background-image: icon(user_add);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+button.editUser, input[type=button].editUser, input[type=submit].editUser{
+	padding-left: 22px;
+	background-image: icon(user_edit);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+button.getUsers, input[type=button].getUsers, input[type=submit].getUsers{
+	padding-left: 22px;
+	background-image: icon(user_go);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+button.addClient, input[type=button].addClient, input[type=submit].addClient{
+	padding-left: 22px;
+	background-image: icon(group_link);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+button.addAccount, input[type=button].addAccount, input[type=submit].addAccount{
+	padding-left: 22px;
+	background-image: icon(package_add);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+button.addCard, input[type=button].addCard, input[type=submit].addCard{
+	padding-left: 22px;
+	background-image: icon(vcard_add);
+	background-repeat: no-repeat;
+	background-position: 4px 50%;
+}
+
+input[type=text], select, textarea{
+	margin: 0px;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #8AC;
+    font-size: 14px;
+    font-family: sans-serif;
+    box-shadow:inset 0px 0px 2px #8ac;
+}
+
+input[type=text]{
+	width: 200px;
+}

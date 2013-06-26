@@ -1,0 +1,1 @@
+window._l = $this.data("lang");

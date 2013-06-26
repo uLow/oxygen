@@ -1,0 +1,795 @@
+/**
+ * GLOBAL
+ */
+body
+{
+    font: normal normal 12px Tahoma, sans-serif;
+	background-color: #FFF;
+    min-width: 1260px;
+}
+
+body
+{
+	color: #000;	
+}
+
+body a
+{
+    color: #13659a;
+}
+
+body a:hover
+{
+	text-decoration: none;
+}
+
+.placeholder 
+{ 
+    color: gray;
+}
+
+
+/**
+ * SITE POPUP
+ */
+#site-overlay
+{
+    background: rgba(0,0,0,0.5);
+    -pie-background: rgba(0,0,0,0.5);
+
+    position: fixed;
+    top:    0px;
+    right:  0px;
+    bottom: 0px;
+    left:   0px;
+    display: none;
+    z-index: 69;
+
+    behavior: url('../../js/online/css3pie/PIE.php');  
+}
+
+#site-loader
+{
+    width:  160px;
+    height: 24px;
+    margin: 0px auto;
+    margin-top: 10%;
+}
+
+#site-popup-content
+{
+    width: 560px;
+    margin: 0px auto;
+    margin-top: 5%;
+    display: none;
+}
+
+#site-popup-content .site-block-c
+{
+    border-color: #2F8BBF;
+}
+
+#site-popup-content .site-block-c .popup-close
+{
+    font-size: 12px;
+}
+
+
+/**
+ * J SLIDER
+ */
+.jslider
+{
+    padding-bottom: 15px; 
+}
+
+.jslider .jslider-scale span
+{
+    border-color: #317298;
+}
+
+.jslider .jslider-scale ins
+{
+    white-space: nowrap;
+}
+
+
+/**
+ * TIPSY TOOLTIP
+ */
+.tipsy
+{
+    font-size: 11px; 
+    position: absolute; 
+    padding: 5px; 
+    z-index: 100000; 
+}
+
+.tipsy-inner 
+{ 
+    background-color: #FFF; 
+    color: #126399; 
+    max-width: 200px; 
+    padding: 4px 8px 4px 8px; 
+    text-align: center; 
+}
+
+.tipsy-inner 
+{ 
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border: 1px solid #c4d8e4;
+    behavior: url('../../js/online/css3pie/PIE.php');  
+}
+
+.tipsy-arrow 
+{
+    display: none;
+}
+
+
+/**
+ * LAYOUT
+ */
+#container
+{
+    position: relative;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -131px;
+}
+
+.wrapper-1020
+{
+	max-width: 1020px;
+	margin: 0px auto;
+    position: relative;
+}
+
+
+/**
+ * HEADER
+ */
+#header
+{
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 5;
+}
+
+#header .cap
+{
+    height: 56px;
+}
+
+
+/**
+ * HEADER LOGO
+ */
+#header .cap .logo
+{
+    display: block;
+    width:  184px;
+    height: 56px;
+    background: url('../../images/logo-a.png') no-repeat center center;
+
+    position: absolute;
+    top:  0px;
+    left: 0px;
+}
+
+
+/**
+ * HEADER CONTACTS
+ */
+#header .cap .contacts
+{
+    float: right;
+    overflow: hidden;
+    padding: 8px 20px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #144C76;
+    min-width: 330px;
+}
+
+#header .cap .contacts a
+{
+    color: #FFF;
+}
+
+#header .cap .contacts .image
+{
+    margin-right: 10px;
+}
+
+#header .cap .contacts .info
+{
+    margin: 2px 0px;
+    font-size: 12px;
+}
+
+#header .cap .contacts .actions .big
+{
+    font-size: 16px;
+}
+
+
+/**
+ * HEADER TOOLBAR
+ */
+#header .cap .toolbar
+{
+    float: right;
+    border-right: 1px solid #3489BF;
+    border-left:  1px solid #11649A;
+}
+
+#header .cap .toolbar .section
+{
+    float: left;
+    height: 56px;
+    border-right: 1px solid #11649A;
+    border-left:  1px solid #3489BF;
+    text-shadow: 1px 1px 1px #144C76;
+}
+
+
+/* Button */
+
+#header .cap .toolbar .section > .button
+{
+    font-size: 13px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    line-height: 56px; 
+    padding: 0px 20px;
+}
+
+#header .cap .toolbar .section > .button:active
+{
+    box-shadow: inset #033C70 0px 0px 14px;    
+}
+
+
+/* Dropdown */
+
+#header .cap .toolbar .section > .dropdown
+{
+    display: block;
+    width: 100px;
+    background: url('../../images/arrow-a.png') no-repeat 93% 27px;
+}
+
+#header .cap .toolbar .section > .dropdown:hover > .item
+{
+    display: block;
+
+}
+
+#header .cap .toolbar .section > .dropdown .item
+{  
+    display: block;
+    line-height: 30px;
+    font-size: 13px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none; 
+    padding: 0px 30px 0px 28px;
+    background-color: #1F75AA;
+    border-top: 1px solid #FFF;
+    display: none;
+}
+
+#header .cap .toolbar .section > .dropdown css3-container:first-child + .item,
+#header .cap .toolbar .section > .dropdown .item:first-child
+{
+    line-height: 56px; 
+    background-color: transparent;
+    border-top: none;
+    display: block;
+}
+
+#header .cap .toolbar .section > .dropdown:hover > .item:first-child
+{
+    box-shadow: inset #033C70 0px 0px 14px;
+}
+
+
+/* Popup */
+
+#header .cap .toolbar .section .popup-button
+{
+    cursor: pointer;
+    color: #FFF;
+    padding: 0px 15px;
+    height: 100%;
+    position: relative;
+    margin-bottom: -5px;
+    z-index: 4;
+}
+
+#header .cap .toolbar .section .popup-button a
+{
+    color: #FFF;
+    text-decoration: none;
+}
+
+#header .cap .toolbar .section .popup-button a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+#header .cap .toolbar .section .popup-pane
+{
+    background-color: #FFF;
+    text-shadow: none;
+    position: relative;
+    z-index: 3;
+    border-radius: 5px;
+    border: 1px solid #b7d0e0;
+    padding: 15px;
+    -webkit-box-shadow: #D5D5D5 0px 1px 4px;
+    -moz-box-shadow: #D5D5D5 0px 1px 4px;
+    box-shadow: #D5D5D5 0px 1px 4px;
+    behavior: url('../../js/online/css3pie/PIE.php');        
+}
+
+#header .cap .toolbar .section .popup-pane .popup-close
+{
+    display: block;
+    position: absolute;
+    background: url('../../images/top-arr-a.png') no-repeat;
+    top:    12px;
+    right:  10px;
+    width:  13px;
+    height: 11px;
+}
+
+#header .cap .toolbar .section .popup-pane h1
+{
+    font-size: 12px;
+    color: #126398;
+    margin-bottom: 5px;
+}
+
+#header .cap .toolbar .section .popup-pane p
+{
+    color: #424242;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+
+/**
+ * HEADER FEEDBACK
+ */
+#header .cap .toolbar > .feedback
+{
+    font-size: 12px;
+    width: 370px;
+}
+
+#header .cap .toolbar > .feedback .big
+{
+    font-size: 16px;
+}
+
+#header .cap .toolbar > .feedback .content
+{
+    padding-top: 7px;
+}
+
+#header .cap .toolbar > .feedback .content .info
+{
+    margin: 2px 0px; 
+}
+
+#header .cap .toolbar > .feedback .content .image
+{
+    margin-right: 10px;
+}
+
+#header .cap .toolbar > .feedback .feedback-form input[type="text"]
+{
+    width: 152px;
+}
+
+#header .cap .toolbar > .feedback .feedback-form textarea
+{
+    width: 326px;
+}
+
+
+/**
+ * HEADER HELP
+ */
+#header .cap .toolbar > .help .popup-button .image.left
+{
+    margin-right: 10px; 
+}
+
+
+#header .cap .toolbar > .help .popup-button .info
+{
+    font-size: 13px;
+    margin: 2px 0px;
+}
+
+#header .cap .toolbar > .help .popup-button .actions
+{
+    font-size: 11px;
+    margin: 5px 0px;   
+}
+
+#header .cap .toolbar > .help .popup-button .actions .dropdown
+{
+    margin: 0px 5px;
+    background: url('../../images/arrow-a.png') no-repeat right 6px;
+    padding-right: 12px;
+}
+
+#header .cap .toolbar > .help
+{
+    width: 302px;
+}
+
+#header .cap .toolbar > .help .help-button .content
+{
+    position: absolute;
+    top: 7px; 
+    width: 100%;
+}
+
+
+/* Message list */
+
+#header .cap .toolbar > .help .help-pane .messages-block
+{
+    margin-bottom: 15px;
+}
+
+#header .cap .toolbar > .help .help-pane .message-ctrls
+{
+    text-align: justify;
+}
+
+#header .cap .toolbar > .help .help-pane .message-ctrls .item
+{
+    font-size: 11px;
+    color: #13649a;
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    white-space: nowrap;
+}
+
+#header .cap .toolbar > .help .help-pane .message-ctrls .justify
+{
+    display: inline-block; 
+    width: 100%
+}
+
+#header .cap .toolbar > .help .help-pane .message-ctrls .item.prev
+{
+    background: url('../../images/left-arr-b.png') no-repeat left 4px;
+    padding-left: 15px;
+}
+
+#header .cap .toolbar > .help .help-pane .message-ctrls .item.next
+{
+    background: url('../../images/right-arr-b.png') no-repeat right 4px;
+    padding-right: 15px;
+}
+
+
+/* Message form  */
+
+#header .cap .toolbar > .help .help-pane .message-form textarea
+{
+    width: 258px;
+}
+
+
+/**
+ * BODY
+ */
+#body
+{
+
+}
+
+
+/**
+ * BODY ACCOUNT DATA
+ */
+#account-data
+{
+
+}
+
+
+/* Account */
+
+#account-data .account a
+{
+    color: #000;
+}
+
+#account-data .account .number
+{
+    margin-bottom: 5px;
+}
+
+#account-data .account .owner
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* Time */
+
+#account-data .time .valid
+{
+
+}
+
+#account-data .time .timeleft
+{
+    margin-bottom: 7px;
+}
+
+#account-data .time .timeleft .days
+{
+    color: #d70303;
+}
+
+#account-data .time .timeleft .extend
+{
+    color: #e56464;
+}
+
+#account-data .time .currency
+{
+    font-size: 11px;
+    color: #919191;
+}
+
+
+/* Payments */
+
+#account-data .payments .currency
+{
+    color: #000;
+    font-weight: normal;
+}
+
+#account-data .payments label
+{
+    margin-right: 10px;
+}
+
+#account-data .payments .time
+{
+
+}
+
+
+#account-data .payments .earned
+{
+    color: #0e9b04;
+    font-weight: bold;
+}
+
+#account-data .payments .spent
+{
+    color: #aa0303;
+    font-weight: bold;
+}
+
+#account-data .payments .count
+{
+
+}
+
+
+/* Money */
+
+#account-data .money .moneyleft
+{
+    font-size: 18px;
+}
+
+#account-data .money .moneyleft .value
+{
+    color: #13659a;
+}
+
+#account-data .money .reserved
+{
+    color: #919191;
+}
+
+
+/**
+ * BODY ACCOUNT OPERATIONS
+ */
+#account-operations
+{
+    margin-top: 40px;  
+}
+
+#account-operations .button-list .button
+{
+    margin-bottom: 20px;
+}
+
+
+/**
+ * FOOTER
+ */
+#footer,
+#sf-push
+{
+    height: 131px;
+    width: 100%;
+}
+
+
+/**
+ * FOOTER ADS
+ */
+ #footer .ads
+{
+    height: 60px;
+    background-color: #f7f9fa;
+    border-top: 1px solid #e0e4e7;
+}
+
+#footer .ad-list
+{
+    position: absolute;
+    right: 0px;
+    top:   14px;    
+}
+
+#footer .ads .appstore .text
+{
+    font-size: 12px;
+    color: #919191;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#footer ul.ad-list li
+{
+    float: left;
+    margin-left: 10px;
+}
+
+
+/**
+ * FOOTER SECURITY
+ */
+#footer .security
+{
+    border-top: 1px solid #116298;
+    height: 80px;
+}
+
+#footer .security .provider-list
+{
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top:   8px;
+}
+
+#footer .security .provider-list .provider
+{ 
+    margin-left: 25px; 
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+#footer .security .provider-list .provider a
+{
+    background-image: url('../../images/security-sp.png');
+    display: block;
+}
+
+#footer .security .provider .fkk{ background-position: 0 0;      width: 79px;  height: 66px; } 
+#footer .security .provider .mc { background-position: 0 -68px;  width: 60px;  height: 36px; } 
+#footer .security .provider .mcs{ background-position: 0 -106px; width: 82px;  height: 29px; } 
+#footer .security .provider .pci{ background-position: 0 -137px; width: 144px; height: 44px; } 
+#footer .security .provider .sw { background-position: 0 -183px; width: 62px;  height: 61px; } 
+#footer .security .provider .th { background-position: 0 -246px; width: 85px;  height: 39px; } 
+#footer .security .provider .vs { background-position: 0 -287px; width: 83px;  height: 42px; } 
+
+
+/**
+ * FOOTER SECURITY MORE
+ */
+#footer .security .more
+{
+    position: absolute;
+    left: 0px;
+    top:  26px;
+    padding-left: 35px;
+    background: url('../../images/shield.png') no-repeat left 0px;
+    min-height: 28px;
+    color: #cde5f4;
+    text-shadow: 1px 1px 1px #144C76;
+}
+
+#footer .security .more .title
+{
+    font-size: 12px;
+    color: #FFF;
+}
+
+#footer .security .more p
+{
+    font-size: 10px;
+}
+
+#footer .security .more p a
+{
+    color: #cde5f4;
+}
+
+
+/**
+ * FOOTER STATUSBAR
+ */
+#footer .statusbar
+{
+    background: #000;
+    height: 50px;
+    color: #FFF;
+    font-size: 11px;
+}
+
+#footer .statusbar a
+{
+    color: #FFF;
+}
+
+
+/**
+ * FOOTER STATUSBAR COPYRIGHT
+ */
+#footer .statusbar .copyright
+{
+    position: absolute;
+    top:  18px;
+    left: 0px;
+}
+
+
+/**
+ * FOOTER STATUSBAR STATUS-LIST
+ */
+#footer .statusbar .status-list
+{
+    position: absolute;
+    right: 0px;
+    top:   18px;
+}
+
+#footer .statusbar .status-list .status
+{
+    float: left;
+    text-align: right;
+    margin-left: 20px;
+}

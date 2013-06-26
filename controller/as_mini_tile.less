@@ -1,0 +1,38 @@
+display: block;
+height: 100%;
+overflow: hidden;
+img.watermark {
+    width: 150%;
+    position: absolute;
+    margin:-20%;
+    opacity: 0.4;
+    float:left;
+}
+color: #468;
+text-decoration: none;
+background-image: resource('back-tile6.png');
+width: 100px;
+height: 100px;
+margin: 10px;
+padding: 2px;
+float:left;
+background-color: #ABC;
+border-radius: 8px;
+position: relative;
+&:hover {
+    background-image: resource('back-tile5.png');
+	span {
+		color: white;
+	}
+}
+span {
+	font-size: 12px;
+	color: #468;
+	position: absolute;
+	padding: 4px 8px;
+	bottom: 0px;
+	right: 0px;
+	display: block;
+	text-align: right;
+}
+

@@ -1,0 +1,1 @@
+<?=$this->company?>, <?=date('Y')?>
