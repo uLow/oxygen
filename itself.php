@@ -203,9 +203,9 @@
             } else {
                 //header('HTTP/1.0 500 OxygenError');
                 //header('HTTP/1.0 404 Page not found');    
-                $root->put_page_view();
+                //$root->put_page_view();
                 //$root->put_page_view(array('error'=>array('errorText'=>'This page either does not exist or you have no access to it.','errorCode'=>'We are sorry, the page you requested cannot be found.')));
-                //echo $ex->getMessage();
+                echo $ex->getMessage();
             }
         }
     }
