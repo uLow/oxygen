@@ -200,6 +200,7 @@
             $this->OXYGEN_URI = $oxygenURI;
             $this->OXYGEN_PATH_INFO = $oxygenPath;
             $this->QUERY_STRING = $qs;
+            //die("<pre>".print_r(array($this->DOCUMENT_ROOT,$this->OXYGEN_ROOT_URI,$this->OXYGEN_URI,$this->OXYGEN_PATH_INFO,$this->QUERY_STRING),1)."</pre>");
         }
 
         public function __setAssets() {
