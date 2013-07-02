@@ -11,7 +11,8 @@
         }
 
         public function url($path) {
-            $oxygeRealPath = realpath("oxygen/..");
+            //$oxygeRealPath = realpath("oxygen/..");
+            $oxygeRealPath = CURRENT_ROOT_PATH;
         	$url = str_replace($oxygeRealPath, '', $this->path($path));
         	$url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
         	return $url;

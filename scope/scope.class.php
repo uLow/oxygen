@@ -196,6 +196,7 @@
                 $oxygenPath = $oxygenURI;
                 $qs = '';
             }
+
             $this->DOCUMENT_ROOT = $root;
             $this->OXYGEN_ROOT_URI = $oxygenRootURI;
             $this->OXYGEN_URI = $oxygenURI;
