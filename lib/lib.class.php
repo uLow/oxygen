@@ -13,13 +13,14 @@
         public function url($path) {
             //$oxygeRealPath = realpath("oxygen/..");
             $oxygeRealPath = CURRENT_ROOT_PATH;
+            //die("LIB: ".$this->path($path). " :: ". $oxygeRealPath);
         	$url = str_replace($oxygeRealPath, '', $this->path($path));
         	$url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
         	return $url;
         }
         
         public static function __class_construct($scope) {
-            $scope->LIB_PATH = dirname(__file__) . DIRECTORY_SEPARATOR;
+            $scope->LIB_PATH = CURRENT_ROOT_PATH . DIRECTORY_SEPARATOR . "oxygen" . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR;
         }
     }
 
