@@ -168,7 +168,8 @@
         public function __setPaths() {
             $oxygen  = $this->OXYGEN_ROOT;
             if (isset($this->SERVER['DOCUMENT_ROOT'])) {
-                $oxygeRealPath = realpath("oxygen/..");
+                $oxygeRealPath = CURRENT_ROOT_PATH;
+                //$oxygeRealPath = realpath("oxygen/..");
                 //$root = $this->SERVER['DOCUMENT_ROOT'];
                 $root = rtrim(str_replace('/', DIRECTORY_SEPARATOR, $oxygeRealPath),'/');
             } else {
