@@ -91,7 +91,6 @@
             $class,
             $resource
         ) {
-            return '/test/test/test/'.$resource;
             $path = $this->pathFor($class, $resource, false);
             $oxygeRealPath = realpath("oxygen/..");
             $url = str_replace($oxygeRealPath, '', $path);
