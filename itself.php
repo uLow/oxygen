@@ -193,7 +193,7 @@
                 }
             }
         } catch(Exception $ex) {
-            if (!$debug) {
+            if ($debug) {
                 try {
                     $scope->__wrapException($ex)->put_view();
                 } catch(Exception $ex) {
