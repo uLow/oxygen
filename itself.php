@@ -204,6 +204,7 @@
                 //header('HTTP/1.0 500 OxygenError');
                 //header('HTTP/1.0 404 Page not found');    
                 //$root->put_page_view();
+
                 header('Content-Type: text/html; Charset=UTF-8');
                 $root->put_page_view(
                     array(
@@ -261,7 +262,7 @@
     function encodeText($text){
         return htmlentities($text, ENT_QUOTES, 'UTF-8');
     }
-
-    return Oxygen_Scope::newRoot(dirname(dirname(__FILE__)));
+    //return Oxygen_Scope::newRoot(dirname(dirname(__FILE__)));
+    return Oxygen_Scope::newRoot(CURRENT_ROOT_PATH);
 
 ?>
