@@ -17,7 +17,7 @@
         }
 
         public function setUploadPath($path){
-            $this->uploadPath = $path;
+            $this->uploadPath = $path.$this->uploadPathMin;
         }
 
         public function handleFiles(){

@@ -1,10 +1,29 @@
 <?
 
-    class Oxygen_Config extends Oxygen_Object {
+    class Oxygen_Config {
+        private static $config = null;
 
+        public static function get($key){
+            $config = self::getConfigFile();
+            if($config === null){
+                return null;
+            }else{
+                if(isset($config[$key])){
+                    return $config[$key];
+                }else{
+                    return null;
+                }
+            }
+        }
 
-        public static function __class_construct($scope) {
-
+        private static function getConfigFile(){
+            $configPath = CURRENT_ROOT_PATH.DIRECTORY_SEPARATOR."config".DIRECTORY_SEPARATOR."global.php";
+            if(self::$config === null){
+                if(file_exists($configPath)){
+                    self::$config = include($configPath);
+                }
+            }
+            return self::$config;
         }
     }
 
