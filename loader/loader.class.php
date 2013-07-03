@@ -1,4 +1,5 @@
 <?
+exit;
     class Oxygen_Loader extends Oxygen_Object {
         const UPPERCASE_FILE     = '.uppercase';
         const CLASS_EXTENSION    = '.class.php';
@@ -91,7 +92,6 @@
             $class,
             $resource
         ) {
-            return '/test/test/test/'.$resource;
             $path = $this->pathFor($class, $resource, false);
             $oxygeRealPath = realpath("oxygen/..");
             $url = str_replace($oxygeRealPath, '', $path);
