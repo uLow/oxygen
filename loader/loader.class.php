@@ -94,7 +94,7 @@
         ) {
             $oxygeRealPath = CURRENT_ROOT_PATH;
             //die("LIB: ".$this->path($path). " :: ". $oxygeRealPath);
-            $url = str_replace($oxygeRealPath, '', $this->pathFor($class, $resource, false););
+            $url = str_replace($oxygeRealPath, '', $this->pathFor($class, $resource, false));
             $url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
             return $url;
         }
