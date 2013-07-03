@@ -193,7 +193,7 @@
                 }
             }
         } catch(Exception $ex) {
-            if ($debug) {
+            if (!$debug) {
                 try {
                     $scope->__wrapException($ex)->put_view();
                 } catch(Exception $ex) {
@@ -203,10 +203,19 @@
             } else {
                 //header('HTTP/1.0 500 OxygenError');
                 //header('HTTP/1.0 404 Page not found');    
-                $root->put_page_view();
-                //$root->put_page_view(array('error'=>array('errorText'=>'This page either does not exist or you have no access to it.','errorCode'=>'We are sorry, the page you requested cannot be found.')));
+                //$root->put_page_view();
+                header('Content-Type: text/html; Charset=UTF-8');
+                $root->put_page_view(
+                    array(
+                        'error'=>array(
+                            'errorText'=>'404error_text',
+                            'errorCode'=>'404error_header'
+                        )
+                    )
+                );
                 //echo $ex->getMessage();
             }
+            //echo $ex->getMessage();
         }
     }
 
