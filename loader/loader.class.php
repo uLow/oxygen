@@ -93,7 +93,7 @@
             $resource
         ) {
             $path = $this->pathFor($class, $resource, false);
-            $oxygeRealPath = CURRENT_ROOT_PATH;
+            $oxygeRealPath = realpath("oxygen/..");
             $url = str_replace($oxygeRealPath, '', $path);
             //$url = str_replace($this->scope->DOCUMENT_ROOT, '', $path);
             $url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
