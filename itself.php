@@ -262,7 +262,7 @@
     function encodeText($text){
         return htmlentities($text, ENT_QUOTES, 'UTF-8');
     }
-    //return Oxygen_Scope::newRoot(dirname(dirname(__FILE__)));
-    return Oxygen_Scope::newRoot(CURRENT_ROOT_PATH);
+    return Oxygen_Scope::newRoot(dirname(dirname(__FILE__)));
+    //return Oxygen_Scope::newRoot(CURRENT_ROOT_PATH);
 
 ?>
