@@ -79,7 +79,7 @@
 				$loadedFrom = __CLASS__;
 			}
 			if($path === false){
-				$path = "/var/www/html/tpro/oxygen_logs/";
+				$path = Oxygen_Config::get('log_path');
 			}
 			self::$loadedFrom = $loadedFrom;
 			$logFile = $logFile 
