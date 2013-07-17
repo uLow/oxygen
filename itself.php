@@ -206,14 +206,18 @@
                 //$root->put_page_view();
 
                 header('Content-Type: text/html; Charset=UTF-8');
-                $root->put_page_view(
-                    array(
-                        'error'=>array(
-                            'errorText'=>'404error_text',
-                            'errorCode'=>'404error_header'
+                try{
+                    $root->put_page_view(
+                        array(
+                            'error'=>array(
+                                'errorText'=>'404error_text',
+                                'errorCode'=>'404error_header'
+                            )
                         )
-                    )
-                );
+                    );
+                } catch(Exception $e) {
+                    echo "::".$e->getMessage();
+                }
                 //echo $ex->getMessage();
             }
             //echo $ex->getMessage();
