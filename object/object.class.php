@@ -205,7 +205,7 @@
             );
         }
 
-        public static function log($logText, $logRequest = false, $logPath = false){
+        public static function log($logText="", $logRequest = false, $logPath = false){
             Oxygen_Logger::log(get_called_class(), $logText, false, $logRequest, $logPath);
         }
 
