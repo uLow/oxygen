@@ -1,5 +1,6 @@
 <?
     class Oxygen_Loader extends Oxygen_Object {
+
         const UPPERCASE_FILE     = '.uppercase';
         const CLASS_EXTENSION    = '.class.php';
         const BASE_EXTENSION     = '.base.php';
