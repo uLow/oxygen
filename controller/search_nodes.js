@@ -50,3 +50,24 @@ $search.focusout(function(){
 		tmpSearch = $search.val();
 	}
 });
+
+$this.find('.findItems').click(function(){
+	$items.html('<loader>');
+	$items.removeClass('collapsed').addClass('expanded');		
+	$this.remoteSafe(
+		'getItems', {
+			criteria: $search.val(),
+			nodeTemplate: 'node'
+		}, function(res){
+		if($items.html()==res.body){
+			return false;
+		}
+		if(res.body != ''){
+			$items.embed(res, true); 
+			//console.log(res);
+		}else{
+			$items.html('<span class="disabled">empty result</span>');
+		}
+	});
+	tmpSearch = $search.val();
+});
