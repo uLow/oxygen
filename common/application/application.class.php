@@ -17,6 +17,7 @@
             $root = Oxygen_Scope::getRoot();
             $this->scope->register('Language',$languageClass);
             $this->language = $this->scope->Language();
+            if(isset($_GET['lang'])){$this->scope->SESSION['lang'] = $_GET['lang'];}
             if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
             }
@@ -44,8 +45,10 @@
         public function rpc_selectLanguege($args){
             if(isset($this->language->languages[$args->lang])){
                 $this->scope->SESSION['lang'] = $args->lang;
+                $page = $args->page;
+                $page = preg_replace("/\?lang\=../", "", $page);
             }
-            return $args->page;
+            return $page;
         }
 
 		public function configure($x) {
