@@ -206,15 +206,15 @@
                 //$root->put_page_view();
 
                 header('Content-Type: text/html; Charset=UTF-8');
-                $root->put_page_view(
+                /*$root->put_page_view(
                     array(
                         'error'=>array(
                             'errorText'=>'404error_text',
                             'errorCode'=>'404error_header'
                         )
                     )
-                );
-                //echo $ex->getMessage();
+                );*/
+                echo $ex->getMessage();
             }
             //echo $ex->getMessage();
         }
