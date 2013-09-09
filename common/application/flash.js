@@ -13,6 +13,7 @@ $this.flash = function(d) {
 		//.css({color:blinkTextColor})
         $li = $('<li>').html(d.message).appendTo($this);
         $this.css('top', $h);
+        $this.css('margin-top', 0.33*$w);
 		$this.css('left', $w);
 		$this.hideIt($li,d);
     } else {
@@ -36,7 +37,7 @@ $this.hideIt = function($obj,d) {
 }
 
 o.flash = function(message,type){
-    $this.flash({type:type,message:message});
+    $this.flash({type:type, message:message});
 }
 
 $this.updateFlash = function () {
