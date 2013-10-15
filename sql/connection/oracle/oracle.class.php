@@ -118,11 +118,14 @@
             //die(var_dump($this->link));
             //die(var_dump(self::$_lll));
            // $result = oci_parse($this->link, $sql);
-			$result = oci_parse(self::$conn, $sql);
-			oci_execute($result);
+            Oxygen_Logger::log(false, $sql, false);
+
+            $result = oci_parse(self::$conn, $sql);
+            oci_execute($result);
+
 			$this->__assert(
 				$result,
-                oci_error(self::$conn).":".$sql
+                oci_error(self::$conn)
 				//oci_error($this->link)
 			);
 
