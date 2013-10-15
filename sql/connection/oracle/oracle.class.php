@@ -196,7 +196,7 @@
 				if($type == 'int'){
 					return (int)$value;
 				}else{
-					return '\'' . addslashes($value) . '\'';
+					return '\'' . str_replace("'", "''", $value) . '\'';
 				}
             }
         }
@@ -302,7 +302,7 @@
 		
         public function formatQuery($sql, $params = array()) {
             return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.addslashes(\$params['\\2']).'\\'') : \$params['<\\2>']",$sql);
+                "'\\1' === '{' ? ('\\''.str_replace(\"'\", \"''\", \$params['\\2']).'\\'') : \$params['<\\2>']",$sql);
         }
 
 		public function paramQuery($sql, $params = array()) {
