@@ -122,7 +122,7 @@
 			oci_execute($result);
 			$this->__assert(
 				$result,
-                oci_error(self::$conn).$sql
+                oci_error(self::$conn)
 				//oci_error($this->link)
 			);
 
