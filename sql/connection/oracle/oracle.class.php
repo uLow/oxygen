@@ -118,7 +118,7 @@
             //die(var_dump($this->link));
             //die(var_dump(self::$_lll));
            // $result = oci_parse($this->link, $sql);
-            Oxygen_Logger::log(false, $sql, false);
+            //Oxygen_Logger::log(false, $sql, false);
 
             $result = oci_parse(self::$conn, $sql);
             oci_execute($result);
