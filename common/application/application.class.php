@@ -17,7 +17,38 @@
             $root = Oxygen_Scope::getRoot();
             $this->scope->register('Language',$languageClass);
             $this->language = $this->scope->Language();
-            if(isset($_GET['lang'])){$this->scope->SESSION['lang'] = $_GET['lang'];}
+            if(isset($_GET['lang']) && isset($this->language->languages[$_GET['lang']])){
+                $this->scope->SESSION['lang'] = $_GET['lang'];
+            }else{
+                // set language according to country
+                $geoIP = $this->scope->Oxygen_Geoip();
+                $geoCountry = $geoIP->getCountryFromIP();
+                $geoLang = "en";
+                switch ($geoCountry) {
+                    case 'Latvia':
+                    case 'Reserved':
+                        $geoLang = "lv";
+                        break;
+                    case 'Armenia':
+                    case 'Azerbaijan':
+                    case 'Belarus':
+                    case 'Georgia':
+                    case 'Kazakhstan':
+                    case 'Uzbekistan':
+                    case 'Moldova Republic of':
+                    case 'Tajikistan':
+                    case 'Turkmenistan':
+                    case 'Ukraine':
+                    case 'Russian Federation':
+                    case 'Kyrgyzstan':
+                        $geoLang = "ru";
+                        break;
+                    default:
+                        $geoLang = "en";
+                        break;
+                }
+                $this->scope->SESSION['lang'] = $geoLang;
+            }
             if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
             }
