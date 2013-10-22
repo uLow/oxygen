@@ -19,7 +19,7 @@
             $this->language = $this->scope->Language();
             if(isset($_GET['lang']) && isset($this->language->languages[$_GET['lang']])){
                 $this->scope->SESSION['lang'] = $_GET['lang'];
-            }else{
+            }elseif(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 // set language according to country
                 $geoIP = $this->scope->Oxygen_Geoip();
                 $geoCountry = $geoIP->getCountryFromIP();
@@ -49,9 +49,9 @@
                 }
                 $this->scope->SESSION['lang'] = $geoLang;
             }
-            if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
+            /*if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
-            }
+            }*/
             $this->language->lang = $this->scope->currentLang = $this->scope->SESSION['lang'];
             $root->language = $this->scope->language = $this->language;
         }
