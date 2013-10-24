@@ -20,27 +20,8 @@
             if(isset($_GET['lang']) && isset($this->language->languages[$_GET['lang']])){
                 $this->scope->SESSION['lang'] = $_GET['lang'];
             }elseif(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
-
-
-                /*$address = explode(".", "91.235.182.1");
-                $integer_ip = (16777216*$address[0])+(65536*$address[1])+(256*$address[2])+$address[3];
-                var_dump($address);
-                var_dump($integer_ip);
-                exit;*/
-
-
-                // set language according to country
+                /* geoLang script is working but needs a new DB
                 $geoIP = $this->scope->Oxygen_Geoip();
-
-                // 91.235.182.1 = ukraine
-                // 91.214.84.110 = ukraine
-                // 213.160.146.140 = ukraine
-                // 213.165.170.180 = malta
-                // 87.110.182.18 = latvia
-                /*$gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
-                $geoCountry = geoip_country_name_by_addr($gi, "80.24.24.24");
-                geoip_close($gi);*/
-
                 $geoCountry = $geoIP->getCountryFromIP();
                 $geoLang = "en";
                 switch ($geoCountry) {
@@ -53,7 +34,7 @@
                     case 'Belarus':
                     case 'Georgia':
                     case 'Kazakhstan':
-                    case 'Uzbekistan':
+                    case 'Uz bekistan':
                     case 'Moldova Republic of':
                     case 'Tajikistan':
                     case 'Turkmenistan':
@@ -67,12 +48,52 @@
                         break;
                 }
                 $this->scope->SESSION['lang'] = $geoLang;
+                */
+                if(isset($_SERVER["HTTP_ACCEPT_LANGUAGE"])){
+                    $browser_lang = $this->parseBrowserDefaultLanguage($_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+                    switch ($browser_lang) {
+                        case 'en':
+                        case 'lv':
+                        case 'ru':
+                            $this->scope->SESSION['lang'] = $browser_lang;
+                            break;
+                        default:
+                            $this->scope->SESSION['lang'] = 'en';
+                            break;
+                    }
+                }else{
+                    $this->scope->SESSION['lang'] = 'en';
+                }
             }
             /*if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
             }*/
             $this->language->lang = $this->scope->currentLang = $this->scope->SESSION['lang'];
             $root->language = $this->scope->language = $this->language;
+        }
+
+        public function parseBrowserDefaultLanguage($http_accept, $deflang = "en") {
+           if(isset($http_accept) && strlen($http_accept) > 1)  {
+              # Split possible languages into array
+              $x = explode(",",$http_accept);
+              foreach ($x as $val) {
+                 #check for q-value and create associative array. No q-value means 1 by rule
+                 if(preg_match("/(.*);q=([0-1]{0,1}\.\d{0,4})/i",$val,$matches))
+                    $lang[$matches[1]] = (float)$matches[2];
+                 else
+                    $lang[$val] = 1.0;
+              }
+
+              #return default language (highest q-value)
+              $qval = 0.0;
+              foreach ($lang as $key => $value) {
+                 if ($value > $qval) {
+                    $qval = (float)$value;
+                    $deflang = $key;
+                 }
+              }
+           }
+           return strtolower($deflang);
         }
 
         public function _ln($key){
