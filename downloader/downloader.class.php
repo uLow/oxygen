@@ -8,23 +8,55 @@
 
         public $ch = null;
         public static $options = array(
-            CURLOPT_USERAGENT => self::USER_AGENT,
-            CURLOPT_FAILONERROR => 1,
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_TIMEOUT => self::TIMEOUT,
-            CURLOPT_HTTPGET => 1,
-            CURLOPT_ENCODING => 'gzip'
+            'get' => array(
+                CURLOPT_USERAGENT => self::USER_AGENT,
+                CURLOPT_FAILONERROR => 1,
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_TIMEOUT => self::TIMEOUT,
+                CURLOPT_HTTPGET => 1,
+                CURLOPT_ENCODING => 'gzip'
+            ),
+            'post' => array(
+                CURLOPT_USERAGENT => self::USER_AGENT,
+                CURLOPT_FAILONERROR => 1,
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_TIMEOUT => self::TIMEOUT,
+                CURLOPT_POST => 1,
+                CURLOPT_ENCODING => 'gzip'
+            )
         );
 
 
         public function __construct() {
-            $ch = $this->ch =  curl_init();
-            foreach(self::$options as $name => $value) {
-                curl_setopt($ch, $name, $value);
+            $this->ch =  curl_init();
+        }
+
+        public function post($url, $params, $auth = false)  {
+            foreach(self::$options['post'] as $name => $value) {
+                curl_setopt($this->ch, $name, $value);
+            }
+            curl_setopt($this->ch, CURLOPT_URL, $url);
+            curl_setopt($this->ch, CURLOPT_RETURNTRANSFER,1);
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER,0);
+            curl_setopt($this->ch, CURLOPT_SSL_VERIFYHOST,0);
+            curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($params));
+            if ($auth !== false) {
+                curl_setopt($this->ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+                curl_setopt($this->ch, CURLOPT_USERPWD, $auth['user'].':'.$auth['pass']);
+            }
+            $result = curl_exec($this->ch);
+
+            if($result === false){
+                return curl_error($this->ch);
+            }else{
+                return $result;
             }
         }
 
         public function get($url,$params = array()) {
+            foreach(self::$options['get'] as $name => $value) {
+                curl_setopt($this->ch, $name, $value);
+            }
             if (count($params)>0) {
                 if (preg_match("/\?/",$url)) {
                     $url .= '&';
@@ -37,11 +69,12 @@
             curl_setopt($this->ch, CURLOPT_URL, $url);
             curl_setopt($this->ch, CURLOPT_RETURNTRANSFER,1);
             $result = curl_exec($this->ch);
-            $this->__assert(
-                $result !== false,
-                'DOWNLOAD FAILED'
-            );
-            return $result;
+            
+            if($result === false){
+                return curl_error($this->ch);
+            }else{
+                return $result;
+            }
         }
 
         public function getSimpleXML($url, $params = array()) {
@@ -64,6 +97,3 @@
         }
     }
 
-
-
-?>

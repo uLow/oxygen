@@ -7,6 +7,10 @@
     private static $data_set = null;
     private static $data_source = null;
 
+<?$sources = explode("/", $this->source);?>
+    public $database = '<?=$sources[0]?>';
+    public $table = '<?=$sources[1]?>';
+
 <?foreach ($this->fields as $field):?>
     public static $field_<?=$field->name?> = null;
 <?endforeach?>
@@ -18,6 +22,11 @@
 
     public function __getPattern() {
         return '<?=$this->pattern?>';
+    }
+
+    public function __getPrimaryKey() {
+        <?if(is_array($this->key)){?>return array('<?=implode("','", $this->key)?>');<?}else{?>return '<?=$this->key?>';<?}?>
+    
     }
 
     public function __getField($name) {
