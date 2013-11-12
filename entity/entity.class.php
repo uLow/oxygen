@@ -32,6 +32,7 @@
             }
             $conn = $this->scope->connection;
             $this->__preSubmit();
+
             if(count($this->original)) {
                 // UPDATE EXISTING
                 $update = array();
@@ -52,7 +53,6 @@
                 }
             } else {
                 // IS NEW
-
                 //$sql = $this->owner->insert($this->current);
                 //$conn->rawQuery();
                 $this->original = $this->current;
@@ -63,7 +63,7 @@
                 */
                 //return $sql;
                 $result = $this->insert($this->current);
-                $this[$this->__getPrimaryKey()] = $result;
+                $this[$this->__getPrimaryKey()] = (string)$result;
                 return $this;
             }
         }
@@ -174,7 +174,8 @@
             $keys = array_keys($data);
             $values = array_values($data);
             $primary_key = preg_replace("/\{([^:]+):.*\}/i", "$1", $this->__getPattern());
-            return $this->scope->connection->runQuery("insert into `{$this->database}`.{$this->table} (`".implode("`,`", $keys)."`) values ('".implode("','", $values)."')",array(),$primary_key, $this->scope, get_class($this));
+            $ret = $this->scope->connection->runQuery("insert into `{$this->database}`.{$this->table} (`".implode("`,`", $keys)."`) values ('".implode("','", $values)."')");
+            return $ret;
         }
 
         public function insertRow($data, $prefix, $table, $raw=false)
