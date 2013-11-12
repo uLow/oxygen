@@ -11,6 +11,26 @@
         public $data  = '';
         public $i18n  = false;
 
+        public static $field_types = array(
+            'integer',
+            'string',
+            'unixtime',
+            'minor',
+            'object',
+            'password',
+            'set',
+            'ip',
+            'json',
+            'text',
+            'double',
+            'collection',
+            'cross',
+        );
+
+        public static function getFieldTypes(){
+            return self::$field_types;
+        }
+
         public function option($name,$default = null) {
             if(isset($this->yaml[$name])) {
                 return $this->yaml[$name];

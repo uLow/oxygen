@@ -21,4 +21,5 @@ $a.click(function(){
 			}			
 		});
 	}
+    $('.searchNodesController').find('ul.items').eq(0).removeClass('collapsed').addClass('expanded');
 });

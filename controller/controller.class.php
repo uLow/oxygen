@@ -40,6 +40,8 @@
         public $isCurrent = false;
         public $isActive = false;
         public $child = false;
+        public $hasSubMenu = true;
+        public $showInMenu = true;
 
         protected $count  = false;
 
@@ -64,6 +66,16 @@
 			$this->model = $model;
             $this->name = $this->route;
 		}
+
+        public function hideInMenu(){
+            $this->showInMenu = false;
+            return $this;
+        }
+
+        public function displayInMenu(){
+            $this->showInMenu = true;
+            return $this;
+        }
 
         public function getModelData() {
             return array();

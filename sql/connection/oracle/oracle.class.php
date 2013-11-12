@@ -118,11 +118,14 @@
             //die(var_dump($this->link));
             //die(var_dump(self::$_lll));
            // $result = oci_parse($this->link, $sql);
-			$result = oci_parse(self::$conn, $sql);
-			oci_execute($result);
+            //Oxygen_Logger::log(false, $sql, false);
+
+            $result = oci_parse(self::$conn, $sql);
+            oci_execute($result);
+
 			$this->__assert(
 				$result,
-                oci_error(self::$conn).$sql
+                oci_error(self::$conn)
 				//oci_error($this->link)
 			);
 
@@ -193,7 +196,7 @@
 				if($type == 'int'){
 					return (int)$value;
 				}else{
-					return '\'' . addslashes($value) . '\'';
+					return '\'' . str_replace("'", "''", $value) . '\'';
 				}
             }
         }
@@ -299,7 +302,7 @@
 		
         public function formatQuery($sql, $params = array()) {
             return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.addslashes(\$params['\\2']).'\\'') : \$params['<\\2>']",$sql);
+                "'\\1' === '{' ? ('\\''.str_replace(\"'\", \"''\", \$params['\\2']).'\\'') : \$params['<\\2>']",$sql);
         }
 
 		public function paramQuery($sql, $params = array()) {

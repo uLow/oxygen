@@ -27,6 +27,9 @@
         }
 
         public function __submit() {
+            if(!$this->scope){
+                $this->scope = Oxygen_Scope::getRoot();
+            }
             $conn = $this->scope->connection;
             $this->__preSubmit();
             if(count($this->original)) {
@@ -50,14 +53,34 @@
             } else {
                 // IS NEW
 
-                $sql = $this->owner->insert($this->current);
+                //$sql = $this->owner->insert($this->current);
+                //$conn->rawQuery();
+                $this->original = $this->current;
                 /*
                 $conn->rawQuery();
                 $this->original = $this->current;
                 return $conn->lastAffectedRows();
                 */
-                return $sql;
+                //return $sql;
+                $result = $this->insert($this->current);
+                $this[$this->__getPrimaryKey()] = $result;
+                return $this;
             }
+        }
+
+        public function __preRemove(){
+
+        }
+
+        public function __remove(){
+            if(!$this->scope){
+                $this->scope = Oxygen_Scope::getRoot();
+            }
+            $conn = $this->scope->connection;
+            $this->__preRemove();
+            $primary_key = $this->__getPrimaryKey();
+            $id = $this[$this->__getPrimaryKey()];
+            $conn->rawQuery("delete from {$this->database}.{$this->table} where {$primary_key}='{$id}'");
         }
 
         public function __construct($owner, $original = false) {
@@ -145,6 +168,13 @@
                 }
             }
             return $result;
+        }
+
+        public function insert($data){
+            $keys = array_keys($data);
+            $values = array_values($data);
+            $primary_key = preg_replace("/\{([^:]+):.*\}/i", "$1", $this->__getPattern());
+            return $this->scope->connection->runQuery("insert into `{$this->database}`.{$this->table} (`".implode("`,`", $keys)."`) values ('".implode("','", $values)."')",array(),$primary_key, $this->scope, get_class($this));
         }
 
         public function insertRow($data, $prefix, $table, $raw=false)
