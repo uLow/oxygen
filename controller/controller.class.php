@@ -67,6 +67,10 @@
             $this->name = $this->route;
 		}
 
+        public function rpc_oxygenControllerStateRefresh($args){
+            return $this->embed_($args->component);
+        }
+
         public function hideInMenu(){
             $this->showInMenu = false;
             return $this;

@@ -39,13 +39,17 @@
 
 <?if($this->string):?>
     public function __toString() {
-        return '<?=preg_replace('/{([A-Za-z0-9_]+)}/','\'.(($x = self::$field_$1[$this]) === "" ? "not-set" : $x).\'', $this->string)?>';
+        <?$str = preg_replace("/\{([a-z0-9]+)/e", "'{'.ucfirst('$1')", $this->string);?>
+        <?$str2 = preg_replace("/_([a-z0-9])/e", "ucfirst('$1')", $str);?>
+        return '<?=preg_replace('/{([A-Za-z0-9_]+)}/','\'.(($x = $this->get$1()) === "" ? "not-set" : $x).\'', $str2)?>';
     }
 <?endif?>
 
-    public static function __class_construct($scope) {
-        // HERE
+    public static function extendedConstructor(){
+        // meant to add extra fields (non-database-based) in entity
+    }
 
+    public static function __class_construct($scope) {
         self::$data_set = $scope->connection['<?=$this->source?>'];
         self::$data_set->scope->register('Row','<?=$this->schema->moduleClassName . '_Entity_' . $this->name?>');
         <?if(isset($this->yml['order'])):?>
@@ -55,7 +59,8 @@
         <?endif?>
 <?foreach ($this->fields as $field):?>    
         self::$fields['<?=$field->name?>'] = self::$field_<?=$field->name?> = $scope-><?$field->put_new()?>;
-<?endforeach?>        
+<?endforeach?>      
+        self::extendedConstructor();  
     }
 
 
