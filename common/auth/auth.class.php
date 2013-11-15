@@ -87,6 +87,10 @@
 			return '';
 		}
 
+        public function isLogged(){
+            return count($this->roles)>0;
+        }
+
 		public function process($data) {
 			$session = $this->scope->SESSION;
 			if($this->role !== false) {

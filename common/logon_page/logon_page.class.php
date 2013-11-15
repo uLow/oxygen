@@ -14,8 +14,15 @@
 				return $this->_("log_in");
 			}
 		}
-		public function handlePost() {
-			return $this->scope->auth->process($this->scope->POST);
+        public function handlePost() {
+            return $this->scope->auth->process($this->scope->POST);
+        }
+		public function handleGet() {
+            if(isset($this->args['sign-out'])){
+                $this->scope->auth->process(array('sign-out'=>true));
+                return redirectResponse('authentication');
+            }
+            return parent::handleGet();
 		}
 	}
 
