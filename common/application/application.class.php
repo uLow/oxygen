@@ -19,58 +19,59 @@
             $this->language = $this->scope->Language();
             if(isset($_GET['lang']) && isset($this->language->languages[$_GET['lang']])){
                 $this->scope->SESSION['lang'] = $_GET['lang'];
-            }elseif(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
-
-
-                /*$address = explode(".", "91.235.182.1");
-                $integer_ip = (16777216*$address[0])+(65536*$address[1])+(256*$address[2])+$address[3];
-                var_dump($address);
-                var_dump($integer_ip);
-                exit;*/
-
-
-                // set language according to country
-                $geoIP = $this->scope->Oxygen_Geoip();
-
-                // 91.235.182.1 = ukraine
-                // 91.214.84.110 = ukraine
-                // 213.160.146.140 = ukraine
-                // 213.165.170.180 = malta
-                // 87.110.182.18 = latvia
-                /*$gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
-                $geoCountry = geoip_country_name_by_addr($gi, "80.24.24.24");
-                geoip_close($gi);*/
-
-                $geoCountry = $geoIP->getCountryFromIP();
-                $geoLang = "en";
-                switch ($geoCountry) {
-                    case 'Latvia':
-                    case 'Reserved':
-                        $geoLang = "lv";
-                        break;
-                    case 'Armenia':
-                    case 'Azerbaijan':
-                    case 'Belarus':
-                    case 'Georgia':
-                    case 'Kazakhstan':
-                    case 'Uzbekistan':
-                    case 'Moldova Republic of':
-                    case 'Tajikistan':
-                    case 'Turkmenistan':
-                    case 'Ukraine':
-                    case 'Russian Federation':
-                    case 'Kyrgyzstan':
-                        $geoLang = "ru";
-                        break;
-                    default:
-                        $geoLang = "en";
-                        break;
-                }
-                $this->scope->SESSION['lang'] = $geoLang;
             }
-            /*if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
+            // elseif(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
+
+
+            //     /*$address = explode(".", "91.235.182.1");
+            //     $integer_ip = (16777216*$address[0])+(65536*$address[1])+(256*$address[2])+$address[3];
+            //     var_dump($address);
+            //     var_dump($integer_ip);
+            //     exit;*/
+
+
+            //     // set language according to country
+            //     $geoIP = $this->scope->Oxygen_Geoip();
+
+            //     // 91.235.182.1 = ukraine
+            //     // 91.214.84.110 = ukraine
+            //     // 213.160.146.140 = ukraine
+            //     // 213.165.170.180 = malta
+            //     // 87.110.182.18 = latvia
+            //     /*$gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
+            //     $geoCountry = geoip_country_name_by_addr($gi, "80.24.24.24");
+            //     geoip_close($gi);*/
+
+            //     $geoCountry = $geoIP->getCountryFromIP();
+            //     $geoLang = "en";
+            //     switch ($geoCountry) {
+            //         case 'Latvia':
+            //         case 'Reserved':
+            //             $geoLang = "lv";
+            //             break;
+            //         case 'Armenia':
+            //         case 'Azerbaijan':
+            //         case 'Belarus':
+            //         case 'Georgia':
+            //         case 'Kazakhstan':
+            //         case 'Uzbekistan':
+            //         case 'Moldova Republic of':
+            //         case 'Tajikistan':
+            //         case 'Turkmenistan':
+            //         case 'Ukraine':
+            //         case 'Russian Federation':
+            //         case 'Kyrgyzstan':
+            //             $geoLang = "ru";
+            //             break;
+            //         default:
+            //             $geoLang = "en";
+            //             break;
+            //     }
+            //     $this->scope->SESSION['lang'] = $geoLang;
+            // }
+            if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
-            }*/
+            }
             $this->language->lang = $this->scope->currentLang = $this->scope->SESSION['lang'];
             $root->language = $this->scope->language = $this->language;
         }
