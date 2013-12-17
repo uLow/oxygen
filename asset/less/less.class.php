@@ -62,7 +62,7 @@
 			try {
 				return $this->less->parse($source);
 			} catch(Exception $ex) {
-				$this->flash($ex->getMessage,'error');
+				$this->flash($ex->getMessage(),'error');
 				return '/* ERROR */';
 			}
 		}

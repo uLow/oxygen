@@ -68,6 +68,10 @@
 		}
 
         public function rpc_oxygenControllerStateRefresh($args){
+            foreach($args as $k=>$v){
+                if($k!=='component' && $k!=='refresh')
+                    $this->args[$k] = $v;
+            }
             return $this->embed_($args->component);
         }
 
@@ -286,6 +290,7 @@
                 $method = $SERVER['HTTP_X_OXYGEN_RPC'];
                 $continuation = $SERVER['HTTP_X_OXYGEN_CONTINUATION'];
                 $args = json_decode(file_get_contents('php://input'));
+                
                 if ($continuation === 'new') {
                     $client = $this->scope->Oxygen_Communication_Client($this, $continuation);
                 } else {
@@ -457,9 +462,18 @@
 		}
 
         public function parseArgs(){
+            $this->_rpcArgs = (array)json_decode(file_get_contents('php://input'));
+
             $array = array();
             parse_str($this->rawArgs, $array);
             $this->args = $array;
+            if(isset($this->_rpcArgs, $this->_rpcArgs['refresh'])){
+                foreach($this->_rpcArgs as $k=>$v){
+                    if($k != 'component' && $k != 'refresh'){
+                        $this->args[$k] = $v;
+                    }
+                }
+            }
         }
 
         public function setPath($parent, $route = '', $rest = ''){
