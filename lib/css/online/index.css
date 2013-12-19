@@ -17,8 +17,8 @@ body{
 #body .content .login-block
 {
 	width: 500px;
-	margin: 0px auto;
-	margin-bottom: 10%;
+	margin: 10% auto;
+	//margin-bottom: 10%;
 }
 
 #body .content .login-block .login-form
