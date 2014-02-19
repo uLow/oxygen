@@ -69,15 +69,22 @@
             //     }
             //     $this->scope->SESSION['lang'] = $geoLang;
             // }
+            /* If there is no ?lang= parameter and no lang in session then parse browser lang (if it can not be defined, use def lang) */
             if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
-                $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
+                //if(isset($this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']))){
+                if(isset($this->language->languages[$this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE'])])){
+                    $this->scope->SESSION['lang'] = $this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+                }else{
+                    $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
+                }
             }
             $this->language->lang = $this->scope->currentLang = $this->scope->SESSION['lang'];
             $root->language = $this->scope->language = $this->language;
         }
 
-        public function parseBrowserDefaultLanguage($http_accept, $deflang = "en") {
-           if(isset($http_accept) && strlen($http_accept) > 1)  {
+        public function parseBrowserDefaultLanguage($http_accept){
+            $deflang = 'en';
+            if(isset($http_accept) && strlen($http_accept) > 1){
               # Split possible languages into array
               $x = explode(",",$http_accept);
               foreach ($x as $val) {
@@ -87,7 +94,6 @@
                  else
                     $lang[$val] = 1.0;
               }
-
               #return default language (highest q-value)
               $qval = 0.0;
               foreach ($lang as $key => $value) {
@@ -96,8 +102,8 @@
                     $deflang = $key;
                  }
               }
-           }
-           return strtolower($deflang);
+            }
+            return strtolower($deflang);
         }
 
         public function _ln($key){

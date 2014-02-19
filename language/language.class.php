@@ -3,7 +3,7 @@
 		
 		public $lang;
 		private $langPack = null;
-		public $languages = array("lv"=>"Latviešu", "ru"=>"Русский", "en"=>"English");
+		public $languages = array("en"=>"English", "ru"=>"Русский", "lv"=>"Latviešu");
 
 		public function __complete()
 		{
