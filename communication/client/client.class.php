@@ -54,7 +54,7 @@
         public function ask($template, $data) {
             $digest = $this->getCallDigest();
             if($this->callDigest === $digest) {
-                if ($this->callError !== null) {
+                if ($this->callError !== null && $this->callError !== "" && $this->callError !== false) {
                     throw new Oxygen_Communication_ClientException($this->callError);
                 } else {
                     return $this->callResult;
