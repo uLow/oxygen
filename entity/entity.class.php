@@ -63,7 +63,7 @@
                 */
                 //return $sql;
                 $result = $this->insert($this->current);
-                $this[$this->__getPrimaryKey()] = (string)$result;
+                $this[$this->__getPrimaryKey(true)] = (string)$result;
                 return $this;
             }
         }
@@ -139,7 +139,8 @@
                 $this->current[$data] = $value;
             } else if(is_array($data)) {
                 foreach($data as $k => $d) {
-                    if(!array_key_exists($k,$value)) {
+                    //if(!array_key_exists($k,$value)) {
+                    if(!isset($value[$k])) {
                         throw $this->scope->Exception(
                             Oxygen_Utils_Text::format(self::MISSING_DATA,$k,get_class($this))
                         );
