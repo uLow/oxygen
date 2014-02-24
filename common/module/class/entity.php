@@ -24,8 +24,14 @@
         return '<?=$this->pattern?>';
     }
 
-    public function __getPrimaryKey() {
-        <?if(is_array($this->key)){?>return array('<?=implode("','", $this->key)?>');<?}else{?>return '<?=$this->key?>';<?}?>
+    public function __getPrimaryKey($pattern = false) {
+        if($pattern === false){
+            <?if(is_array($this->key)){?>return array('<?=implode("','", $this->key)?>');<?}else{?>return '<?=$this->key?>';<?}?>
+
+        }else{
+        
+            return '<?=$this->pattern?>';
+        }
     
     }
 
