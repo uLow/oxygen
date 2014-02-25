@@ -72,7 +72,7 @@
             /* If there is no ?lang= parameter and no lang in session then parse browser lang (if it can not be defined, use def lang) */
             if(!isset($this->scope->SESSION['lang']) or !isset($this->language->languages[$this->scope->SESSION['lang']])){
                 //if(isset($this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']))){
-                if(isset($this->language->languages[$this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE'])])){
+                if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'], $this->language->languages[$this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE'])])){
                     $this->scope->SESSION['lang'] = $this->parseBrowserDefaultLanguage($_SERVER['HTTP_ACCEPT_LANGUAGE']);
                 }else{
                     $this->scope->SESSION['lang'] = $this->language->getDefaultLanguage();
