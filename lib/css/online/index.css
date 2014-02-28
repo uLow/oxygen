@@ -7,7 +7,7 @@ body{
  */
 #container
 {
-    margin: 0 auto -192px;
+    /*margin: 0 auto -192px;*/
 }
 
 
@@ -87,7 +87,8 @@ body{
 #footer,
 #sf-push
 {
-    height: 192px;
+    /*height: 192px; -> Original, with 'ads' section that is in 60px height */
+    /*height: 192px;*/
 }
 
 #footer{
