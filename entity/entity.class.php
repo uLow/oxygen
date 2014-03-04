@@ -63,6 +63,7 @@
                 */
                 //return $sql;
                 $result = $this->insert($this->current);
+                $this[$this->__getPrimaryKey()] = (string)$result;
                 $this[$this->__getPrimaryKey(true)] = (string)$result;
                 return $this;
             }
