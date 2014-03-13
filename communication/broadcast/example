@@ -1,0 +1,19 @@
+example:
+
+PHP:
+/* Connect to broadcast server and send messages to channels */
+$broadcast = new Oxygen_Communication_Broadcast("http://broadcast.dev/faye");
+$broadcast->publish("/messages", array("text"=>"hi there"));
+$broadcast->publish("/messages2", array("text"=>"hi there2"));
+
+/* Connect to broadcast server with defined channel and then send just messages, in fact that channel is already definedl */
+$broadcast = new Oxygen_Communication_Broadcast("http://broadcast.dev/faye", "/messages");
+$broadcast->publish(array("text"=>"hi there3"));
+
+JS:
+/* Should be loaded before. Example: <script type="text/javascript" src="http://broadcast.dev/faye/client.js"></script> */
+var client = new Faye.Client('http://broadcast.dev/faye');
+client.subscribe('/messages', function(message) {
+    console.log('Got a message: ' + message.text);
+});
+client.publish('/messages2', {hello:'world'});
