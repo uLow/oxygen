@@ -11,7 +11,7 @@
 		}
 
 		public function publish($channel, $data = false){
-			if(is_array($channel)){
+			if($data === false){
 				if($this->channel === false){
 					throw new Exception("No channel has been set for broadcast server ".$this->url);
 				}else{
