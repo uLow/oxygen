@@ -7,7 +7,7 @@ body{
  */
 #container
 {
-    margin: 0 auto -192px;
+    /*margin: 0 auto -192px;*/
 }
 
 
@@ -17,8 +17,8 @@ body{
 #body .content .login-block
 {
 	width: 500px;
-	margin: 0px auto;
-	margin-bottom: 10%;
+	margin: 10% auto;
+	//margin-bottom: 10%;
 }
 
 #body .content .login-block .login-form
@@ -87,7 +87,8 @@ body{
 #footer,
 #sf-push
 {
-    height: 192px;
+    /*height: 192px; -> Original, with 'ads' section that is in 60px height */
+    /*height: 192px;*/
 }
 
 #footer{
