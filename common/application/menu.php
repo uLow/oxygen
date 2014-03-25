@@ -4,17 +4,17 @@
 	<?if(!$child->isHidden()){?>
 		<?if($child->isActive):?>
 			<li class="expanded">
-				<a class="title" href="<?=$child->go()?>"><?$child->put_icon()?><?=$child?></a>
+				<a class="title" href="<?=$child->go(false)?>"><?$child->put_icon()?><?=$child?></a>
 				<?if(count($child)>0 && $child->showInMenu && get_class($child)!='Oxygen_Entity_Collection'):?>
 				<ul class="second-level">
 					<?foreach($child as $subchild):?>
 					<?if($subchild->isActive):?>
 						<li class="expanded">
-							<a class="title" href="<?=$subchild->go()?>"><?$subchild->put_icon()?><?=$subchild?></a>
+							<a class="title" href="<?=$subchild->go(false)?>"><?$subchild->put_icon()?><?=$subchild?></a>
 						</li>
 					<?else:?>
 						<li class="collapsed">
-							<a class="title" href="<?=$subchild->go()?>"><?$subchild->put_icon()?><?=$subchild?></a>
+							<a class="title" href="<?=$subchild->go(false)?>"><?$subchild->put_icon()?><?=$subchild?></a>
 						</li>
 					<?endif?>
 					<?endforeach?>
@@ -23,7 +23,7 @@
 			</li>
 		<?else:?>
 			<li class="collapsed">
-				<a class="title" href="<?=$child->go()?>"><?$child->put_icon()?><?=$child?></a>
+				<a class="title" href="<?=$child->go(false)?>"><?$child->put_icon()?><?=$child?></a>
 			</li>
 		<?endif?>
 	<?}?>
