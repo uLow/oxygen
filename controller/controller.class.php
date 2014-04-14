@@ -286,7 +286,7 @@
         public function handlePost() {
             $SERVER = $this->scope->SERVER;
             if(isset($SERVER['HTTP_X_OXYGEN_RPC'])) {
-                $callback = $this->scope->GET['callback'];
+                $callback = isset($this->scope->GET['callback'])?$this->scope->GET['callback']:null;
                 $method = $SERVER['HTTP_X_OXYGEN_RPC'];
                 $continuation = $SERVER['HTTP_X_OXYGEN_CONTINUATION'];
                 $args = json_decode(file_get_contents('php://input'));

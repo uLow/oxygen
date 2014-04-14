@@ -11,6 +11,7 @@
             if ($this->current_call !== null) {
                 $message .= ' in template ' . get_class($this->current_call->instance) . '::' . $this->current_call->name;
             }
+            error_log($message, $code);
             parent::__construct($message, $code);
             $this->previous = $previous; //TODO: See above.
         }

@@ -90,7 +90,7 @@
 
         public function urlFor(
             $class,
-            $resource
+            $resource = false
         ) {
             $path = $this->pathFor($class, $resource, false);
             $oxygeRealPath = realpath("oxygen/..");
