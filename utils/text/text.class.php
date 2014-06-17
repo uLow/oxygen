@@ -8,10 +8,17 @@
             'ļ' => 'l', 'ņ' => 'n', 'š' => 's', 'ū' => 'u', 'ž' => 'z',  'ç' => 'e',
             'í' => 'k', 'â' => 'a'
         );
-        const REGEXP_DIACRITICS = '/(Ā|Č|Ē|Ģ|Ī|Ķ|Ļ|Ņ|Š|Ū|Ž|ā|č|ē|ģ|ī|ķ|ļ|ņ|š|ū|ž|ç|í|â)/e';
+        const REGEXP_DIACRITICS = '/(Ā|Č|Ē|Ģ|Ī|Ķ|Ļ|Ņ|Š|Ū|Ž|ā|č|ē|ģ|ī|ķ|ļ|ņ|š|ū|ž|ç|í|â)/';
 
         public static function removeDiacritics($text) {
-            return preg_replace(self::REGEXP_DIACRITICS,'self::$diacritics["\\1"]',$text);
+            return preg_replace_callback(
+                self::REGEXP_DIACRITICS,
+                function($m){
+                    return self::$diacritics[$m[1]];
+                },
+                //'self::$diacritics["\\1"]',
+                $text
+            );
         }
         public static function format($format) {
             $args = func_get_args();

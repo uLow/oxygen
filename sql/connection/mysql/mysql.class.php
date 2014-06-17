@@ -290,12 +290,27 @@
         }
 
         public function formatParams($sql, $params = array()) {
-			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
+			return preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                $sql
+            );
         }
 		
         public function formatQuery($sql, $params = array()) {
-            return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.mysqli_real_escape_string(\$params['\\2'],\$this->link).'\\'') : \$params['<\\2>']",$sql);
+            return preg_replace_callback(
+                '/([{<])([A-Za-z0-9_]*?)([>}])/',
+                function($m) use($params){
+                    if($m[1] === '{'){
+                        return mysqli_real_escape_string($params[$m[2]], $this->link);
+                    }else{
+                        return $params['<'.$m[2]'>'];
+                    }
+                },
+                $sql
+            );
         }
 
 		public function paramQuery($sql, $params = array()) {
@@ -476,5 +491,3 @@
 
 
 	}
-
-?>
