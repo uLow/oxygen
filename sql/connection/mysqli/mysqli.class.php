@@ -306,7 +306,7 @@
                     if($m[1] === '{'){
                         return mysqli_real_escape_string($params[$m[2]], $this->link);
                     }else{
-                        return $params['<'.$m[2]'>'];
+                        return $params['<'.$m[2].'>'];
                     }
                 },
                 $sql

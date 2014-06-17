@@ -319,7 +319,7 @@
                     if($m[1] === '{'){
                         return str_replace("'", "''", $params[$m[2]]);
                     }else{
-                        return $params['<'.$m[2]'>'];
+                        return $params['<'.$m[2].'>'];
                     }
                 },
                 $sql
