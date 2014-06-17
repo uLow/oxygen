@@ -13,14 +13,16 @@
         public static function removeDiacritics($text) {
             return preg_replace(self::REGEXP_DIACRITICS,'self::$diacritics["\\1"]',$text);
         }
-        public static function format($format,
-            $arg0 = '',
-            $arg1 = '',
-            $arg2 = '',
-            $arg3 = '',
-            $arg4 = '',
-            $arg5 = '') {
-            return preg_replace('/{([0-5])}/e','$arg\\1',$format);
+        public static function format($format) {
+            $args = func_get_args();
+            //return preg_replace('/{([0-5])}/e','$arg\\1',$format);
+            return preg_replace_callback(
+                '/{([0-5])}/',
+                function($m) use($args){
+                    return $args[$m[1]+1];
+                },
+                $format
+            );
         }
 
         public static function humanize($name) {

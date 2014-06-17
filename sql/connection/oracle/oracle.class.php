@@ -311,7 +311,7 @@
 
         public function lastInsertId() {
 			throw new Exception('There is no implemented lastInsertId for oracle yet.'); // be careful! 
-            //return mysql_insert_id($this->link);
+            //return mysqli_insert_id($this->link);
         }
 
         public function lastAffectedRows() {
@@ -411,10 +411,10 @@
                     TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'columns', 'column' => '*');
-            while($row = mysql_fetch_assoc($columns)){
+            while($row = mysqli_fetch_assoc($columns)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($columns);
+            mysqli_free_result($columns);
 
             $keys = $this->rawQuery("SELECT
                 c.TABLE_SCHEMA                                              as `database`,
@@ -440,10 +440,10 @@
                 u.ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'keys', 'key' => 'columns', 'ordinal'=>'*');
-            while($row = mysql_fetch_assoc($keys)){
+            while($row = mysqli_fetch_assoc($keys)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($keys);
+            mysqli_free_result($keys);
 
             foreach($toReflect as $db) {
                 $this->cacheReflectedDb($db, $this->model['databases'][$db]);

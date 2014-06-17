@@ -5,7 +5,7 @@
         const PARAM_REGEXP = '/{([0-9A-Z\.a-z_]+):([^{}]+)}/';
 
         const PARAM_GUARD_REPLACE = '#\\1#';
-        const PARAM_GUARD_REGEXP  = '/#([0-9A-Z\.a-z_]+)#/e';
+        const PARAM_GUARD_REGEXP  = '/#([0-9A-Z\.a-z_]+)#/';
 
         const INT_REGEXP_BARE = '-?[0-9]+';
         const STR_REGEXP_BARE = '[^\/]+';
@@ -142,7 +142,14 @@
                 );
                 $params[$name] = $value;
             }
-            return preg_replace(self::PARAM_REGEXP . 'e', "\$params['\\1']", $this->pattern);
+            return preg_replace_callback(
+                self::PARAM_REGEXP,
+                function($m) use($params){
+                    return $params[$m[1]];
+                },
+                //"\$params['\\1']", 
+                $this->pattern
+            );
         }
 
         public function parseKey($str) {
@@ -260,12 +267,24 @@
                 }
                 $compiled = preg_replace(self::PARAM_REGEXP,self::PARAM_GUARD_REPLACE, $this->pattern);
                 $compiled = preg_quote($compiled,'/');
-                $this->extract = '/' . preg_replace (
+                //die(print_r(array($compiled, $params)));
+                $this->extract = '/' . preg_replace_callback (
                     self::PARAM_GUARD_REGEXP,
-                    "'(?P<\\1>'.\$params['\\1'].')'",
+                    function($m) use($params){
+                        return '(?P<'.$m[1].'>'.$params[$m[1]].')';
+                    },
+                    //"'(?P<\\1>'.\$params['\\1'].')'",
                     $compiled
                 ) . '/';
-                $this->regexp = preg_replace(self::PARAM_GUARD_REGEXP,"\$params['\\1']", $compiled);
+                $this->regexp = preg_replace_callback(
+                    self::PARAM_GUARD_REGEXP,
+                    function($m) use($params){
+                        return $params[$m[1]];
+                    },
+                    //"\$params['\\1']",
+                    $compiled
+                );
+                //die($this->regexp);
                 if(is_array($this->data)){
                     $this->__assert(
                         count($names) === 1,

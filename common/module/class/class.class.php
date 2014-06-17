@@ -124,7 +124,14 @@
                             $fieldDef['data'] = $this->relations[$fieldName]['join'];
                             $fieldDef['entity-class'] = $this->relations[$fieldName]['class']->getClassFor('Entity');
                         }
-                        $this->fields[$fieldName] = $this->scope->{'Oxygen_Field_' . preg_replace('/(_|^)([a-z])/e', 'ucfirst("$2")', $fieldDef['type'])}($this, $fieldName, $fieldDef);
+                        $field = preg_replace_callback(
+                            '/(_|^)([a-z])/', 
+                            function($m){
+                                return ucfirst($m[2]);
+                            },
+                            $fieldDef['type']
+                        );
+                        $this->fields[$fieldName] = $this->scope->{'Oxygen_Field_' . $field}($this, $fieldName, $fieldDef);
                     } catch(Exception $e) {
                         $this->throw_ClassException($e);
                     }
