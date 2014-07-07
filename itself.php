@@ -132,14 +132,6 @@
         }
     }
 
-    class Oxygen_RedirectException extends Exception {
-        public $url = '';
-        public function __construct($url)
-        {
-            $this->url = $url;
-        }
-    }
-
 
     function handleHttpRequest($scope, $root, $model = false, $debug = true) {
         $scope->__setEnvironment(array(
