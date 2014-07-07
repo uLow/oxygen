@@ -29,9 +29,10 @@
 				$value = $parts['value'];
 				$ext = $parts['ext'];
 			}
+
 			
 			$this->__assert(($type === 'keyword' or $type === 'string'), 'Invalid icon code');
-			$this->__assert(preg_match("/^[a-z_]+$/", $value), 'Invalid icon code');
+			$this->__assert(preg_match("/^[a-z_-]+$/", $value), 'Invalid icon code');
 			return Oxygen_Utils_Text::format(
                 self::CSS_URL,
                 $this->scope->assets->getIcon($value, $ext)

@@ -108,7 +108,7 @@
                 if (is_integer($key)) {
                     $c = $value;
                 } else {
-                    $c = $key . '=\'' . mysqli_real_escape_string($value) . '\'';
+                    $c = $key . '=\'' . addslashes($value) . '\'';
                 }
                 $res .= $res === ''
                     ? ''
@@ -126,7 +126,7 @@
                 if (is_integer($key)) {
                     $c = $value;
                 } else {
-                    $c = $key . '=\'' . mysqli_real_escape_string($value) . '\'';
+                    $c = $key . '=\'' . addslashes($value) . '\'';
                 }
                 $res .= $res === ''
                     ? ''

@@ -489,5 +489,19 @@
             }
         }
 
+        public function startTransaction(){
+            mysqli_autocommit($this->link, false);
+        }
 
+        public function commit(){
+            if(!mysqli_commit($this->link)) {
+                mysqli_autocommit($this->link, true);
+                throw new Exception("Transaction commit failed");
+            }
+        }
+
+        public function rollback(){
+            mysqli_rollback($this->link);
+            mysqli_autocommit($this->link, true);
+        }
 	}
