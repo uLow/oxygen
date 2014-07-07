@@ -146,7 +146,7 @@
 
         public function generate() {
             $this->initFields();
-            foreach (array('Entity','Page','Form') as $kind) {
+            foreach (array('Entity','Form') as $kind) {
                 foreach(array('','_') as $base) {
                     foreach(array(true,false) as $plural) {
                         $name = $this->name;
