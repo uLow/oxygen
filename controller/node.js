@@ -14,9 +14,11 @@ $a.click(function(){
 			criteria:''
 		}, function(err, res){
 			if(err){
-				//console.log(err);
+				console.log(err);
 			}else{
+				$ul.stop().fadeOut('slow');
 				$ul.embed(res, true); 
+				$ul.stop().fadeIn('slow');
 				//console.log(res);
 			}			
 		});
