@@ -1,7 +1,8 @@
-var $a = $this.find('a.hit');
+/*var $a = $this.find('a.hit');
 var $ul = $this.find('ul.items');
 
 $a.click(function(){
+	console.log('test');
 	if($ul.hasClass('expanded')){
 		$ul.removeClass('expanded').addClass('collapsed');
 		$(this).removeClass('collapse').addClass('expand');
@@ -15,4 +16,4 @@ $a.click(function(){
 		}, function(res){$ul.embed(res, true); console.log(res)});
 	}
     $('.searchNodesController').find('ul.items').eq(0).removeClass('collapsed').addClass('expanded');
-});
+});*/
