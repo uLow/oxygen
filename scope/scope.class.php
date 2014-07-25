@@ -156,7 +156,7 @@
         }
 
         // Wraps given $exception into Oxygen_Exception_Wrapper
-        // unless $exception is instance of Oxygen_Excpeion itself
+        // unless $exception is instance of Oxygen_Exception itself
         public function __wrapException($exception) {
             //error_log($exception->getMessage(), 3, '/tmp/php_errors.log');
             if ($exception instanceof Oxygen_Exception) {
