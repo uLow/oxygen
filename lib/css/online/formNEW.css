@@ -1,0 +1,648 @@
+/**
+ * GLOBALS
+ */
+.form
+{
+
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="file"],
+.form input[type="number"],
+.form textarea
+{
+    border: 1px solid transparent;
+    border-radius: 3px;
+
+    -webkit-box-shadow: #EDEDED 0px 1px 3px;
+    -moz-box-shadow: #EDEDED 0px 1px 3px;
+    box-shadow: #EDEDED 0px 1px 3px;
+
+    padding: 4px 5px;   
+
+    position: relative;
+    behavior: url('../../js/online/css3pie/PIE.php');  
+
+    font-family: Tahoma, sans-serif;
+
+    width: 89%;
+
+}
+
+
+/**
+* FORM TABS
+*/
+.form-tabs-a
+{
+    font-family: Tahoma, sans-serif;
+    font-size: 11px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+
+.form-tabs-a ul
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+}
+
+.form-tabs-a li
+{
+    line-height: 26px;
+    text-align: center;
+    float: right;
+    background-image: url('/style/images/form-arrow-2.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-left: -15px;
+    padding-right: 13px;
+}
+
+.form-tabs-a li a
+{
+    background-color: #E5E5E5;
+    color: #9C9895;
+    text-decoration: none;
+    display: block;
+    border: 1px solid #E5E5E5;
+    border-right: none;
+    padding-right: 16px;
+    padding-left: 22px;
+    border-radius: 4px;
+    behavior: url('../../js/online/css3pie/PIE.php');  
+}
+
+.form-tabs-a li.active a,
+.form-tabs-a li.visited a
+{
+    padding-right: 8px;
+}
+
+.form-tabs-a li.visited
+{
+    background-image: url('/style/images/form-arrow.png');
+}     
+
+.form-tabs-a li.visited a
+{
+    background-color: #FFF;
+    font-weight: bold;
+    color: #9C9895;
+}
+
+
+.form-tabs-a li.active
+{
+    background-image: url('/style/images/form-arrow.png');
+}            
+
+.form-tabs-a li.active a
+{
+    background-color: #FFF;
+    font-weight: bold;
+    color: #145B9B;
+}  
+
+
+/**
+ * FORM A
+ */
+#site-popup-content .site-form-a
+{
+    margin-right: -18px;
+}
+
+.site-form-a .form-fields
+{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+
+/* Licence */
+
+.site-form-a .licence
+{
+    font-size: 11px;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+.site-form-a .licence input
+{
+    float: left;
+    margin-right: 5px;
+}
+
+.site-form-a .licence article
+{
+    overflow: hidden;
+}
+
+
+/* Category */
+
+.site-form-a .form-fields li.category h1
+{
+    font-size: 13px;
+}
+
+
+/* Fields */
+
+.site-form-a .form-fields li
+{
+    margin-bottom: 1.3em;
+}
+
+.site-form-a .form-fields li label,
+.site-form-a .form-fields li .field
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.site-form-a .form-fields li label
+{
+    text-align: right;
+    width: 46%;
+    font-size: 13px;
+    margin-right: 1%;
+}
+
+.site-form-a .form-fields li label.top
+{
+    vertical-align: top;
+}
+
+.site-form-a .form-fields li .field
+{
+    width: 41%; 
+    position: relative;
+}
+
+
+/* Checkbox/radio group field */
+
+.site-form-a .form-fields li .field .chbx-radio-group li
+{
+    padding: 8px 0px;
+    background-position: top left;
+    background-repeat: repeat-x;
+    cursor: pointer;
+}
+
+.site-form-a .form-fields li .field .chbx-radio-group li:first-child
+{
+    padding-top: 0px;
+    background-image: none; 
+}
+
+
+/* Error */
+
+.site-form-a .form-fields li .field .hint
+{
+    color: gray;
+    font-size: 10px;
+    display: block;
+    position: absolute;
+    bottom: -13px;
+    left: 3px;  
+}
+
+.site-form-a .form-fields li.error .field .hint
+{
+    color: red;
+}
+
+
+/* Columns */
+
+.site-form-a .form-columns
+{
+    overflow: hidden;
+    background-repeat: repeat-y;
+    background-position: 48% top;
+    margin-bottom: 10px;
+}
+
+.site-form-a .form-columns .form-fields.left,
+.site-form-a .form-columns .form-fields.right
+{
+    width: 50%;
+}
+
+/**
+ * FORM B
+ * Compinsate right margin in popup
+ */
+#site-popup-content .site-form-b
+{
+    /*margin-right: -18px;*/
+}
+
+.site-form-b
+{
+    margin-right: -10px;
+}
+
+.site-form-b .form-fields li
+{
+    margin-bottom: 1.3em;
+}
+
+.site-form-b .form-fields li label
+{
+    margin-bottom: 5px;
+    display: block;
+}
+
+.site-form-b .form-fields li .field
+{
+    position: relative;
+}
+
+
+/* Error */
+
+.site-form-b .form-fields li .field .hint
+{
+    color: gray;
+    font-size: 10px;
+    display: block;
+    position: absolute;
+    bottom: -13px;
+    left: 3px;  
+}
+
+.site-form-b .form-fields li.error .field .hint
+{
+    color: red;
+}
+
+
+/**
+ * FORM SUBMIT A 
+ */
+.form-submit-a .text
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    *vertical-align: top; /* IE7 bug */
+    margin-left: 5px;
+}
+
+
+/* Header field */
+
+.site-form-b .form-fields li.header
+{
+    margin-bottom: 25px;
+}
+
+.site-form-b .form-fields li.header label,
+.site-form-b .form-fields li.header .field
+{
+    display:  -moz-inline-stack;
+    display:  inline-block;             
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.site-form-b .form-fields li.header label
+{
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+
+/* Notice field */
+
+.site-form-b .form-fields li.required em
+{
+    color: maroon;
+    font-style: normal;
+}
+
+.site-form-b .form-fields li.notice
+{
+    margin-bottom: 25px;
+    font-size: 11px;
+    color: #393939;
+}
+
+
+/* Columns */
+
+.site-form-b .form-columns
+{
+    overflow: hidden;
+}
+
+.site-form-b .form-columns .form-fields.left,
+.site-form-b .form-columns .form-fields.right
+{
+    width: 50%;
+}
+
+
+/**
+ * FORM NAVIGATION A
+ */
+.form-navigation-a
+{
+    overflow: hidden;
+}
+
+.form-navigation-a .back
+{
+    float: left;
+    line-height: 30px;
+    color: #000;
+    font-size: 11px;
+}
+
+.form-navigation-a .back .arrow
+{
+    width:  14px;
+    height: 16px;
+    background-position: 0px -14px;
+}
+
+.form-navigation-a .forward
+{
+    float: right;
+}
+
+
+/**
+ * SELECT BOX
+ */
+.selectBox-dropdown 
+{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding-right: 23px;
+    position: relative;
+    background-position: bottom;
+    background-repeat: repeat-x;
+    outline: none;
+    font-size: 12px;
+
+    -webkit-box-shadow: #EDEDED 0px 1px 3px;
+    -moz-box-shadow: #EDEDED 0px 1px 3px;
+    box-shadow: #EDEDED 0px 1px 3px;
+    border-radius: 3px;
+
+    behavior: url('../../js/online/css3pie/PIE.php');      
+}
+
+.selectBox-dropdown .selectBox-label 
+{
+    cursor: default;
+    line-height: 24px;
+    margin-left: 10px;
+    white-space: nowrap;
+}
+
+.selectBox-dropdown .selectBox-arrow 
+{
+    position: absolute;
+
+    top:    0px;
+    right:  0px;
+    width:  23px;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: 50% center;
+}
+
+
+/* Dropdown menu */
+.selectBox-dropdown-menu 
+{
+    position: absolute;
+    z-index:    100;
+    max-height: 200px;
+    min-height: 1em;
+    border: 1px solid transparent;  
+    overflow: auto;
+}
+
+
+/* Inline control */
+.selectBox-inline 
+{
+    min-width: 150px;
+    outline: none;
+    border: solid 1px transparent;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.selectBox-inline:focus 
+{
+
+}
+
+
+/* Options */
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a 
+{
+    list-style: none;
+    display: block;
+    cursor: default;
+}
+
+.selectBox-options li a 
+{
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 3px 10px;
+}
+
+.selectBox-options li.selectBox-disabled a 
+{
+    background-color: transparent;
+}
+
+.selectBox-options .selectBox-optgroup 
+{
+    font-weight: bold;
+    line-height: 1.5;
+    padding: 0 .3em;
+    white-space: nowrap;
+}
+
+
+/* Disabled state */
+.selectBox.selectBox-disabled 
+{
+    color: #888 !important;
+}
+
+.selectBox-dropdown.selectBox-disabled .selectBox-arrow 
+{
+    opacity: .5;
+    filter: alpha(opacity=50);
+}
+
+.selectBox-inline.selectBox-disabled .selectBox-options a 
+{
+    background-color: transparent !important;
+} 
+
+/**
+ * GLOBALS
+ */
+.form input[type="text"],
+.form input[type="password"],
+.form input[type="file"],
+.form input[type="number"],
+.form textarea
+{
+    background-color: #FFF;
+    border-color: #8dbcd7;
+}
+
+/**
+ * FORM A
+ * Checkbox/radio group field
+ */
+.site-form-a .form-fields li .field .chbx-radio-group li
+{
+    background-image: url('/style/images/border-b.png');
+}
+
+/**
+ * FORM NAVIGATION A
+ */
+.form-navigation-a .back .arrow
+{
+    background-image:  url('/style/images/arrows-b.png');
+}
+
+
+/**
+ * FORM SUBMIT A 
+ */
+.form-submit-a .text
+{
+    color: #1361a3;
+}
+
+
+/**
+ * SELECT BOX
+ * Dropdown control
+ */
+.selectBox-dropdown 
+{
+    border-color: #8dbcd7;
+    background: #f5f9fb; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FFF 0%, #f5f9fb 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FFF), color-stop(100%, #f5f9fb)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FFF 0%, #f5f9fb 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FFF 0%, #f5f9fb 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FFF 0%, #f5f9fb 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #FFF 0%, #f5f9fb 100%); /* W3C */
+    -pie-background: linear-gradient(#FFF, #f5f9fb);
+}
+
+
+.selectBox-dropdown .selectBox-label 
+{
+    color: #000;
+}
+
+.selectBox-dropdown .selectBox-arrow 
+{
+    background-image: url('/style/images/arrow-b1.png');
+}
+
+
+/* Dropdown menu */
+.selectBox-dropdown-menu 
+{
+    border: 1px solid #8dbcd7;  
+    background: #FFF;
+}
+
+
+/* Inline control */
+.selectBox-inline 
+{
+    border-color: #BBB;
+    background-color: #FFF;
+}
+
+.selectBox-inline:focus 
+{
+    border-color: #666;
+}
+
+
+/* Options */
+.selectBox-options,
+.selectBox-options li,
+.selectBox-options li a 
+{
+    color: #000;
+}
+
+.selectBox-options li.selectBox-hover a 
+{
+    background-color: #E3EEF4;
+}
+
+.selectBox-options li.selectBox-disabled a 
+{
+    color: #888;
+    background-color: transparent;
+}
+
+.selectBox-options .selectBox-optgroup 
+{
+    color: #666;
+    background: #FCFCFC;
+    padding-left: 10px;
+}
+
+
+/* Disabled state */
+.selectBox.selectBox-disabled 
+{
+    color: #888 !important;
+}
+
+.selectBox-inline.selectBox-disabled 
+{
+    color: #888 !important;
+}
+
+/**
+ * FORM B
+ * select width
+ */
+.site-form-b .form-fields li.header .field select 
+{
+    width: auto;
+}
