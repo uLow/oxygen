@@ -237,7 +237,7 @@
             ;
 
             $this->__assert(
-                preg_match("/^(valueof|create|drop|replace|get|select|insert|update|delete)/i", $sql, $match),
+                preg_match("/^(valueof|create|drop|replace|get|select|insert|update|delete|show)/i", $sql, $match),
                 'Unknown sql-query type'
             );
             $type = strtolower($match[1]);
@@ -250,6 +250,7 @@
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
             if($type == 'select') return $this->scope->ResultSet($sql, $key, $wrapper, $this);
+            if($type == 'show') return $this->scope->ResultSet($sql, $key, $wrapper, $this);
             if($type == 'valueof') {
                 $sql = preg_replace("/^valueof/i", "select", $sql);
                 $res = $this->rawQuery($sql);
