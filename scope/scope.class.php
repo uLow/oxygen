@@ -118,7 +118,9 @@
         }
         
         public function handleError($errno, $errstr, $errfile, $errline) {
-            throw $this->Exception("Error($errno) $errstr in  $errfile at line $errline");
+            $errfiles = explode(DIRECTORY_SEPARATOR, $errfile);
+            $errfile = end($errfiles);
+            throw $this->Exception("Error($errno) $errstr in $errfile at line $errline");
         }
         
         public function strictMode() {

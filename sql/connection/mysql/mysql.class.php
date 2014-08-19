@@ -237,7 +237,7 @@
             ;
 
             $this->__assert(
-                preg_match("/^(valueof|create|drop|replace|get|select|insert|update|delete)/i", $sql, $match),
+                preg_match("/^(valueof|create|drop|replace|get|select|insert|update|delete|show)/i", $sql, $match),
                 'Unknown sql-query type'
             );
             $type = strtolower($match[1]);
@@ -245,11 +245,12 @@
 			
 
             //$sql = preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-            $sql = preg_replace('/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);/*
+            $sql = preg_replace('/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);/*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
             if($type == 'select') return $this->scope->ResultSet($sql, $key, $wrapper, $this);
+            if($type == 'show') return $this->scope->ResultSet($sql, $key, $wrapper, $this);
             if($type == 'valueof') {
                 $sql = preg_replace("/^valueof/i", "select", $sql);
                 $res = $this->rawQuery($sql);
@@ -281,7 +282,7 @@
         }
 
         public function formatParams($sql, $params = array()) {
-			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
+			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
         }
 		
         public function formatQuery($sql, $params = array()) {
