@@ -118,6 +118,7 @@
 
         public function getComponent($name) {
             if (!isset($this->components[$name])) {
+                $name = htmlentities($name, ENT_QUOTES, "UTF-8");
                 throw new Exception("Component {$name} is not found");
             }
             return $this->components[$name];
@@ -129,6 +130,7 @@
             if (method_exists($component, $method)) {
                 return $component->$method($args->args);
             } else {
+                $args->method = htmlentities($args->method, ENT_QUOTES, "UTF-8");
                 throw new Exception("Component method {$args->method} is not found");
             }
         }
@@ -274,6 +276,7 @@
             if(method_exists($this,$name)) {
                 return $result = $this->$name($args, $client);
             } else {
+                $method = htmlentities($method, ENT_QUOTES, "UTF-8");
                 throw $this->scope->Exception("Remote method $method either not exists or is not allowed");
             }
         }
