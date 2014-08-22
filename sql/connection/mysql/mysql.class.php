@@ -184,7 +184,7 @@
 				if($type == 'int'){
 					return (int)$value;
 				}else{
-					return '\'' . mysqli_real_escape_string($value, $this->link) . '\'';
+					return '\'' . mysqli_real_escape_string($this->link, $value) . '\'';
 				}
             }
         }
