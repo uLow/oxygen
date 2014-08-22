@@ -10,7 +10,14 @@
 
         public function applyArgs(&$v, $params) {
             if(is_string($v)) {
-                $v = preg_replace('/{\$([A-Za-z0-9_]+)}/e', "\$params['\\1']", $v);
+                //$v = preg_replace('/{\$([A-Za-z0-9_]+)}/e', "\$params['\\1']", $v);
+                $v = preg_replace_callback(
+                    '/{\$([A-Za-z0-9_]+)}/', 
+                    function($m) use($params){
+                        return $params[$m[1]];
+                    },
+                    $v
+                );
             } else if(is_array($v)) {
                 foreach($v as $key => &$val) {
                     $this->applyArgs($val, $params);

@@ -113,13 +113,13 @@
                 return false;
             }
 
-            $key = APC_CACHE_PREFIX . "pathFor_" . $class . '::' . $resource;
-
+            $key = "pathFor_" . $class . '::' . $resource;
             // return from cache if found there
             /*if (isset($this->path_cache[$key])){
                 return $this->path_cache[$key];
             }*/                              
             if($this->apcLoaded){
+                $key = APC_CACHE_PREFIX . $key;
                 if(($path = apc_fetch($key)) !== false){
                     if($path === 0){
                         return false;

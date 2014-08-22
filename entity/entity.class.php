@@ -198,6 +198,10 @@
                 ");
             }
         }
+
+        public function dump($depth = 10, $highlight = false){
+            return Oxygen_Dumper::dump($this->current, $depth, $highlight);
+        }
     }
 
 

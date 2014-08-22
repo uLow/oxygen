@@ -36,7 +36,7 @@
 		}
 
 		public static function escapeValue($val) {
-			return '\'' . mysql_real_escape_string($val) . '\'';
+			return '\'' . addslashes($val) . '\'';
 		}
 
 		public static function indent($text) {
@@ -108,7 +108,7 @@
                 if (is_integer($key)) {
                     $c = $value;
                 } else {
-                    $c = $key . '=\'' . mysql_real_escape_string($value) . '\'';
+                    $c = $key . '=\'' . addslashes($value) . '\'';
                 }
                 $res .= $res === ''
                     ? ''
@@ -126,7 +126,7 @@
                 if (is_integer($key)) {
                     $c = $value;
                 } else {
-                    $c = $key . '=\'' . mysql_real_escape_string($value) . '\'';
+                    $c = $key . '=\'' . addslashes($value) . '\'';
                 }
                 $res .= $res === ''
                     ? ''
@@ -269,7 +269,7 @@
 				if(is_integer($key)) {
 					$cond[] = $value;
 				} else {
-					$cond[] = $key . ' = \'' . mysql_real_escape_string($value) . '\'';
+					$cond[] = $key . ' = \'' . addslashes($value) . '\'';
 				}
 			}
             foreach($where as $intent => $w) {

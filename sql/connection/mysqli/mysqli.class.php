@@ -1,8 +1,8 @@
 <?
 
-	class Oxygen_SQL_Connection_Mysqli extends Oxygen_SQL_Connection {
+    class Oxygen_SQL_Connection_Mysql extends Oxygen_SQL_Connection {
 
-		private $link = null;
+        private $link = null;
         private $initDbCallback = null;
         private $refreshSchemata = false;
         private $cache = null;
@@ -21,7 +21,7 @@
 
         const CENSORED_PASSWORD = '******';
 
-		private static $implementations = array(
+        private static $implementations = array(
             'Connection'   => 'Oxygen_SQL_Connection',
             'Database'     => 'Oxygen_SQL_Database',
             'Table'        => 'Oxygen_SQL_Table',
@@ -48,6 +48,7 @@
                 $this->model['user'],
                 $this->model['pass']
             );
+            //echo mysqli_error($this->link);
             $this->model['pass'] = self::CENSORED_PASSWORD;
             $this->model['databases'] = array();
             $this->__assert($this->link, mysqli_error($this->link));
@@ -56,7 +57,6 @@
             $this->scope->connection = $this;
             $this->builder = $this->scope->Builder();
             $this->rawQuery('set names utf8');
-            die(var_dump(count($this->model['databases'])));
         }
 
         public function configure($x) {
@@ -102,25 +102,25 @@
                 : array($callback, $method)
             ;
         }
-		
-		
-		public function fetch_assoc($res){
-			return mysqli_fetch_assoc($res);
-		}
-		
-		public function free_result($res){
-			return mysqli_free_result($res);
-		}
-		
+        
+        
+        public function fetch_assoc($res){
+            return mysqli_fetch_assoc($res);
+        }
+        
+        public function free_result($res){
+            return mysqli_free_result($res);
+        }
+        
 
-		public function rawQuery($sql) {
-			$this->__assert(
-				$result = mysqli_query($this->link, $sql),
-				mysqli_error($this->link)
-			);
+        public function rawQuery($sql) {
+            $this->__assert(
+                $result = mysqli_query($this->link, $sql),
+                mysqli_error($this->link)
+            );
             $this->lastQuery = $sql;
-			return $result;
-		}
+            return $result;
+        }
 
         public function getLastQuery(){
             return $this->lastQuery;
@@ -176,60 +176,60 @@
                 $res .= $res === '' ? '()' : ')' ;
                 return $res;
             } else {
-				if($likeCond!==false){
-					$like = explode(',', $likeCond);
-					$value = preg_replace('/%/', '\%', $value);
-					$value = $like[0].$value.$like[1];
-				}
-				if($type == 'int'){
-					return (int)$value;
-				}else{
-					return '\'' . mysqli_real_escape_string($value, $this->link) . '\'';
-				}
+                if($likeCond!==false){
+                    $like = explode(',', $likeCond);
+                    $value = preg_replace('/%/', '\%', $value);
+                    $value = $like[0].$value.$like[1];
+                }
+                if($type == 'int'){
+                    return (int)$value;
+                }else{
+                    return '\'' . mysqli_real_escape_string($value, $this->link) . '\'';
+                }
             }
         }
-		
-		public function processParams($open, $name, $type, $close, $params){
-			//$name = explode(':', $name);
-			if(strlen($type)>0){
-				$type = substr($type, 1);
-			}else{
-				$type = 'str';
-			}
-			
-			if($open == '<' and $close == '>'){
-				return $this->safeName($open.$params[$name].$close);
-			}else{
-				switch($type){
-					case 'wc': 
-						$likeCond = '';
-						if($open=='{%'){
-							$likeCond = '%,';
-						}else{
-							$likeCond = ',';
-						}
-						
-						if($close=='%}'){
-							$likeCond = $likeCond.'%';
-						}
-						
-						return $this->safeValue($params[$name], $type, $likeCond);
-					break;
-					
-					case 'int': 
-						return $this->safeValue($params[$name], $type);
-					break;
-					
-					case 'str': 
-					default:
-						return $this->safeValue($params[$name]);
-					break;
-				}
-			}
-		}
+        
+        public function processParams($open, $name, $type, $close, $params){
+            //$name = explode(':', $name);
+            if(strlen($type)>0){
+                $type = substr($type, 1);
+            }else{
+                $type = 'str';
+            }
+            
+            if($open == '<' and $close == '>'){
+                return $this->safeName($open.$params[$name].$close);
+            }else{
+                switch($type){
+                    case 'wc': 
+                        $likeCond = '';
+                        if($open=='{%'){
+                            $likeCond = '%,';
+                        }else{
+                            $likeCond = ',';
+                        }
+                        
+                        if($close=='%}'){
+                            $likeCond = $likeCond.'%';
+                        }
+                        
+                        return $this->safeValue($params[$name], $type, $likeCond);
+                    break;
+                    
+                    case 'int': 
+                        return $this->safeValue($params[$name], $type);
+                    break;
+                    
+                    case 'str': 
+                    default:
+                        return $this->safeValue($params[$name]);
+                    break;
+                }
+            }
+        }
 
         public function runQuery($sql, $params = array(), $key = false, $wrapper = false, $method = false) {
-			$sql = trim($sql);
+            $sql = trim($sql);
             $wrapper = $wrapper === false
                 ? false
                 : ($method === false
@@ -242,20 +242,19 @@
                 'Unknown sql-query type'
             );
             $type = strtolower($match[1]);
-			
-			
+            
+            
 
             //$sql = preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
             $sql = preg_replace_callback(
-            	'/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/', 
-            	function($m){
-            		global $params;
-            		return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
-            	},
-            	$sql
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                //"\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", 
+                $sql
             );
-            /*
-            $sql = preg_replace('/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);/*
+                /*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
@@ -291,17 +290,32 @@
         }
 
         public function formatParams($sql, $params = array()) {
-			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
+            return preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                $sql
+            );
         }
-		
+        
         public function formatQuery($sql, $params = array()) {
-            return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.mysqli_real_escape_string(\$params['\\2'],\$this->link).'\\'') : \$params['<\\2>']",$sql);
+            return preg_replace_callback(
+                '/([{<])([A-Za-z0-9_]*?)([>}])/',
+                function($m) use($params){
+                    if($m[1] === '{'){
+                        return mysqli_real_escape_string($params[$m[2]], $this->link);
+                    }else{
+                        return $params['<'.$m[2].'>'];
+                    }
+                },
+                $sql
+            );
         }
 
-		public function paramQuery($sql, $params = array()) {
+        public function paramQuery($sql, $params = array()) {
             return $this->rawQuery($this->formatQuery($sql, $params));
-		}
+        }
 
         public function lastInsertId() {
             return mysqli_insert_id($this->link);
@@ -319,25 +333,25 @@
             return $this->resultToArray($this->rawQuery($sql),$key);
         }
 
-		public function resultToArray($res, $key = false) {
-			$array = array();
-			if($key === false) {
-				while($row = mysqli_fetch_assoc($res)) {
-					$array[] = $row;
-				}
-			} else if ($row = mysqli_fetch_assoc($res)) {
-				$this->__assert(
-					isset($row[$key]),
-					'There is no key named {0}',
-					$key
-				);
-				$array[$row[$key]] = $row;
-				while($row = mysqli_fetch_assoc($res)) {
-					$array[$row[$key]] = $row;
-				}
-			}
-			return $array;
-		}
+        public function resultToArray($res, $key = false) {
+            $array = array();
+            if($key === false) {
+                while($row = mysqli_fetch_assoc($res)) {
+                    $array[] = $row;
+                }
+            } else if ($row = mysqli_fetch_assoc($res)) {
+                $this->__assert(
+                    isset($row[$key]),
+                    'There is no key named {0}',
+                    $key
+                );
+                $array[$row[$key]] = $row;
+                while($row = mysqli_fetch_assoc($res)) {
+                    $array[$row[$key]] = $row;
+                }
+            }
+            return $array;
+        }
 
         private function getDbKey($dbName) {
             return "mysql://{$this->model['user']}@{$this->model['host']}/$dbName";
@@ -475,7 +489,19 @@
             }
         }
 
+        public function startTransaction(){
+            mysqli_autocommit($this->link, false);
+        }
 
-	}
+        public function commit(){
+            if(!mysqli_commit($this->link)) {
+                mysqli_autocommit($this->link, true);
+                throw new Exception("Transaction commit failed");
+            }
+        }
 
-?>
+        public function rollback(){
+            mysqli_rollback($this->link);
+            mysqli_autocommit($this->link, true);
+        }
+    }

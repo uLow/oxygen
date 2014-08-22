@@ -43,14 +43,15 @@
         }
 
         public function __complete() {
-            $this->link = mysql_connect(
+            $this->link = mysqli_connect(
                 $this->model['host'],
                 $this->model['user'],
                 $this->model['pass']
             );
+            //echo mysqli_error($this->link);
             $this->model['pass'] = self::CENSORED_PASSWORD;
             $this->model['databases'] = array();
-            $this->__assert($this->link, mysql_error());
+            $this->__assert($this->link, mysqli_error($this->link));
             $this->cache = $this->scope->cache;
             $this->scope->registerAll(self::$implementations);
             $this->scope->connection = $this;
@@ -104,18 +105,18 @@
 		
 		
 		public function fetch_assoc($res){
-			return mysql_fetch_assoc($res);
+			return mysqli_fetch_assoc($res);
 		}
 		
 		public function free_result($res){
-			return mysql_free_result($res);
+			return mysqli_free_result($res);
 		}
 		
 
 		public function rawQuery($sql) {
 			$this->__assert(
-				$result = mysql_query($sql, $this->link),
-				mysql_error($this->link)
+				$result = mysqli_query($this->link, $sql),
+				mysqli_error($this->link)
 			);
             $this->lastQuery = $sql;
 			return $result;
@@ -183,7 +184,7 @@
 				if($type == 'int'){
 					return (int)$value;
 				}else{
-					return '\'' . mysql_real_escape_string($value, $this->link) . '\'';
+					return '\'' . mysqli_real_escape_string($this->link, $value) . '\'';
 				}
             }
         }
@@ -245,7 +246,15 @@
 			
 
             //$sql = preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-            $sql = preg_replace('/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>\.)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);/*
+            $sql = preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                //"\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", 
+                $sql
+            );
+                /*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
@@ -254,8 +263,8 @@
             if($type == 'valueof') {
                 $sql = preg_replace("/^valueof/i", "select", $sql);
                 $res = $this->rawQuery($sql);
-                $row = mysql_fetch_row($res);
-                mysql_free_result($res);
+                $row = mysqli_fetch_row($res);
+                mysqli_free_result($res);
                 if(!$row) return false;
                 return $row[0];
             }
@@ -263,8 +272,8 @@
             if($type == 'get') {
                 $sql = preg_replace("/^get/i", "select", $sql);
                 $res = $this->rawQuery($sql);
-                $obj = mysql_fetch_assoc($res);
-                mysql_free_result($res);
+                $obj = mysqli_fetch_assoc($res);
+                mysqli_free_result($res);
                 if(!$obj) return false;
                 return $this->wrapData($obj, $wrapper);
             }
@@ -272,22 +281,37 @@
             $this->rawQuery($sql);
 
             switch($type){
-            case "insert": return mysql_insert_id($this->link);
-            case "replace": return mysql_insert_id($this->link);
-            case "update": return mysql_affected_rows($this->link);
-            case "delete": return mysql_affected_rows($this->link);
+            case "insert": return mysqli_insert_id($this->link);
+            case "replace": return mysqli_insert_id($this->link);
+            case "update": return mysqli_affected_rows($this->link);
+            case "delete": return mysqli_affected_rows($this->link);
             default:
-                return mysql_affected_rows($this->link);
+                return mysqli_affected_rows($this->link);
             }
         }
 
         public function formatParams($sql, $params = array()) {
-			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)(%}|}|>\.)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
+			return preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                $sql
+            );
         }
 		
         public function formatQuery($sql, $params = array()) {
-            return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.mysql_real_escape_string(\$params['\\2'],\$this->link).'\\'') : \$params['<\\2>']",$sql);
+            return preg_replace_callback(
+                '/([{<])([A-Za-z0-9_]*?)([>}])/',
+                function($m) use($params){
+                    if($m[1] === '{'){
+                        return mysqli_real_escape_string($params[$m[2]], $this->link);
+                    }else{
+                        return $params['<'.$m[2].'>'];
+                    }
+                },
+                $sql
+            );
         }
 
 		public function paramQuery($sql, $params = array()) {
@@ -295,11 +319,11 @@
 		}
 
         public function lastInsertId() {
-            return mysql_insert_id($this->link);
+            return mysqli_insert_id($this->link);
         }
 
         public function lastAffectedRows() {
-            return mysql_affected_rows($this->link);
+            return mysqli_affected_rows($this->link);
         }
 
         public function paramQueryArray($sql, $params = array(), $key = false) {
@@ -313,17 +337,17 @@
 		public function resultToArray($res, $key = false) {
 			$array = array();
 			if($key === false) {
-				while($row = mysql_fetch_assoc($res)) {
+				while($row = mysqli_fetch_assoc($res)) {
 					$array[] = $row;
 				}
-			} else if ($row = mysql_fetch_assoc($res)) {
+			} else if ($row = mysqli_fetch_assoc($res)) {
 				$this->__assert(
 					isset($row[$key]),
 					'There is no key named {0}',
 					$key
 				);
 				$array[$row[$key]] = $row;
-				while($row = mysql_fetch_assoc($res)) {
+				while($row = mysqli_fetch_assoc($res)) {
 					$array[$row[$key]] = $row;
 				}
 			}
@@ -391,10 +415,10 @@
                     TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'columns', 'column' => '*');
-            while($row = mysql_fetch_assoc($columns)){
+            while($row = mysqli_fetch_assoc($columns)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($columns);
+            mysqli_free_result($columns);
 
             $keys = $this->rawQuery("SELECT
                 c.TABLE_SCHEMA                                              as `database`,
@@ -420,10 +444,10 @@
                 u.ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'keys', 'key' => 'columns', 'ordinal'=>'*');
-            while($row = mysql_fetch_assoc($keys)){
+            while($row = mysqli_fetch_assoc($keys)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($keys);
+            mysqli_free_result($keys);
 
             foreach($toReflect as $db) {
                 $this->cacheReflectedDb($db, $this->model['databases'][$db]);
@@ -466,7 +490,19 @@
             }
         }
 
+        public function startTransaction(){
+            mysqli_autocommit($this->link, false);
+        }
 
+        public function commit(){
+            if(!mysqli_commit($this->link)) {
+                mysqli_autocommit($this->link, true);
+                throw new Exception("Transaction commit failed");
+            }
+        }
+
+        public function rollback(){
+            mysqli_rollback($this->link);
+            mysqli_autocommit($this->link, true);
+        }
 	}
-
-?>
