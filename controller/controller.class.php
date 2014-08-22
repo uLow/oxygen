@@ -800,6 +800,20 @@
         {
             return $this->embed_iframe($args->outter_url);
         }
+
+        public function generateClasses() {
+            $mainSchema = $this->loadSchemaFor(get_class($this));
+            foreach ($this->schemata as $s) {
+                $s->initializeModels();
+            }
+            foreach ($this->schemata as $s) {
+                $s->resolveModelDependencies();
+            }
+            foreach ($this->schemata as $s) {
+                $s->generateClasses();
+            }
+            return implode(',', array_keys($this->schemata));
+        }
 	}
 
 ?>

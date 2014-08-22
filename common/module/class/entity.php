@@ -45,8 +45,8 @@
 
 <?if($this->string):?>
     public function __toString() {
-        <?$str = preg_replace("/\{([a-z0-9]+)/e", "'{'.ucfirst('$1')", $this->string);?>
-        <?$str2 = preg_replace("/_([a-z0-9])/e", "ucfirst('$1')", $str);?>
+        <?$str = preg_replace_callback("/\{([a-z0-9]+)/", function($m){ return '{'.ucfirst($m[1]);}, $this->string);?>
+        <?$str2 = preg_replace_callback("/_([a-z0-9])/", function($m){ return ucfirst($m[1]);}, $str);?>
         return '<?=preg_replace('/{([A-Za-z0-9_]+)}/','\'.(($x = $this->get$1()) === "" ? "not-set" : $x).\'', $str2)?>';
     }
 <?endif?>

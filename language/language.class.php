@@ -9,6 +9,9 @@
 		{
 			$reflection = new ReflectionClass(get_class($this));
 			$this->file = $reflection->getFileName();
+		}
+
+		public function setup($params = array()){
 			$this->getLangPack();
 		}
 
@@ -129,7 +132,7 @@
 			return $langPack;
 		}
 
-		public function loadLang($name, $args = array()){
+		public function loadLang($name){
 			$class = get_class($this);
             $call = (object)array(
                 'instance'  => $this,

@@ -48,7 +48,13 @@
         }
 
         public function nameFor($prefix) {
-            return preg_replace('/_([a-z])/ie', "ucfirst('$1')", $prefix.'_'.$this->name);
+            return preg_replace_callback(
+                '/_([a-z])/i',
+                function($m){
+                    return ucfirst($m[1]);
+                },
+                $prefix.'_'.$this->name
+            );
         }
 
         public function __construct($owner,$name, $yaml) {

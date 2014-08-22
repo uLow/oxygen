@@ -210,7 +210,7 @@
         }
 
         public function _($key){
-            return $this->scope->language()->_ln($key);
+            return $this->scope->language->_ln($key);
         }
 
         public function getLang()
@@ -222,6 +222,52 @@
             return htmlentities($text, ENT_QUOTES, 'UTF-8');
         }
 
-    }
+        public function getArrayValues($arr){
+            /*$restrict = array("scope", "Oxygen_Scope", "Oxygen_Object", "Oxygen_Controller", "Oxygen_Controller");
+            $allow = array("Oxygen_SQL_ResultSet", "Oxygen_SQL_Connection_Oracle", "Oxygen_Object");
+            $return = array();
+            if(is_array($arr) || is_object($arr)){
+                foreach($arr as $k=>$v){
+                    if(!is_object($v) || (!preg_match("/Oxygen_/i", get_class($v)) || !in_array(get_class($v), $restrict))){
+                        $return[$k] = $this->print_r($v);
+                    }
+                }
+            }else{
+                $return = $arr;
+            }
 
-?>
+            return $return;*/
+            $return = array();
+            foreach($arr as $key=>$value){
+                if(is_array($value)){
+                    $return[$key] = $this->getArrayValues($value);
+                }elseif(is_object($value)){
+                    $return[$key] = array(
+                        'methods'=>implode(', ', get_class_methods($value)),
+                        'properties'=>print_r((array)get_object_vars($value), 1)
+                    );
+                }else{
+                    $return[$key] = in_array(gettype($value), array('integer','string','bool')) ? $value : gettype($value);
+                }
+            }
+            return $return;
+        }
+
+        public function print_r($return = false, $styled = true){
+            if($styled === true){
+                $s1 = '<div style="overflow: auto; height: 100%;"><pre>';
+                $s2 = '</pre></div>';
+            }else{
+                $s1 = '';
+                $s2 = '';
+            }
+            if($return === true){
+                return $s1.Oxygen_Dumper::dump($this).$s2;
+            }else{
+                echo $s1;
+                echo Oxygen_Dumper::dump($this);
+                echo $s2;
+            }
+        }
+
+    }

@@ -69,7 +69,7 @@
 					throw $this->scope->Exception('Can not obtain an object using scalar key');
 				} else {
 					$where = array();
-					$where[$ik[0]] = $offset;
+					$where[reset($ik)] = $offset;
 				}
 			} else {
 				$where = $offset;

@@ -256,7 +256,13 @@
             $type = strtolower($match[1]);
 
             ////$sql = preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-            $sql = preg_replace('/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);/*
+            $sql = preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                $sql
+            );/*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
@@ -297,12 +303,27 @@
         }
 
         public function formatParams($sql, $params = array()) {
-			return preg_replace('/({%|{|<)([A-Za-z0-9_]*?)(:int|:str|:wc)?(%}|}|>)/e', "\$this->processParams('\\1', '\\2', '\\3', '\\4', \$params)", $sql);
+			preg_replace_callback(
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                function($m) use($params){
+                    return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
+                },
+                $sql
+            );
         }
 		
         public function formatQuery($sql, $params = array()) {
-            return preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
-                "'\\1' === '{' ? ('\\''.str_replace(\"'\", \"''\", \$params['\\2']).'\\'') : \$params['<\\2>']",$sql);
+            return preg_replace_callback(
+                '/([{<])([A-Za-z0-9_]*?)([>}])/',
+                function($m) use($params){
+                    if($m[1] === '{'){
+                        return str_replace("'", "''", $params[$m[2]]);
+                    }else{
+                        return $params['<'.$m[2].'>'];
+                    }
+                },
+                $sql
+            );
         }
 
 		public function paramQuery($sql, $params = array()) {
@@ -311,7 +332,7 @@
 
         public function lastInsertId() {
 			throw new Exception('There is no implemented lastInsertId for oracle yet.'); // be careful! 
-            //return mysql_insert_id($this->link);
+            //return mysqli_insert_id($this->link);
         }
 
         public function lastAffectedRows() {
@@ -411,10 +432,10 @@
                     TABLE_SCHEMA, TABLE_NAME, ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'columns', 'column' => '*');
-            while($row = mysql_fetch_assoc($columns)){
+            while($row = mysqli_fetch_assoc($columns)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($columns);
+            mysqli_free_result($columns);
 
             $keys = $this->rawQuery("SELECT
                 c.TABLE_SCHEMA                                              as `database`,
@@ -440,10 +461,10 @@
                 u.ORDINAL_POSITION
             ");
             $path = array('database' => 'tables', 'table' => 'keys', 'key' => 'columns', 'ordinal'=>'*');
-            while($row = mysql_fetch_assoc($keys)){
+            while($row = mysqli_fetch_assoc($keys)){
                 $this->structurize($row, $path, $this->model['databases']);
             }
-            mysql_free_result($keys);
+            mysqli_free_result($keys);
 
             foreach($toReflect as $db) {
                 $this->cacheReflectedDb($db, $this->model['databases'][$db]);
