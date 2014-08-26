@@ -4,11 +4,8 @@ $this.find(".selectLang").click(function(){
 		if(err){
 			console.log(err);
 		}else{
-            window.location.href=res;
-			/* was by VL
             location.href=res;
 			window.location.reload();
-            */
 		}
 	});
 });
