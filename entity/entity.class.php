@@ -53,18 +53,12 @@
                 }
             } else {
                 // IS NEW
-                //$sql = $this->owner->insert($this->current);
-                //$conn->rawQuery();
                 $this->original = $this->current;
-                /*
-                $conn->rawQuery();
-                $this->original = $this->current;
-                return $conn->lastAffectedRows();
-                */
-                //return $sql;
                 $result = $this->insert($this->current);
-                $this[$this->__getPrimaryKey()] = (string)$result;
-                $this[$this->__getPrimaryKey(true)] = (string)$result;
+                if(is_string($this->__getPrimaryKey())){
+                    $this[$this->__getPrimaryKey()] = (string)$result;
+                    $this[$this->__getPrimaryKey(true)] = (string)$result;
+                }
                 return $this;
             }
         }
