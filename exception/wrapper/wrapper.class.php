@@ -8,6 +8,10 @@
         public function __toString() {
             return (string)$this->ex;
         }
+
+        public function getException(){
+            return $this->ex;
+        }
         
         public function getWrapTrace() {
             return $this->ex->getTrace();

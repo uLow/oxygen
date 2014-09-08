@@ -42,6 +42,10 @@
         public $scope = null;
 
         public function __call($method, $args) {
+            if($this->getName() === 'Oxygen_RedirectException'){
+                header('Location: '.$this->getException()->url);
+                exit;
+            }
             if($method=='download'){
                 echo 'HERE';
             }
