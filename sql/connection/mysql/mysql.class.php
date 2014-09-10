@@ -247,7 +247,7 @@
 
             //$sql = preg_replace('/([{<])([A-Za-z0-9_]*?)([>}])/e',
             $sql = preg_replace_callback(
-                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)(%}|}|>)/',
                 function($m) use($params){
                     return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
                 },
@@ -292,7 +292,7 @@
 
         public function formatParams($sql, $params = array()) {
 			return preg_replace_callback(
-                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)?(%}|}|>)/',
+                '/({%|{|<)([A-Za-z0-9_]+?)(:int|:str|:wc)(%}|}|>)/',
                 function($m) use($params){
                     return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
                 },
