@@ -8,7 +8,7 @@
                 <h5 class="sectionHeader"><span><?=Oxygen_Utils_Text::humanize($name)?></span></h5>
                 <ul data-section="<?=$name?>" style="min-height:5px" class="itemsSection<?if(count($section[1])):?> sortable<?endif?>">
                     <?foreach($section[0] as $item):?>
-                        <li data-class="<?=get_class($item)?>" data-key="<?=htmlentities(json_encode($item->__key()), ENT_QUOTES, 'UTF-8')?>"><?=$item->put_select_view($section[1])?></li>
+                        <li data-class="<?=get_class($item)?>" data-key="<?=htmlentities(json_encode($item[$item->__getPrimaryKey()]), ENT_QUOTES, 'UTF-8')?>"><?=$item->put_select_view($section[1])?></li>
                     <?endforeach?>
                 </ul>
             </li>
