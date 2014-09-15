@@ -194,7 +194,7 @@
 					$value = $like[0].$value.$like[1];
 				}
 				if($type == 'int'){
-					return (int)$value;
+					return (int)(string)$value;
 				}else{
 					return '\'' . str_replace("'", "''", $value) . '\'';
 				}
