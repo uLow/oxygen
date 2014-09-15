@@ -169,6 +169,7 @@
         public function insert($data){
             $keys = array_keys($data);
             $values = array_values($data);
+            $values = array_map("addslashes", $values);
             $primary_key = preg_replace("/\{([^:]+):.*\}/i", "$1", $this->__getPattern());
             $ret = $this->scope->connection->runQuery("insert into `{$this->database}`.{$this->table} (`".implode("`,`", $keys)."`) values ('".implode("','", $values)."')");
             return $ret;
