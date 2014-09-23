@@ -11,7 +11,7 @@
 			if(isset($this->languages[$lang])){
 				$this->langPack[$lang][$key] = $value;
 				try{
-					$this->scope->connection->runQuery("update ".$this->db.".".$this->table." set value='".addslashes($value)."' where key='".addslashes($key)."' and lang='".addslashes($name)."'");
+					$this->scope->connection->runQuery("update ".$this->db.".".$this->table." set value='".addslashes($value)."' where `key`='".addslashes($key)."' and lang='".addslashes($lang)."'");
 				}catch(Exception $e){
 					return $e->getMessage();
 				}
@@ -25,7 +25,7 @@
             foreach($this->langPack as $k=>$v){
                 if(!isset($this->langPack[$k][$key])){
                     $v[$key] = $this->langPack[$k][$key] = $key;
-                    $this->scope->connection->runQuery("insert into ".$this->db.".".$this->table." set key='".addslashes($key)."', value='".addslashes($key)."', lang='".addslashes($name)."'");
+                    $this->scope->connection->runQuery("insert into ".$this->db.".".$this->table." set `key`='".addslashes($key)."', value='".addslashes($key)."', lang='".addslashes($k)."'");
                 }
             }
 		}
@@ -35,7 +35,7 @@
 			foreach($this->langPack as $k=>$v){
 				if(!isset($this->langPack[$k][$key])){
 					$v[$key] = $this->langPack[$k][$key] = $values[$k];
-					$this->scope->connection->runQuery("insert into ".$this->db.".".$this->table." set value='".addslashes($values[$k])."', lang='".addslashes($name)."'");	
+					$this->scope->connection->runQuery("insert into ".$this->db.".".$this->table." set value='".addslashes($values[$k])."', lang='".addslashes($k)."'");	
 				}
 			}
 		}

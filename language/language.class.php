@@ -2,7 +2,7 @@
 	class Oxygen_Language extends Oxygen_Object{
 		
 		public $lang;
-		private $langPack = null;
+		public $langPack = null;
 		public $languages = array("en"=>"English", "ru"=>"Русский", "lv"=>"Latviešu");
 
 		public function __complete()
