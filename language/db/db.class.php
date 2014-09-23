@@ -11,7 +11,7 @@
 			if(isset($this->languages[$lang])){
 				$this->langPack[$lang][$key] = $value;
 				try{
-					$this->scope->connection->runQuery("replace into ".$this->db.".".$this->table." set value='".addslashes($value)."' where `key`='".addslashes($key)."' and lang='".addslashes($lang)."'");
+					$this->scope->connection->runQuery("replace into ".$this->db.".".$this->table." set value='".addslashes($value)."', `key`='".addslashes($key)."', lang='".addslashes($lang)."'");
 				}catch(Exception $e){
 					return $e->getMessage();
 				}
