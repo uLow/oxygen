@@ -54,6 +54,7 @@
 
 		public function writeLang($lang=false){
 			if($lang===false){
+				$this->getLangPack();
 				foreach($this->langPack as $k=>$v){
 					$path = dirname($this->file) . DIRECTORY_SEPARATOR . $k.".php";
 					file_put_contents($path, $this->get_write($v));
@@ -64,6 +65,7 @@
 
 		public function updateLang($key, $value, $lang){
 			if(isset($this->languages[$lang])){
+				$this->getLangPack();
 				$this->langPack[$lang][$key] = $value;
 				try{
 					$path = dirname($this->file) . DIRECTORY_SEPARATOR . $lang.".php";
@@ -78,6 +80,7 @@
 
         public function addKey($key){
             $key = strtolower($key);
+            $this->getLangPack();
             foreach($this->langPack as $k=>$v){
                 if(!isset($this->langPack[$k][$key])){
                     $v[$key] = $this->langPack[$k][$key] = $key;
@@ -93,6 +96,7 @@
         */
 		public function addLang($key, $values=array()){
 			$key = strtolower($key);
+			$this->getLangPack();
 			foreach($this->langPack as $k=>$v){
 				if(!isset($this->langPack[$k][$key])){
 					$v[$key] = $this->langPack[$k][$key] = $values[$k];
@@ -119,6 +123,7 @@
 		}
 
 		public function getLangArray($lang=false){
+			$this->getLangPack();
 			if($lang===false){
 				return $this->langPack[$this->scope->SESSION['lang']];
 			}else{
