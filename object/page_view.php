@@ -23,6 +23,10 @@
 <link rel="shortcut icon" href="<?=$current->getIconSource()?>"/>
 <title><?$current->put_title()?></title>
 <?endif?>
+<script>
+	window.$ = window.oxygen.$;
+	window.jQuery = window.oxygen.$;
+</script>
 </head>
 <body>
 <?=$body?>
