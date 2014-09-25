@@ -1,4 +1,4 @@
-<?$model = $this->getTableBones($args[0])?>
+<?$model = $this->getTableBones($args[0], $args[1])?>
 <?//$relations = $this->getRelations($args[0])?>
 <?//o('div.class[style="float: left; min-height: 240px; border: 1px solid #B7B9AC; border-radius: 8px; box-shadow: 2px 2px 4px rgba(100,100,100,0.4); margin: 4px; padding: 8px;"]#'.$model['class'].'')?>
 <div id="<?=$model['class']?>" class="class">
