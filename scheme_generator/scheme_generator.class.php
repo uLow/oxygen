@@ -35,7 +35,7 @@
             return $this->embed_entity($args->db, $args->table);
         }
 
-        public function getTableBones($tableName, $dbName){
+        public function getTableBones($dbName, $tableName){
             $bones = array();
             $types = array(
                 'int'=>'integer',
@@ -85,7 +85,7 @@
             return $bones;
         }
 
-        public function getRelations($tableName, $dbName = 'ams'){
+        public function getRelations($dbName, $tableName){
             $relations = array();
             $constraints = $this->scope->connection->runQuery("select
                 concat_ws('@', constraint_name, constraint_schema) as id,
