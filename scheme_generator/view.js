@@ -240,10 +240,12 @@ $this.find('.addClass').live('click', function(){
 });
 
 $this.find('.addClassFromDB').live('click', function(){
+    var dbName = window.prompt('Enter database', 'db_name');
     var tableName = window.prompt('Enter table name', 'table_name');
     $this.remote(
         'buildEntityFromDB',
         {
+            db: dbName,
             table: tableName
         },
         function(err, res){

@@ -30,11 +30,12 @@
         }
 
         public function rpc_buildEntityFromDB($args){
+            $db = strtolower(preg_replace("/[^_a-z0-9]+/i", "", $args->db));
             $table = strtolower(preg_replace("/[^_a-z0-9]+/i", "", $args->table));
-            return $this->embed_entity($args->table);
+            return $this->embed_entity($args->db, $args->table);
         }
 
-        public function getTableBones($tableName, $dbName = 'ams'){
+        public function getTableBones($tableName, $dbName){
             $bones = array();
             $types = array(
                 'int'=>'integer',
