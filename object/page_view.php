@@ -15,8 +15,9 @@
 <script src="<?=$this->scope->lib->url('js/oxygen.js')?>"></script>
 <script src="<?=$this->scope->lib->url('js/jquery-ui-1.8.20.custom.min.js')?>"></script>
 <script src="<?=$this->scope->lib->url('js/html5.js')?>"></script>
-<?=$this->put_stylesheets()?>
-<?=$this->put_javascripts()?>
+<?$this->put_stylesheets()?>
+<?$this->scope->assets->css->put_view()?>
+<?$this->put_javascripts()?>
 <?if($this instanceof Oxygen_Controller):?>
 <?$current=$this->getCurrent()?>
 <link rel="shortcut icon" href="<?=$current->getIconSource()?>"/>
