@@ -8,8 +8,8 @@
     databases:  <br>
     <?if(isset($this->yml['databases'])){?>
     <?foreach($this->yml['databases'] as $k=>$db){?>
-        <div style="display: block">
-            <input type="text" class="databaseField" data-alias="<?=$k?>" value="<?=$db?>">
+        <div style="display: block; margin-left: 14px;">
+            <?=$k?>: <input type="text" class="databaseField" data-alias="<?=$k?>" value="<?=$db?>">
         </div>
     <?}?>
     <?}else{?>
@@ -17,14 +17,28 @@
             <input type="text" class="databaseField" data-alias="default" value="">
         </div>
     <?}?>
-    <a href="javascript:void(0)" class="addDatabase" style="display: block;">Add database</a>
+    <a href="javascript:void(0)" class="addDatabase">Add database</a>
 </div>
-<?$this->put_button('addClass','Add class','add')?>
+<div class="uses">
+    uses:  <br>
+    <?if(isset($this->yml['uses'])){?>
+        <?foreach($this->yml['uses'] as $k=>$use){?>
+            <div style="display: block; margin-left: 14px;">
+                <?=$k?>: <input type="text" class="useField" data-alias="<?=$k?>" value="<?=$use?>">
+            </div>
+        <?}?>
+    <?}?>
+    <a href="javascript:void(0)" class="addUse">Add use</a>
+</div>
+<?$this->put_button('addClass','Add class','add', 'javascript:void(0)', 'Add class')?>
+<br>
+<?$this->put_button('addClassFromDB','Add class from database','add', 'javascript:void(0)', 'Add class from DB')?>
 <div class="classes">
     classes: <br>
     <?if(isset($this->yml['classes'])){?>
     <?foreach($this->yml['classes'] as $className=>$schema){?>
-        <div id="<?=$className?>" class="class">
+        <div id="<?=$className?>" class="class" style="position: relative;">
+            <a href="javascript:void(0)" class="removeClass" data-id="<?=$className?>" style="position: absolute; right: 12px; text-decoration: none; color: red; font-size: 12px">X</a>
             <h3 class="className" data-key="class_name"><?=$className?></h3>
             <table class="paramsTable" id="paramsOf<?=$className?>">
                 <tr>
@@ -128,12 +142,18 @@
                     <td class="relations">hidden</td>
                 </tr>
                 <?}else{?>
-                <tr style="display: none">
+                <tr style="display: none;">
                     <th onclick="$(this).parent().find('.relations').toggle()">relations</th>
                     <td id="relations<?=$className?>" class="relations main" data-key="relations" style="display: none;"></td>
                     <td class="relations">hidden</td>
                 </tr>
                 <?}?>
+
+                <?/*<tr>
+                    <td colspan="3">
+                        <a href="javascript:void(0)" class="addRelation" style="font-size: 12px;">Add relation to foreign scheme</a>
+                    </td>
+                </tr>*/?>
             </table>
         </div>
     <?}?>
