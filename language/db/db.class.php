@@ -9,7 +9,7 @@
 
 		public function updateLang($key, $value, $lang){
 			if(isset($this->languages[$lang])){
-				$this->langPack[$lang][$key] = $value;
+				$this->getLangPack()[$lang][$key] = $value;
 				try{
 					$this->scope->connection->runQuery("replace into ".$this->db.".".$this->table." set value='".addslashes($value)."', `key`='".addslashes($key)."', lang='".addslashes($lang)."'");
 				}catch(Exception $e){
@@ -22,7 +22,7 @@
 
 		public function addKey($key){
 			$key = strtolower($key);
-            foreach($this->langPack as $k=>$v){
+            foreach($this->getLangPack() as $k=>$v){
                 if(!isset($this->langPack[$k][$key])){
                     $v[$key] = $this->langPack[$k][$key] = $key;
                     $this->scope->connection->runQuery("replace into ".$this->db.".".$this->table." set `key`='".addslashes($key)."', value='".addslashes($key)."', lang='".addslashes($k)."'");
@@ -32,7 +32,7 @@
 
 		public function addLang($key, $values=array()){
 			$key = strtolower($key);
-			foreach($this->langPack as $k=>$v){
+			foreach($this->getLangPack() as $k=>$v){
 				if(!isset($this->langPack[$k][$key])){
 					$v[$key] = $this->langPack[$k][$key] = $values[$k];
 					$this->scope->connection->runQuery("replace into ".$this->db.".".$this->table." set value='".addslashes($values[$k])."', lang='".addslashes($k)."'");	
