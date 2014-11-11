@@ -79,7 +79,7 @@
                 $this->scope->SESSION['lang'] = $args->lang;
                 $page = $args->page;
                 $page = preg_replace("/\?lang\=..&/", "?", $page);
-                $page = preg_replace("/&lang\=../", "", $page);
+                $page = preg_replace("/[?&]lang\=../", "", $page);
             }
             return $page;
         }
