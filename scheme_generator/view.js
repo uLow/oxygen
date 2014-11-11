@@ -1,8 +1,25 @@
 $this.find('.addDatabase').live('click', function(){
     var dbAlias = window.prompt('Enter database alias', 'db_alias');
     var dbName = window.prompt('Enter database name', 'db_name');
-    var $database = $('<div style="display: block"><input type="text" class="databaseField" data-alias="'+dbAlias+'" value="'+dbName+'"></div>');
+    var $database = $('<div style="display: block; margin-left: 14px;">'+dbAlias+': <input type="text" class="databaseField" data-alias="'+dbAlias+'" value="'+dbName+'"></div>');
     $(this).before($database);
+});
+$this.find('.addUse').live('click', function(){
+    var useAlias = window.prompt('Enter use alias', 'use_alias');
+    var useName = window.prompt('Enter used class name', 'use_name');
+    var $use = $('<div style="display: block; margin-left: 14px;">'+useAlias+': <input type="text" class="useField" data-alias="'+useAlias+'" value="'+useName+'"></div>');
+    $(this).before($use);
+});
+
+$this.find('.addRelation').live('click', function(){
+    var useAlias = window.prompt('Enter use alias', 'use_alias');
+    var useClass = window.prompt('Enter used entity name', 'use_name');
+    var $use = $('<div style="display: block; margin-left: 14px;">'+useAlias+': <input type="text" class="useField" data-alias="'+useAlias+'" value="'+useName+'"></div>');
+    $(this).parent().parent().before($use);
+});
+
+$this.find('.removeClass').live('click', function(){
+    $('#'+$(this).data('id')).remove();
 });
 
 $this.find('.saveSchema').live('click', function(){
@@ -10,6 +27,10 @@ $this.find('.saveSchema').live('click', function(){
     var databases = {};
     $this.find('.databaseField').each(function(){
         databases[$(this).data('alias')] = $(this).val();
+    });
+    var uses = {};
+    $this.find('.useField').each(function(){
+        uses[$(this).data('alias')] = $(this).val();
     });
 
     var classes = {};
@@ -21,9 +42,10 @@ $this.find('.saveSchema').live('click', function(){
             key = key.split(',');
         }
         var pattern = $(this).find('.pattern').text();
-        if(pattern.split('-').length>1){
+        /*if(pattern.split('-').length>1){
             pattern = pattern.split('-');
-        }
+        }*/
+
         var string = $(this).find('.string').text();
         var fields = {};
         $(this).find('.fieldKey').each(function(){
@@ -76,6 +98,7 @@ $this.find('.saveSchema').live('click', function(){
 
     var schema = {
         root: root,
+        uses: uses,
         databases: databases,
         classes: classes
     };
@@ -87,7 +110,7 @@ $this.find('.saveSchema').live('click', function(){
             $this.refresh();
         }
     });
-    //console.log(schema);
+    console.log(schema);
 });
 
 $this.find('.editable').live('click', function(){
@@ -213,6 +236,26 @@ $this.find('.addClass').live('click', function(){
     var key = source+'_id';//window.prompt('Enter primary key', source+'_id');
     var pattern = "{"+key+":int}";
     $this.find('.classes').append('<div id="'+className+'" class="class" style="float: left; min-height: 240px; border: 1px solid #B7B9AC; border-radius: 8px; box-shadow: 2px 2px 4px rgba(100,100,100,0.4); margin: 4px; padding: 8px;"><h3 class="className" data-key="class_name">'+className+'</h3><table class="paramsTable" id="paramsOf'+className+'"><tr><th>source</th><td class="editable source" data-key="source" data-class-name="'+className+'">'+source+'</td></tr><tr><th>key</th><td class="editable key" data-key="key" data-class-name="'+className+'">'+key+'</td></tr><tr><th>pattern</th><td class="editable pattern" data-key="pattern" data-class-name="'+className+'">'+pattern+'</td></tr><tr><th>string</th><td class="editable string" data-key="string" data-class-name="'+className+'">---</td></tr><tr><th onclick="$(this).parent().find(\'.fieldsContainer\').toggle()">fields</th><td data-key="fields"><span class="fieldsContainer">hidden</span><div class="fieldsContainer" style="height: 140px; overflow-y: scroll; padding-right: 24px;"><table><tr><td colspan="3" align="center"><a class="addField" href="javascript:void(0)" alt="Add field" title="Add field" data-class-name="'+className+'"><img src="/oxygen/lib/silk-icons/icons/add.png"></a></td></tr><tr><td><a class="removeField" href="javascript:void(0)" alt="Remove field" title="Remove field"><img src="/oxygen/lib/silk-icons/icons/delete.png"></a></td><td class="editable fieldKey" data-readonly="1" style="font-weight: bold" data-class-name="'+className+'">'+key+'</td><td><select class="fieldsTypesSelect type"><option value="integer" selected="selected">integer</option><option value="string">string</option><option value="unixtime">unixtime</option><option value="minor">minor</option><option value="object">object</option><option value="password">password</option><option value="set">set</option><option value="ip">ip</option><option value="json">json</option><option value="text">text</option><option value="double">double</option><option value="collection">collection</option><option value="cross">cross</option></select></td></tr></table></div></td></tr><tr style="display: none"><th onclick="$(this).parent().find(\'.relations\').toggle()">relations</th><td id="relations'+className+'" class="relations main" data-key="relations" style="display: none;"></td><td class="relations">hidden</td></tr></table></div>');
+    dragAndDrops();
+});
+
+$this.find('.addClassFromDB').live('click', function(){
+    var dbName = window.prompt('Enter database', 'db_name');
+    var tableName = window.prompt('Enter table name', 'table_name');
+    $this.remote(
+        'buildEntityFromDB',
+        {
+            db: dbName,
+            table: tableName
+        },
+        function(err, res){
+            if(err){
+                console.log(err);
+            }else{
+                $this.find('.classes').append(res.body);
+            }
+        }
+    );
     dragAndDrops();
 });
 

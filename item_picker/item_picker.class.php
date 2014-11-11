@@ -5,12 +5,14 @@
         public $buttons;
         public $owner;
         public $name;
+        public $extraParams = array();
 
-        public function __construct($owner, $name, $method, $buttons = array()) {
+        public function __construct($owner, $name, $method, $buttons = array(), $extraParams = array()) {
             $this->method = $method;
             $this->buttons = $buttons;
             $this->owner = $owner;
             $this->name = $name;
+            $this->extraParams = $extraParams;
         }
 
         public function go() {
@@ -18,7 +20,11 @@
         }
 
         public function rpc_getData($criteria) {
-            return $this->embed_results(call_user_func($this->method, $criteria));
+            $params = array($criteria);
+            foreach($this->extraParams as $param){
+                $params[] = $param;
+            }
+            return $this->embed_results(call_user_func_array($this->method, $params));
         }
 
     }

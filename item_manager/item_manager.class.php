@@ -6,13 +6,15 @@
         public $data = null;
         public $pick_method = null;
         public $buttons = null;
+        public $extraParams = array();
 
-        public function __construct($owner,$name,$data,$pick_method,$buttons) {
+        public function __construct($owner,$name,$data,$pick_method,$buttons,$extraParams = array()) {
             $this->owner = $owner;
             $this->data = $data;
             $this->pick_method = $pick_method;
             $this->buttons = $buttons;
             $this->name = $name;
+            $this->extraParams = $extraParams;
         }
 
         public function __complete() {
@@ -21,7 +23,8 @@
                 $this->owner,
                 $picker_name,
                 $this->pick_method,
-                $this->buttons
+                $this->buttons,
+                $this->extraParams
             );
             $this->owner->registerComponent($picker_name,$this->picker);
         }
