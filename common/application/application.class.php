@@ -80,7 +80,7 @@
                 $page = $args->page;
                 $page = preg_replace("/\?lang\=../", "", $page);
             }
-            return $page;
+            return $this->getCurrent()->go();
         }
 
 		public function configure($x) {

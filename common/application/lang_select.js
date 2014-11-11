@@ -5,7 +5,9 @@ $this.find(".selectLang").click(function(){
 			console.log(err);
 		}else{
             location.href=res;
-			window.location.reload();
+			if(location.href == res){
+				window.location.reload();
+			}
 		}
 	});
 });
