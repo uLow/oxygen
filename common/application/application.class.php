@@ -78,9 +78,9 @@
             if(isset($this->language->languages[$args->lang])){
                 $this->scope->SESSION['lang'] = $args->lang;
                 $page = $args->page;
-                $page = preg_replace("/\?lang\=../", "", $page);
+                $page = preg_replace("/[?&]lang\=../", "", $page);
             }
-            return $this->getCurrent()->go();
+            return $page;
         }
 
 		public function configure($x) {
