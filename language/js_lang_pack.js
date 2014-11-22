@@ -1,1 +1,3 @@
-window._l = $this.data("lang");
+$this.remote('getLangPack', {}, function(err, res){
+	window._l = res;
+}, 'noasync');

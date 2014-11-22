@@ -6,6 +6,7 @@
         public $auth;
         public $config;
         public $language = null;
+        public $namespace = 'language';
 
         public function __complete() {
             $this->auth = $this->scope->__authenticated();
@@ -15,8 +16,13 @@
         public function configureLanguages($languageClass='Oxygen_Language', $params=array())
         {
             $root = Oxygen_Scope::getRoot();
-            $this->scope->register('Language', $languageClass);
-            $this->language = $this->scope->Language();
+
+            if(isset($params['namespace'])){
+                $this->namespace = $params['namespace'];
+            }
+
+            //$this->scope->register('Language', $languageClass);
+            $this->language = $this->scope->$languageClass();
             $this->language->setup($params);
             if(isset($_GET['lang']) && isset($this->language->languages[$_GET['lang']])){
                 $this->scope->SESSION['lang'] = $_GET['lang'];
@@ -30,7 +36,7 @@
                 }
             }
             $this->language->lang = $this->scope->currentLang = $this->scope->SESSION['lang'];
-            $root->language = $this->scope->language = $this->language;
+            $root->language = $this->scope->{$this->namespace} = $this->language;
         }
 
         public function parseBrowserDefaultLanguage($http_accept){
@@ -78,7 +84,8 @@
             if(isset($this->language->languages[$args->lang])){
                 $this->scope->SESSION['lang'] = $args->lang;
                 $page = $args->page;
-                $page = preg_replace("/\?lang\=../", "", $page);
+                $page = preg_replace("/\?lang\=..&/", "?", $page);
+                $page = preg_replace("/[?&]lang\=../", "", $page);
             }
             return $page;
         }
@@ -141,6 +148,14 @@
         public function rpc_reflectDB()
         {
             $this->scope->connection->reflectDatabases(true);
+        }
+
+        public function rpc_getLangPack($args){
+            if(isset($this->scope->language)){
+                return $this->scope->language->getLangArray();
+            }else{
+                return array();
+            }
         }
 	}
 
