@@ -157,6 +157,12 @@
                 return array();
             }
         }
+
+        public function rpc_consess(){
+            return 'true';
+        }
+        
+
 	}
 
 ?>
