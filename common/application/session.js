@@ -70,3 +70,13 @@ $(document).on("click", function(e) {
         c = 0;
     }
 });
+
+$(document).on("keyup", function(e){
+    if(!e){
+        e = window.event;
+    }
+    var keyCode = e.keyCode || e.which;
+    if(keyCode === 13){
+        $('#popup_ok').click();
+    }
+});
