@@ -18,7 +18,7 @@
             return $this->scope->auth->process($this->scope->POST);
         }
 		public function handleGet() {
-            if(isset($this->args['sign-out']) || isset($_GET['sign-out'])){
+            if(isset($this->args['sign-out'])){
                 $this->scope->auth->process(array('sign-out'=>true));
                 return redirectResponse('authentication');
             }

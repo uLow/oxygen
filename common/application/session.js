@@ -1,56 +1,72 @@
-var isAuth = $this.find("._authenticated").data("auth");
+c = 0;
+var forget = 0;
+var t;
 
-if(isAuth==1){
-    c=0;
-    var forget = 0;
-    var t;
-    function continueSessionPromt(c){
-        var timeleft = 0;
-        var timeleft_v = '';
-        if(600-c > 60){
-            timeleft = Math.ceil((600-c)/60);
-            timeleft_v = window._l.minutes_short;
-        }else{
-            timeleft = 600-c;
-            timeleft_v = window._l.seconds_short;
-        }
-        jConfirm(window._l.continue_session, window._l.session_is_ending+' '+timeleft+' '+timeleft_v, {
-            okButton: window._l.continue,
-            cancelButton: window._l.logout
-        }, function(ok){
-            if(ok){
-                c=0;
-                a=0;
-                $this.remote('consess', {}, function(err, res){});
-                clearTimeout(t);
-                countTimeout(a);
+countTimeout = function(a){
+    if(a != c){
+        c = a;
+    }
+    if((600-c) <= 0){
+
+        c = 0;
+        a = 0;
+
+        $this.remote('isLogged', {}, function(err, res){
+            if(err){
+                console.log('Error:'+err);
             }else{
-                //forget+=60;
-                location.href='/login?sign-out';
+                if(res === false){
+                    var miniForm = '<div style="text-align: center;"><div>Enter your credentials to continue without losing data.</div><div style="margin: 8px;"><input type="text" class="reLogin" placeholder="Login"></div><div style="margin: 8px;"><input type="password" class="rePassword" placeholder="Password"></div></div>';
+                    var winTitle = 'Session expired';
+
+                    jConfirm(miniForm, winTitle, {
+                            okButton: window._l.continue,
+                            cancelButton: window._l.logout
+                        }, function(ok, $alerts){
+                            if(ok){
+                                c = 0;
+                                a = 0;
+                                $this.remote(
+                                    'reLogin',
+                                    {
+                                        login:      $('.reLogin').val(),
+                                        password:   $('.rePassword').val()
+                                    },
+                                    function(err, res){
+                                        if(err){
+                                            console.log('Error:'+err);
+                                        }else if(res === true){
+                                            $alerts._hide();
+                                            clearTimeout(t);
+                                            countTimeout(a);
+                                        }else{
+                                            alert('Login/password is invalid.');
+                                            $('.rePassword').val('');
+                                        }
+                                    }
+                                );
+                            }else{
+                                location.href = '/login&sign-out';
+                            }
+                            return false;
+                        });
+                }
             }
         });
-    }
 
-    countTimeout = function(a){
-        if(a!=c){
-            c=a;
-        }
-        if(c>300+forget){
-            continueSessionPromt(c);
-        }
-        if((600-c)<=0){
-            location.href='/login?sign-out';
-        }else{
-            c=c+1;
-            t=setTimeout("countTimeout(c)", 1000);
-        }
-    }
+        clearTimeout(t);
+        countTimeout(a);
 
-    countTimeout(0);
+    }else{
+        c=c+1;
+        t=setTimeout("countTimeout(c)", 1000);
+    }
 }
 
-$(document).click(function(e) { 
+countTimeout(0);
+
+$(document).on("click", function(e) { 
     if (e.button == 0) {
-        c=0;
+        c = 0;
     }
 });

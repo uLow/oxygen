@@ -1,1 +1,1 @@
-<span style="display: none" class="_authenticated" data-auth="1"></span>
+<?o()?>
