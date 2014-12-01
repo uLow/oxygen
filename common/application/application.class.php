@@ -158,8 +158,12 @@
             }
         }
 
+        public function rpc_consess() {
+            return true;
+        }
+
         public function rpc_isLogged(){
-            return (bool)!$this->scope->auth->role;
+            return (bool)$this->scope->auth->role;
         }
 
         public function rpc_reLogin($args){
