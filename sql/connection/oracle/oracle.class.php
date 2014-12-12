@@ -265,12 +265,12 @@
             );
 
             $sql = preg_replace_callback(
-                '/([_a-z0-9]+)(\snot)?\sin\s?\(\s?(.*)\)/',
+                '/\s([._a-z0-9]+)(\snot)?\sin\s?\(\s?(.*)\)/i',
                 function($m){
                     $key = $m[1];
                     $not = $m[2];
                     $in = explode(',', $m[3]);
-                    if(count($in) >= 1000){
+                    if(count($in) > 999){
                         $inList = array();
                         $i = 0;
                         $return = array();
@@ -281,15 +281,16 @@
                             }
                         }
                         foreach($inList as $split){
-                            $return[] = '('.$key.' '.$not.' in('.implode(',', $split).'))';
+                            $return[] = $key.' '.$not.' in('.implode(',', $split).')';
                         }
-                        return '('.implode(' or ', $return).')';
+                        return ' ('.implode(' or ', $return).')';
                     }else{
-                        return $key.' '.$not.' in('.implode(',', $in).')';
+                        return ' '.$key.' '.$not.' in('.implode(',', $in).')';
                     }
                 },
                 $sql
-            );/*
+            );
+            /*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
 
