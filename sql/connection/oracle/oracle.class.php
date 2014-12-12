@@ -270,13 +270,13 @@
                     $key = $m[1];
                     $not = $m[2];
                     $in = explode(',', $m[3]);
-                    if(count($in) > 999){
+                    if(count($in) > 500){
                         $inList = array();
                         $i = 0;
                         $return = array();
                         foreach($in as $item){
                             $inList[$i][] = $item;
-                            if(count($inList) == 999){
+                            if(count($inList) == 500){
                                 $i++;
                             }
                         }
