@@ -276,7 +276,7 @@
                         $return = array();
                         foreach($in as $item){
                             $inList[$i][] = $item;
-                            if(count($inList) == 500){
+                            if(count($inList[$i]) == 500){
                                 $i++;
                             }
                         }
