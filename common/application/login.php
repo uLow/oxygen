@@ -8,6 +8,7 @@
 			<?endforeach?>
 		</select>*/?>
 		<input type="submit" name="sign-out" value="<?=$this->_("sign_out")?>"/>
+        <?$this->put_session()?>
 	<?else:?>
 		<span class="message"><?=$this->_("you_are_not_authorized")?></span>
 	<?endif?>

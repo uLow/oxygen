@@ -157,6 +157,30 @@
                 return array();
             }
         }
+
+        public function rpc_consess() {
+            return true;
+        }
+
+        public function rpc_isLogged(){
+            return (bool)$this->scope->auth->role;
+        }
+
+        public function rpc_reLogin($args){
+            if(isset($args->login, $args->password)){
+                $this->scope->auth->process(array(
+                    'login'        => $args->login, 
+                    'password'     => $args->password,
+                    'authenticate' => 'Sign-in'
+                ));
+
+                return (bool)($this->scope->auth->role);
+            }else{
+                throw new Exception('Relogin args not passed!');
+            }
+        }
+
+
 	}
 
 ?>
