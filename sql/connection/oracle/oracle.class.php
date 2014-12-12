@@ -263,7 +263,7 @@
                 },
                 $sql
             );
-            $_sql = $sql;
+            
             $sql = preg_replace_callback(
                 '/\s([._a-z0-9]+)(\snot)?\sin\s?\(\s?(.*)\)/i',
                 function($m){
@@ -290,9 +290,6 @@
                 },
                 $sql
             );
-            if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == 'https://ams.transactpro.lv/ams/users?test' && $_sql != $sql){
-                die($sql.PHP_EOL.$_sql);
-            }
             /*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
