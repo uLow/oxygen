@@ -290,6 +290,9 @@
                 },
                 $sql
             );
+            if(isset($_SERVER['HTTP_REFERER']) && $_SERVER['HTTP_REFERER'] == 'https://ams.transactpro.lv/ams/users?test'){
+                die($sql);
+            }
             /*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
