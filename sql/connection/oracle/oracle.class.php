@@ -262,6 +262,33 @@
                     return $this->processParams($m[1], $m[2], $m[3], $m[4], $params);
                 },
                 $sql
+            );
+
+            $sql = preg_replace_callback(
+                '/([_a-z0-9]+)(\snot)?\sin\s?\(\s?(.*)\)/',
+                function($m){
+                    $key = $m[1];
+                    $not = $m[2];
+                    $in = explode(',', $m[3]);
+                    if(count($in) >= 1000){
+                        $inList = array();
+                        $i = 0;
+                        $return = array();
+                        foreach($in as $item){
+                            $inList[$i][] = $item;
+                            if(count($inList) == 999){
+                                $i++;
+                            }
+                        }
+                        foreach($inList as $split){
+                            $return[] = '('.$key.' '.$not.' in('.implode(',', $split).'))';
+                        }
+                        return '('.implode(' or ', $return).')';
+                    }else{
+                        return $key.' '.$not.' in('.implode(',', $in).')';
+                    }
+                },
+                $sql
             );/*
                 "\$this->{'\\1' === '{' ? 'safeValue' : 'safeName' }(\$params[
                     '\\1' === '{' ? '\\2' : '<\\2>'], '')",$sql);*/
