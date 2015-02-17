@@ -1,5 +1,9 @@
 <?
-    class Oxygen_Geoip extends Oxygen_Object {
+namespace oxygen\geoip;
+
+    use oxygen\object\Oxygen_Object;
+
+	class Oxygen_Geoip extends Oxygen_Object {
 		public $geoipaddrfrom = null;
 		public $geoipaddrupto = null;
 

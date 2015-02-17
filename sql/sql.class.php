@@ -1,4 +1,6 @@
 <?
+namespace oxygen\sql;
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_SQL extends Oxygen_Object {
 

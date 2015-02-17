@@ -1,4 +1,6 @@
 <?
+namespace oxygen\field\cross;
+    use oxygen\field\Oxygen_Field;
 
     class Oxygen_Field_Cross extends Oxygen_Field {
         public function wrap($cond) {

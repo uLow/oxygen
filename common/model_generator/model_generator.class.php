@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\model_generator;
+
+    use oxygen\controller\Oxygen_Controller;
 
     class Oxygen_Common_ModelGenerator extends Oxygen_Controller {
 

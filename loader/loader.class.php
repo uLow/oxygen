@@ -1,5 +1,9 @@
 <?
-    class Oxygen_Loader extends Oxygen_Object {
+namespace oxygen\loader;
+use Exception;
+use oxygen\object\Oxygen_Object;
+
+class Oxygen_Loader extends Oxygen_Object {
 
         const UPPERCASE_FILE     = '.uppercase';
         const CLASS_EXTENSION    = '.class.php';
@@ -32,15 +36,16 @@
         }
         
         public function register() {
-            spl_autoload_register(array($this, 'loadClass'));
+            //spl_autoload_register(array($this, 'loadClass'));
         }
 
         public function loadClass($class) {
+            //echo($class."<br>");
             if (isset($this->loaded[$class])) return;
             if (!class_exists($class, false)) {
                 $path = $this->pathFor($class);
-                ob_start();    
-                try {   
+                ob_start();
+                try {
                     require_once $path;
                     $ex = null;
                 } catch (Exception $e) {
@@ -50,8 +55,8 @@
                 } /* finally */ {
                     echo trim(ob_get_clean());
                     if ($ex !== null) throw $ex;
-                }  
-                
+                }
+
                 $this->__assert(
                     class_exists($class,false),
                     self::CLASS_NOT_FOUND,

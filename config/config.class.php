@@ -1,5 +1,5 @@
 <?
-
+namespace oxygen\config;
     class Oxygen_Config {
         private static $config = null;
 

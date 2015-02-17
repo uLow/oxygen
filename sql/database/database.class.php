@@ -1,5 +1,9 @@
 <?
-	class Oxygen_SQL_Database extends Oxygen_ScopeController {
+namespace oxygen\sql\database;
+
+	use oxygen\scope_controller\Oxygen_ScopeController;
+
+    class Oxygen_SQL_Database extends Oxygen_ScopeController {
 
         public $connection = null;
 

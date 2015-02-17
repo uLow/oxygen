@@ -1,6 +1,9 @@
 <?
+namespace oxygen\sql\key;
 
-	class Oxygen_SQL_Key extends Oxygen_SQL_Columns {
+	use oxygen\sql\columns\Oxygen_SQL_Columns;
+
+    class Oxygen_SQL_Key extends Oxygen_SQL_Columns {
         public function getDefaultView() {
             return 'view';
         }

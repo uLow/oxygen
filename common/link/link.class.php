@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\link;
+
+    use oxygen\controller\Oxygen_Controller;
 
     class Oxygen_Common_Link extends Oxygen_Controller {
         public $title = '';

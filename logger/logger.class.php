@@ -1,4 +1,10 @@
 <?
+namespace oxygen\logger;
+	use Exception;
+	use oxygen\config\Oxygen_Config;
+	use oxygen\object\Oxygen_Object;
+	use oxygen\scope\Oxygen_Scope;
+
 	class Oxygen_Logger extends Oxygen_Object
 	{
 		private static $logFile;

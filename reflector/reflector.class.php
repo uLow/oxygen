@@ -1,4 +1,7 @@
 <?
+namespace oxygen\reflector;
+
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Reflector extends Oxygen_Object {
         public $data = null;

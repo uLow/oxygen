@@ -1,4 +1,7 @@
 <?
+namespace oxygen\controller\iterator;
+	use Iterator;
+	use oxygen\object\Oxygen_Object;
 
 	class Oxygen_Controller_Iterator extends Oxygen_Object implements Iterator {
 

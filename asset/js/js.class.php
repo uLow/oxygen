@@ -1,4 +1,7 @@
 <?
+namespace oxygen\asset\js;
+    use oxygen\asset\Oxygen_Asset;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
     class Oxygen_Asset_JS extends Oxygen_Asset {
 

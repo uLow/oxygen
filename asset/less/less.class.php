@@ -1,6 +1,10 @@
 <?
+namespace oxygen\asset\less;
+use Exception;
+use oxygen\asset\Oxygen_Asset;
+use oxygen\utils\text\Oxygen_Utils_Text;
 
-	class Oxygen_Asset_LESS extends Oxygen_Asset {
+class Oxygen_Asset_LESS extends Oxygen_Asset {
 
 		public static function __class_construct($scope) {
 			$scope->lib->load('lessphp/lessc.inc.php');

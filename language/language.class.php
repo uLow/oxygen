@@ -1,4 +1,12 @@
 <?
+namespace oxygen\language;
+
+	use Exception;
+	use oxygen\loader\Oxygen_Loader;
+	use oxygen\object\Oxygen_Object;
+	use oxygen\Oxygen;
+	use ReflectionClass;
+
 	class Oxygen_Language extends Oxygen_Object{
 		
 		public $lang;

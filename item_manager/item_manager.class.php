@@ -1,4 +1,9 @@
 <?
+namespace oxygen\item_manager;
+
+    use Exception;
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_ItemManager extends Oxygen_Object {
 
         public $owner = null;

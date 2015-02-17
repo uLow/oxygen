@@ -1,4 +1,8 @@
 <?
+namespace oxygen\router;
+
+    use oxygen\collection\Oxygen_Collection;
+
     class Oxygen_Router extends Oxygen_Collection {
 
         const TYPES_REGEXP = '/^(?:(int)|(str)|(url)|(any)|\/([^\/]*(?:\\\\\/[^\/]*)*)\/)$/';

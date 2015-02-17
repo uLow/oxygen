@@ -1,4 +1,8 @@
 <?
+namespace oxygen\uploader;
+
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_Uploader extends Oxygen_Object{
         private $uploadPath = null;
         private $uploadPathMin = null;

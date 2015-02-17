@@ -1,4 +1,6 @@
 <?
+namespace oxygen\utils\date;
+    use Exception;
 
     class Oxygen_Utils_Date {
         public static function Convert($formatFrom,$formatTo,$date) {

@@ -1,6 +1,8 @@
 <?
-
+namespace oxygen\utils\url;
     //TODO: Finish the functionality
+    use oxygen\exception\Oxygen_Exception;
+
     class Oxygen_Utils_URL {
         public static function pathFor($url) {
         }

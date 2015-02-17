@@ -1,4 +1,14 @@
 <?
+namespace oxygen\object;
+
+    use Exception;
+    use oxygen\dumper\Oxygen_Dumper;
+    use oxygen\loader\Oxygen_Loader;
+    use oxygen\logger\Oxygen_Logger;
+    use oxygen\Oxygen;
+    use oxygen\redirect_exception\Oxygen_RedirectException;
+    use oxygen\scope\Oxygen_Scope;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
     class Oxygen_Object {
 

@@ -1,4 +1,10 @@
 <?
+namespace oxygen\generator;
+    use ArrayObject;
+    use Exception;
+    use oxygen\exception\Oxygen_Exception;
+    use oxygen\loader\Oxygen_Loader;
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Generator extends Oxygen_Object {
         private $models = null;

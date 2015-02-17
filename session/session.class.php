@@ -1,4 +1,8 @@
 <?
+namespace oxygen\session;
+
+	use ArrayAccess;
+	use oxygen\object\Oxygen_Object;
 
 	class Oxygen_Session extends Oxygen_Object
 		implements ArrayAccess

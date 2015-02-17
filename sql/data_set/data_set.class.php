@@ -1,4 +1,10 @@
 <?
+namespace oxygen\sql\data_set;
+
+	use ArrayAccess;
+	use Countable;
+	use IteratorAggregate;
+	use oxygen\object\Oxygen_Object;
 
 	class Oxygen_SQL_DataSet extends Oxygen_Object
 		implements

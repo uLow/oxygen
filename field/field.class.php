@@ -1,4 +1,7 @@
 <?
+namespace oxygen\field;
+    use ArrayAccess;
+    use oxygen\object\Oxygen_Object;
 
     abstract class Oxygen_Field extends Oxygen_Object implements ArrayAccess {
 

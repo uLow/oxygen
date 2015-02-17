@@ -1,4 +1,5 @@
 <?
+namespace oxygen\dumper;
 /**
  * TVarDumper class file
  *

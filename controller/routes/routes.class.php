@@ -1,4 +1,8 @@
 <?
+namespace oxygen\controller\routes;
+    use ArrayAccess;
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_Controller_Routes extends Oxygen_Object implements ArrayAccess {
 
         public $controller = null;

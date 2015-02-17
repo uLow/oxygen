@@ -1,4 +1,10 @@
 <?
+namespace oxygen\controller\section;
+	use ArrayAccess;
+	use Countable;
+	use IteratorAggregate;
+	use oxygen\object\Oxygen_Object;
+
 	class Oxygen_Controller_Section
 		extends Oxygen_Object
 		implements ArrayAccess, IteratorAggregate, Countable

@@ -1,4 +1,7 @@
 <?
+namespace oxygen\validation\item;
+
+    use oxygen\object\Oxygen_Object;
 
     abstract class Oxygen_Validation_Item extends Oxygen_Object {
 

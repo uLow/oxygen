@@ -1,4 +1,8 @@
 <?
+namespace oxygen\cache\file;
+	use Exception;
+	use oxygen\cache\Oxygen_Cache;
+	use oxygen\utils\text\Oxygen_Utils_Text;
 
 	class Oxygen_Cache_File extends Oxygen_Cache {
 

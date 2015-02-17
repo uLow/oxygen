@@ -1,4 +1,9 @@
 <?
+namespace oxygen\meta;
+
+    use oxygen\loader\Oxygen_Loader;
+    use oxygen\object\Oxygen_Object;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
     class Oxygen_Meta extends Oxygen_Object {
 

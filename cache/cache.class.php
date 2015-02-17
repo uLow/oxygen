@@ -1,4 +1,7 @@
 <?
+namespace oxygen\cache;
+	use ArrayAccess;
+	use oxygen\object\Oxygen_Object;
 
 	abstract class Oxygen_Cache extends Oxygen_Object implements ArrayAccess {
 

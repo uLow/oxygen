@@ -1,4 +1,9 @@
 <?
+namespace oxygen\communication\client;
+    use oxygen\communication\client_exception\Oxygen_Communication_ClientException;
+    use oxygen\communication\token\Oxygen_Communication_Token;
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_Communication_Client extends Oxygen_Object {
 
         public $continuation = '';

@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\model_generator\model;
+
+    use oxygen\controller\Oxygen_Controller;
 
     class Oxygen_Common_ModelGenerator_Model extends Oxygen_Controller {
         public function getIcon() {

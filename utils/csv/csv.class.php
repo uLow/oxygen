@@ -1,4 +1,5 @@
 <?
+namespace oxygen\utils\csv;
     class Oxygen_Utils_CSV {
 
         

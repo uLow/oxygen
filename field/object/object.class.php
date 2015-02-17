@@ -1,4 +1,6 @@
 <?
+namespace oxygen\field\object;
+    use oxygen\field\Oxygen_Field;
 
     class Oxygen_Field_Object extends Oxygen_Field {
         public function wrap($cond) {

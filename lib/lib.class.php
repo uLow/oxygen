@@ -1,4 +1,7 @@
 <?
+namespace oxygen\lib;
+
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Lib extends Oxygen_Object {
 

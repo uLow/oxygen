@@ -1,4 +1,7 @@
 <?
+namespace oxygen\field\minor;
+    use oxygen\field\Oxygen_Field;
+
     class Oxygen_Field_Minor extends Oxygen_Field {
         public function wrap($value){
             return $value/100;

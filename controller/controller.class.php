@@ -1,6 +1,14 @@
 <?
+namespace oxygen\controller;
+	use ArrayAccess;
+    use Countable;
+    use Exception;
+    use IteratorAggregate;
+    use oxygen\object\Oxygen_Object;
+    use oxygen\redirect_exception\Oxygen_RedirectException;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
-	class Oxygen_Controller extends Oxygen_Object
+    class Oxygen_Controller extends Oxygen_Object
         implements Countable, ArrayAccess, IteratorAggregate
     {
 
@@ -814,6 +822,14 @@
             }
             return implode(',', array_keys($this->schemata));
         }
-	}
+
+        /**
+         * @return string
+         */
+        public function getPattern()
+        {
+            return $this->pattern;
+        }
+    }
 
 ?>

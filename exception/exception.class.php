@@ -1,4 +1,9 @@
 <?
+namespace oxygen\exception;
+    use Exception;
+    use oxygen\loader\Oxygen_Loader;
+    use oxygen\Oxygen;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
     class Oxygen_Exception extends Exception {
 

@@ -1,4 +1,8 @@
 <?
+namespace oxygen\sql\connection\mysqli;
+
+    use Exception;
+    use oxygen\sql\connection\Oxygen_SQL_Connection;
 
     class Oxygen_SQL_Connection_Mysql extends Oxygen_SQL_Connection {
 

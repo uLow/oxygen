@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\file_upload;
+	use Exception;
+	use oxygen\controller\Oxygen_Controller;
 
 	class Oxygen_Common_FileUpload extends Oxygen_Controller {
 

@@ -1,5 +1,5 @@
 <?
-
+namespace oxygen\utils\text;
     class Oxygen_Utils_Text {
         private static $diacritics = array(
             'Ā' => 'A', 'Č' => 'C', 'Ē' => 'E', 'Ģ' => 'G', 'Ī' => 'I',  'Ķ' => 'K',

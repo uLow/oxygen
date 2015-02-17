@@ -1,4 +1,5 @@
 <?
+namespace oxygen\validation;
     class Oxygen_Validation {
         const NONE    = 0;
         const NOTICE  = 1;

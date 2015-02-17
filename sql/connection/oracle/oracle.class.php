@@ -1,6 +1,10 @@
 <?
+namespace oxygen\sql\connection\oracle;
 
-	class Oxygen_SQL_Connection_Oracle extends Oxygen_SQL_Connection {
+	use Exception;
+    use oxygen\sql\connection\Oxygen_SQL_Connection;
+
+    class Oxygen_SQL_Connection_Oracle extends Oxygen_SQL_Connection {
 
 		private $link = null;
         private static $conn = null;

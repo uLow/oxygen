@@ -1,4 +1,12 @@
 <?
+namespace oxygen\entity;
+    use ArrayAccess;
+    use ArrayIterator;
+    use IteratorAggregate;
+    use oxygen\dumper\Oxygen_Dumper;
+    use oxygen\object\Oxygen_Object;
+    use oxygen\scope\Oxygen_Scope;
+    use oxygen\utils\text\Oxygen_Utils_Text;
 
     class Oxygen_Entity extends Oxygen_Object implements ArrayAccess, IteratorAggregate {
 

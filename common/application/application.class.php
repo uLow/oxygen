@@ -1,6 +1,10 @@
 <?
+namespace oxygen\common\application;
+	use Exception;
+    use oxygen\controller\Oxygen_Controller;
+    use oxygen\scope\Oxygen_Scope;
 
-	class Oxygen_Common_Application extends Oxygen_Controller {
+    class Oxygen_Common_Application extends Oxygen_Controller {
 
         public $company = 'YourCompany';
         public $auth;

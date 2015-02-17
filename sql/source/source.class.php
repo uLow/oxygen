@@ -1,5 +1,5 @@
 <?
-
+namespace oxygen\sql\source;
 	interface Oxygen_SQL_Source {
 
 		public function getColumns();

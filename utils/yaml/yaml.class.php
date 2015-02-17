@@ -1,5 +1,5 @@
 <?
-
+namespace oxygen\utils\yaml;
     class Oxygen_Utils_YAML {
         public function load($input) {
             return sfYaml::load($input);

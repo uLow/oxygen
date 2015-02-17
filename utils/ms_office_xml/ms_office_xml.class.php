@@ -1,4 +1,7 @@
 <?
+namespace oxygen\utils\ms_office_xml;
+    use Exception;
+
     class Oxygen_Utils_MsOfficeXml {
 
         public static function generateXML($tpl, $data=array()) {

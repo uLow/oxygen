@@ -1,4 +1,8 @@
 <?
+namespace oxygen\router\iterator;
+    use ArrayObject;
+    use Iterator;
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Router_Iterator extends Oxygen_Object implements Iterator {
 

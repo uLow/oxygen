@@ -1,4 +1,9 @@
 <?
+namespace oxygen\scheme_generator;
+
+    use oxygen\controller\Oxygen_Controller;
+    use oxygen\field\Oxygen_Field;
+
     class Oxygen_SchemeGenerator extends Oxygen_Controller{
         public $yml = null;
         public function __toString(){

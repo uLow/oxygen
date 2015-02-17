@@ -1,4 +1,6 @@
 <?
+namespace oxygen\controller\configurator;
+	use oxygen\object\Oxygen_Object;
 
 	class Oxygen_Controller_Configurator extends Oxygen_Object {
 

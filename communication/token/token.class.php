@@ -1,4 +1,6 @@
 <?
+namespace oxygen\communication\token;
+    use Exception;
 
     class Oxygen_Communication_Token extends Exception {
 

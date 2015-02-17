@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\module;
+    use Exception;
+    use oxygen\scope_controller\Oxygen_ScopeController;
 
     class Oxygen_Common_Module extends Oxygen_ScopeController {
 

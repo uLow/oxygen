@@ -1,4 +1,8 @@
 <?
+namespace oxygen\item_picker;
+
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_ItemPicker extends Oxygen_Object {
         
         private $method;

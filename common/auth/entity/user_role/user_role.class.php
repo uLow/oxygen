@@ -1,4 +1,6 @@
 <?
+namespace oxygen\common\auth\entity\user_role;
+    use oxygen\entity\Oxygen_Entity;
 
     class Oxygen_Common_Auth_Entity_UserRole extends Oxygen_Entity {
         public function __class_construct() {

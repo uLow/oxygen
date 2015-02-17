@@ -1,4 +1,7 @@
 <?
+namespace oxygen\common\logon_page;
+
+	use oxygen\controller\Oxygen_Controller;
 
 	class Oxygen_Common_LogonPage extends Oxygen_Controller {
 		public function configure($x) {

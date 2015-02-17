@@ -1,4 +1,8 @@
 <?
+namespace oxygen\sql\table;
+
+    use oxygen\scope_controller\Oxygen_ScopeController;
+    use oxygen\sql\builder\Oxygen_SQL_Builder;
 
     class Oxygen_SQL_Table extends Oxygen_ScopeController {
 

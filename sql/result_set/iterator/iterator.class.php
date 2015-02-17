@@ -1,4 +1,9 @@
 <?
+namespace oxygen\sql\result_set\iterator;
+
+    use Iterator;
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_SQL_ResultSet_Iterator extends Oxygen_Object implements Iterator {
 
         private $current    = null;

@@ -1,5 +1,13 @@
 <?
-    class Oxygen_SQL_ResultSet extends Oxygen_Object 
+namespace oxygen\sql\result_set;
+
+    use ArrayAccess;
+    use Countable;
+    use Exception;
+    use IteratorAggregate;
+    use oxygen\object\Oxygen_Object;
+
+    class Oxygen_SQL_ResultSet extends Oxygen_Object
         implements IteratorAggregate, ArrayAccess, Countable
         
     {

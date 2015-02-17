@@ -1,6 +1,9 @@
 <?
+namespace oxygen\sql\connection;
 
-	class Oxygen_SQL_Connection extends Oxygen_ScopeController {
+	use oxygen\scope_controller\Oxygen_ScopeController;
+
+    class Oxygen_SQL_Connection extends Oxygen_ScopeController {
 
 		private $link = null;
         private $initDbCallback = null;

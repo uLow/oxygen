@@ -1,10 +1,12 @@
 <?
 
-    require_once "object/object.class.php";
+use oxygen\scope\Oxygen_Scope;
+
+require_once "object/object.class.php";
     require_once "loader/loader.class.php";
     require_once "scope/scope.class.php";
     require_once "factory/factory.class.php";
-    require_once "factory/class/class.class.php";
+    require_once "factory/class_handler/class_handler.class.php";
 
     define('OXYGEN_JSON_RESPONSE',1);
     define('OXYGEN_JSONP_RESPONSE',6);

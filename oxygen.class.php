@@ -1,4 +1,5 @@
 <?
+namespace oxygen;
     class Oxygen {
 
         private static $stack = array();

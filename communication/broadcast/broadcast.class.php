@@ -1,4 +1,7 @@
 <?
+namespace oxygen\communication\broadcast;
+	use Exception;
+
 	class Oxygen_Communication_Broadcast {
 		private $url;
 		private $channel = false;

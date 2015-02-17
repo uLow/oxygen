@@ -1,4 +1,7 @@
 <?
+namespace oxygen\exception\wrapper;
+    use oxygen\exception\Oxygen_Exception;
+
     class Oxygen_Exception_Wrapper extends Oxygen_Exception {
         private $ex = null;
         public function __construct($ex) {

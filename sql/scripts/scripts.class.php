@@ -1,6 +1,9 @@
 <?
+namespace oxygen\sql\scripts;
 
-	class Oxygen_Sql_Scripts extends Oxygen_Entity_Controller {
+	use oxygen\entity\controller\Oxygen_Entity_Controller;
+
+class Oxygen_Sql_Scripts extends Oxygen_Entity_Controller {
 
 
 	}

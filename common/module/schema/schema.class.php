@@ -1,4 +1,9 @@
 <?
+namespace oxygen\common\module\schema;
+
+    use Exception;
+    use oxygen\object\Oxygen_Object;
+
     class Oxygen_Common_Module_Schema extends Oxygen_Object {
 
         public $yml, $owner;
@@ -52,7 +57,7 @@
         public function initializeModels() {
             if(isset($this->yml['classes'])) {
                 foreach ($this->yml['classes'] as $className => $classDef) {
-                    $this->classes[$className] = $this->scope->Oxygen_Common_Module_Class(
+                    $this->classes[$className] = $this->scope->Oxygen_Common_Module_ClassHandler(
                         $className,
                         $classDef, 
                         $this

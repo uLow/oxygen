@@ -1,6 +1,8 @@
 <?
+namespace oxygen\factory;
+use oxygen\object\Oxygen_Object;
 
-    abstract class Oxygen_Factory extends Oxygen_Object {
+abstract class Oxygen_Factory extends Oxygen_Object {
         private $definition = null;
         public final function __construct($definition) {
             $this->definition = $definition;

@@ -1,4 +1,6 @@
 <?
+namespace oxygen\common\auth;
+	use oxygen\controller\Oxygen_Controller;
 
 	class Oxygen_Common_Auth extends Oxygen_Controller {
 

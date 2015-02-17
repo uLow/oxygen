@@ -1,4 +1,6 @@
 <?
+namespace oxygen\entity\controller;
+    use oxygen\controller\Oxygen_Controller;
 
     class Oxygen_Entity_Controller extends Oxygen_Controller {
         public function rpc_UpdateCell($args) {

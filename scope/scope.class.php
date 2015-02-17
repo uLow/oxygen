@@ -1,6 +1,11 @@
 <?
+namespace oxygen\scope;
+use oxygen\factory\class_handler\Oxygen_Factory_ClassHandler;
+use oxygen\loader\Oxygen_Loader;
+use oxygen\object\Oxygen_Object;
+use oxygen\exception\Oxygen_Exception;
 
-    class Oxygen_Scope extends Oxygen_Object {
+class Oxygen_Scope extends Oxygen_Object {
 
         const FACTORY_REDEFINED = 'Factory {0} is redefined in this scope';
 
@@ -221,7 +226,7 @@
             $this->__depend($this);
             $this->__complete();
             
-            $factory = new Oxygen_Factory_Class('Oxygen_Factory_Class');
+            $factory = new Oxygen_Factory_ClassHandler('Oxygen_Factory_ClassHandler');
             $factory->__depend($this);
             $factory->__complete();
             
@@ -238,7 +243,7 @@
             $this->OXYGEN_ROOT = $root;
             
             $this->__introduce(get_class($this));
-            $this->__introduce('Oxygen_Factory_Class');
+            $this->__introduce('Oxygen_Factory_ClassHandler');
             $this->__introduce('Oxygen_Loader');
             
             return $this;

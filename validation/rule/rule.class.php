@@ -1,4 +1,7 @@
 <?
+namespace oxygen\validation\rule;
+
+    use oxygen\object\Oxygen_Object;
 
     abstract class Oxygen_Validation_Rule extends Oxygen_Object {
         public abstract function validate($instance);

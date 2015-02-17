@@ -1,6 +1,8 @@
 <?
+namespace oxygen\common\file_upload\format;
+    use oxygen\controller\Oxygen_Controller;
 
-    class Oxygen_Common_FileUpload_Format extends Oxygen_Controller {
+class Oxygen_Common_FileUpload_Format extends Oxygen_Controller {
         protected $args = null;
         public $id;
         public $title;

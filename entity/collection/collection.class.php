@@ -1,4 +1,7 @@
 <?
+namespace oxygen\entity\collection;
+
+    use oxygen\entity\controller\Oxygen_Entity_Controller;
 
     class Oxygen_Entity_Collection extends Oxygen_Entity_Controller {
         public function plural($n) {

@@ -1,4 +1,6 @@
 <?
+namespace oxygen\controller\dummy;
+	use oxygen\controller\Oxygen_Controller;
 
 	class Oxygen_Controller_Dummy extends Oxygen_Controller {
 		//private $icon = '';

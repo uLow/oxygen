@@ -1,4 +1,9 @@
 <?
+namespace oxygen\asset;
+
+    use oxygen\object\Oxygen_Object;
+    use oxygen\utils\text\Oxygen_Utils_Text;
+
     abstract class Oxygen_Asset extends Oxygen_Object {
 
         public $list = array();

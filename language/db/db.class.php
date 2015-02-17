@@ -1,4 +1,9 @@
 <?
+namespace oxygen\language\db;
+
+	use Exception;
+	use oxygen\language\Oxygen_Language;
+
 	class Oxygen_Language_DB extends Oxygen_Language {
 		public $db = null, $table = null;
 

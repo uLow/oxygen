@@ -1,4 +1,6 @@
 <?
+namespace oxygen\common\admin_tools;
+    use oxygen\controller\Oxygen_Controller;
 
     class Oxygen_Common_AdminTools extends Oxygen_Controller {
 

@@ -1,4 +1,6 @@
 <?
+namespace oxygen\asset\manager;
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Asset_Manager extends Oxygen_Object {
 

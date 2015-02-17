@@ -1,4 +1,7 @@
 <?
+namespace oxygen\serializer;
+
+	use oxygen\object\Oxygen_Object;
 
 	class Oxygen_Serializer extends Oxygen_Object {
 		private $array = array();

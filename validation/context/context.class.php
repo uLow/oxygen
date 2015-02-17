@@ -1,4 +1,7 @@
 <?
+namespace oxygen\validation\context;
+
+    use oxygen\object\Oxygen_Object;
 
     class Oxygen_Validation_Context extends Oxygen_Object {
         private $items = array();

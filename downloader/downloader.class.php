@@ -1,5 +1,8 @@
 <?
+namespace oxygen\downloader;
 
+    use oxygen\object\Oxygen_Object;
+    use SimpleXMLElement;
 
     class Oxygen_Downloader extends Oxygen_Object {
 
