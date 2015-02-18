@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <?
-    try {
+use oxygen\controller\Controller;
+
+try {
         $body = $this->get_main_entry_view();
         $less = $assets->less->compile();
         $js   = $assets->js->compile();
@@ -18,7 +20,7 @@
 <?$this->put_stylesheets()?>
 <?$this->scope->assets->css->put_view()?>
 <?$this->put_javascripts()?>
-<?if($this instanceof Oxygen_Controller):?>
+<?if($this instanceof Controller):?>
 <?$current=$this->getCurrent()?>
 <link rel="shortcut icon" href="<?=$current->getIconSource()?>"/>
 <title><?$current->put_title()?></title>

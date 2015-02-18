@@ -1,8 +1,8 @@
 <?='<?'?>
-
+use oxygen\entity\Entity;
     <?$this->put_warning()?>
 
-    class <?=$args['className']?> extends Oxygen_Entity {
+    class <?=$args['className']?> extends Entity {
 
     private static $data_set = null;
     private static $data_source = null;

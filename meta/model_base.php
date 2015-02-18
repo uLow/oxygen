@@ -1,4 +1,5 @@
 <?='<?'?>
+use oxygen\scope\Scope;
 /*******************************************************
 
              !!! DO NOT CHANGE THIS FILE !!!            
@@ -21,7 +22,7 @@ class <?=$this->getModelBaseName()?> extends <?=$this->getModelParent()?> {
     public static $<?=$field->name?> = null;
     <?endforeach?>
     public static function __class_construct() {
-        $scope = Oxygen_Scope::root();
+        $scope = Scope::root();
         <?foreach($this->getFields() as $field):?>
         self::$<?=$field->name?> =
         self::$__fields['<?=$field->name?>'] = $scope-><?=get_class($field)?>(

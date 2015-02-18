@@ -1,12 +1,14 @@
 <?
 
-use oxygen\scope\Oxygen_Scope;
+use oxygen\Oxygen;
+use oxygen\redirect_exception\RedirectException;
+use oxygen\scope\Scope;
 
-require_once "object/object.class.php";
-    require_once "loader/loader.class.php";
-    require_once "scope/scope.class.php";
-    require_once "factory/factory.class.php";
-    require_once "factory/class_handler/class_handler.class.php";
+    require_once "object/Object.php";
+    require_once "loader/Loader.php";
+    require_once "scope/Scope.php";
+    require_once "factory/Factory.php";
+    require_once "factory/factory_handler/FactoryHandler.php";
 
     define('OXYGEN_JSON_RESPONSE',1);
     define('OXYGEN_JSONP_RESPONSE',6);
@@ -124,10 +126,10 @@ require_once "object/object.class.php";
 
     function registerOxygenCommons($scope) {
         $array = array(
-            'LogonPage' => 'Oxygen_Common_LogonPage',
-            'Authenticator' => 'Oxygen_Common_Auth',
-            'Application' => 'Oxygen_Common_Application',
-            'Page' => 'Oxygen_Common_Page'
+            'LogonPage'     => 'oxygen\\common\\logon_page\\LogonPage',
+            'Authenticator' => 'oxygen\\common\\auth\\Auth',
+            'Application'   => 'oxygen\\common\\application\\Application',
+            'Page'          => 'oxygen\\common\\page\\Page'
         );
         foreach($array as $name => $class) {
             $scope->register($name, $class);
@@ -158,7 +160,7 @@ require_once "object/object.class.php";
             try{
                 $last = $root[$scope->OXYGEN_PATH_INFO];
                 $result = $last->handleRequest();
-            }catch(Oxygen_RedirectException $e){
+            }catch(RedirectException $e){
                 $result = $e->url;
             }
             if (is_string($result)) {
@@ -227,8 +229,8 @@ require_once "object/object.class.php";
     }
 
     function getArrayVals($arr){
-        $restrict = array("scope", "Oxygen_Scope", "Oxygen_Object", "Oxygen_Controller", "Oxygen_Controller");
-        $allow = array("Oxygen_SQL_ResultSet", "Oxygen_SQL_Connection_Oracle", "Oxygen_Object");
+        $restrict = array("scope", "Scope", "Object", "Oxygen_Controller", "Oxygen_Controller");
+        $allow = array("Oxygen_SQL_ResultSet", "Oxygen_SQL_Connection_Oracle", "Object");
         $return = array();
         if(is_array($arr) || is_object($arr)){
             foreach($arr as $k=>$v){
@@ -256,7 +258,7 @@ require_once "object/object.class.php";
     function encodeText($text){
         return htmlentities($text, ENT_QUOTES, 'UTF-8');
     }
-    return Oxygen_Scope::newRoot(dirname(dirname(__FILE__)));
-    //return Oxygen_Scope::newRoot(CURRENT_ROOT_PATH);
+    return Scope::newRoot(dirname(dirname(__FILE__)));
+    //return Scope::newRoot(CURRENT_ROOT_PATH);
 
 ?>

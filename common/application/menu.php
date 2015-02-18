@@ -5,7 +5,7 @@
 		<?if($child->isActive):?>
 			<li class="expanded">
 				<a class="title" href="<?=$child->go(false)?>"><?$child->put_icon()?><?=$child?></a>
-				<?if(count($child)>0 && $child->showInMenu && get_class($child)!='Oxygen_Entity_Collection'):?>
+				<?if(count($child)>0 && $child->showInMenu && get_class($child)!='oxygen\\entity\collection\\Collection'):?>
 				<ul class="second-level">
 					<?foreach($child as $subchild):?>
 					<?if($subchild->isActive):?>

@@ -1,6 +1,6 @@
 <?='<?'?>
-
-    class <?=$args['className'] ?> extends Oxygen_Common_Forms {
+use oxygen\common\forms\Forms;
+    class <?=$args['className'] ?> extends Forms {
         public function __construct($model = '*') {
             if($model === '*') {
                 $model = <?=$this->getClassFor('Entity')?>::all();

@@ -1,6 +1,6 @@
 $.oxygen = function(options) {
     var defaults = {
-        component: 'Oxygen_Page_Missing',
+        component: 'oxygen\\page\\missing\\Missing',
         method: 'getData',
         args: {},
         callback: function (err,data) {}

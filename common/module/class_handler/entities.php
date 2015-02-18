@@ -1,8 +1,8 @@
 <?='<?'?>
-
+use oxygen\sql\data_set\DataSet;
     <?$this->put_warning()?>
 
-    class <?=$args['className']?> extends Oxygen_SQL_DataSet {
+    class <?=$args['className']?> extends DataSet {
 
     }
 

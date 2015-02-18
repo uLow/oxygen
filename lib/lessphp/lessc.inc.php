@@ -1,5 +1,4 @@
 <?php
-
 /**
  * lessphp v0.3.3
  * http://leafo.net/lessphp
@@ -32,6 +31,7 @@
  *    - compiling: lessc::compileBlock()
  *
  */
+
 class lessc {
 	public static $VERSION = "v0.3.3";
 	protected $buffer;
