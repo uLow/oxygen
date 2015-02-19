@@ -97,16 +97,16 @@
 
     function pdfResponse($data, $length=0, $filename='file.pdf') {
         $headers = array(
-            'Content-Description: File Transfer', 
-            'Cache-Control: private, must-revalidate, post-check=0, pre-check=0, max-age=1', 
-            'Pragma: public', 
-            'Expires: Sat, 26 Jul 1997 05:00:00 GMT', 
-            'Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT', 
-            'Content-Type: application/force-download', 
-            '*Content-Type: application/octet-stream', 
-            '*Content-Type: application/download', 
-            '*Content-Type: application/pdf', 
-            'Content-Disposition: attachment; filename="'.$filename.'";',
+            'Content-Description: File Transfer',
+            'Cache-Control: private, must-revalidate, post-check=0, pre-check=0, max-age=1',
+            'Pragma: public',
+            'Expires: Sat, 26 Jul 1997 05:00:00 GMT',
+            'Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT',
+            'Content-Type: application/pdf',
+            '*Content-Type: application/octet-stream',
+            '*Content-Type: application/download',
+            '*Content-Type: application/force-download',
+            'Content-Disposition: inline; filename="'.$filename.'";',
             'Content-Transfer-Encoding: binary'
         );
         if (!isset($_SERVER['HTTP_ACCEPT_ENCODING']) OR empty($_SERVER['HTTP_ACCEPT_ENCODING'])) {
