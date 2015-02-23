@@ -1,6 +1,5 @@
 <?
 namespace oxygen\common\application;
-	use Exception;
     use oxygen\controller\Controller;
     use oxygen\scope\Scope;
 
@@ -125,14 +124,14 @@ namespace oxygen\common\application;
                 $this->scope->lib->load('yaml-php/lib/sfYaml.php');
                 try {
                     $file = $this->scope->loader->pathFor($className,'schema.yml');
-                    $yml = sfYaml::load($file);
-                    $s = $this->schemata[$className] = $this->scope->Oxygen_Common_Module_Schema(
+                    $yml = \sfYaml::load($file);
+                    $s = $this->schemata[$className] = $this->scope->{'oxygen\\common\\module\\schema\\Schema'}(
                         $yml, 
                         $this, 
                         $className
                     );
                     $s->resolveUsings();
-                } catch(Exception $e) {
+                } catch(\Exception $e) {
                     $this->throw_Exception($e->getMessage() . ' in ' . $className);
                 }
             }
@@ -180,7 +179,7 @@ namespace oxygen\common\application;
 
                 return (bool)($this->scope->auth->role);
             }else{
-                throw new Exception('Relogin args not passed!');
+                throw new \Exception('Relogin args not passed!');
             }
         }
 

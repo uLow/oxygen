@@ -15,7 +15,7 @@ namespace oxygen\entity\collection;
                 $ks[] = '{'.$k.':url}';
             };
             $key = implode('/',$ks);
-            $x[$key]->Oxygen_Entity_Controller($this->model);
+            $x[$key]->{'oxygen\\entity\\controller\\EntityController'}($this->model);
         }
 
         public function rpc_getMore($args) {

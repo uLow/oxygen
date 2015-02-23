@@ -23,7 +23,7 @@ namespace oxygen\item_manager;
 
         public function __complete() {
             $picker_name = $this->name . '/picker';
-            $this->picker = $this->scope->Oxygen_ItemPicker(
+            $this->picker = $this->scope->{'oxygen\\item_picker\\ItemPicker'}(
                 $this->owner,
                 $picker_name,
                 $this->pick_method,

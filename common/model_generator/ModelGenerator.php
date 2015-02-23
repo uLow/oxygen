@@ -207,7 +207,7 @@ namespace oxygen\common\model_generator;
                 }
             }
 
-            $x['{class:url}']->Oxygen_Common_ModelGenerator_Model($classes);
+            $x['{class:url}']->{'oxygen\\common\\model_generator\\model\\Model'}($classes);
         }
     }
 

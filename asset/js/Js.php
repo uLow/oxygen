@@ -33,7 +33,7 @@ namespace oxygen\asset\js;
                 return Text::format(
                     self::JQUERY_WRAPPER,
                     $item->component !== false ? '.' . $item->component : 'body',
-                    $item->class,
+                    addslashes($item->class),
                     $item->name,
                     $source
                 );

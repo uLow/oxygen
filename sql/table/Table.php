@@ -1,4 +1,4 @@
-<?
+<?php
 namespace oxygen\sql\table;
 
     use oxygen\scope_controller\ScopeController;
@@ -153,7 +153,7 @@ namespace oxygen\sql\table;
         public function configure($x) {
         	$x['columns']->Columns($this->model['columns']);
             $x['keys']->Keys($this->model['keys']);
-            $x['rows']->Oxygen_Entity_Collection($this->getData($this->model['name']));
+            $x['rows']->{'oxygen\\entity\\collection\\Collection'}($this->getData($this->model['name']));
         }
 
         public function __complete() {

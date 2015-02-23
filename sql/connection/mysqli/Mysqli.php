@@ -25,17 +25,17 @@ namespace oxygen\sql\connection\mysqli;
         const CENSORED_PASSWORD = '******';
 
         private static $implementations = array(
-            'Connection'   => 'oxygen\\SQL\\connection\\Connection',
-            'Database'     => 'oxygen\\SQL\\database\\Database',
-            'Table'        => 'oxygen\\SQL\\table\\Table',
-            'Columns'      => 'oxygen\\SQL\\columns\\Columns',
-            'Column'       => 'oxygen\\SQL\\column\\Column',
-            'Key'          => 'oxygen\\SQL\\key\\Key',
-            'Keys'         => 'oxygen\\SQL\\keys\\Keys',
-            'DataSet'      => 'oxygen\\SQL\\data_set\\DataSet',
-            'Builder'      => 'oxygen\\SQL\\builder\\Builder',
-            'ResultSet'    => 'oxygen\\SQL\\result_set\\ResultSet',
-            'DataIterator' => 'oxygen\\SQL\\result_set\\iterator\\Iterator',
+            'Connection'   => 'oxygen\\sql\\connection\\Connection',
+            'Database'     => 'oxygen\\sql\\database\\Database',
+            'Table'        => 'oxygen\\sql\\table\\Table',
+            'Columns'      => 'oxygen\\sql\\columns\\Columns',
+            'Column'       => 'oxygen\\sql\\column\\Column',
+            'Key'          => 'oxygen\\sql\\key\\Key',
+            'Keys'         => 'oxygen\\sql\\keys\\Keys',
+            'DataSet'      => 'oxygen\\sql\\data_set\\DataSet',
+            'Builder'      => 'oxygen\\sql\\builder\\Builder',
+            'ResultSet'    => 'oxygen\\sql\\result_set\\ResultSet',
+            'DataIterator' => 'oxygen\\sql\\result_set\\iterator\\Iterator',
             'Row'          => 'oxygen\\entity\\Entity'
         );
 

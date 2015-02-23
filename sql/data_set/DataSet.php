@@ -4,6 +4,7 @@ namespace oxygen\sql\data_set;
 	use ArrayAccess;
 	use Countable;
 	use IteratorAggregate;
+	use oxygen\dumper\Dumper;
 	use oxygen\object\Object;
 
 	class DataSet extends Object
@@ -22,6 +23,7 @@ namespace oxygen\sql\data_set;
 		public $iterationKey = false;
         public $mainAlias = '';
 		public $sql = array();
+		public $meta = array();
 
 		private static $defaults = array(
 			'select' => false,
@@ -35,8 +37,6 @@ namespace oxygen\sql\data_set;
 			'offset' => false,
 			'keys'   => false
 		);
-
-		public $meta = array();
 		public function getMeta() {
 			return $this->meta;
 		}
@@ -72,7 +72,7 @@ namespace oxygen\sql\data_set;
 			if(!is_array($offset)) {
 				$ik = $this->getIterationKey();
 				if(count($ik) !== 1) {
-					throw $this->scope->Exception('Can not obtain an object using scalar key');
+					throw $this->scope->Exception('Can not obtain an object using scalar key ('.print_r($ik, 1).')');
 				} else {
 					$where = array();
 					$where[reset($ik)] = $offset;
@@ -103,7 +103,14 @@ namespace oxygen\sql\data_set;
 		}
 
 		public function __construct($meta) {
-            $this->mainAlias = key($meta['from']);
+//			if($meta['from'] === null){
+//				echo '<pre>';
+//				die(Dumper::dump(debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 0),5, true));
+//			}
+			if($meta instanceof \oxygen\sql\data_set\DataSet){
+				$meta = $meta->meta;
+			}
+			$this->mainAlias = key($meta['from']);
 			$this->meta = array_merge(self::$defaults, $meta);
 		}
 

@@ -1,1 +1,1 @@
-// Nothing to configure for <?=$this->name?> <?=get_class($this)?>
+// Nothing to configure for <?=$this->name?> <?=addslashes(get_class($this))?>

@@ -1,14 +1,14 @@
 <?
 namespace oxygen\common\module\schema;
 
-    use Exception;
+    use oxygen\dumper\Dumper;
     use oxygen\object\Object;
+    use oxygen\utils\text\Text;
 
     class Schema extends Object {
 
         public $yml, $owner;
         public $uses = array();
-        public $root;
         public $classes = array();
         public $databases = array();
         public $moduleClassName = '';
@@ -16,16 +16,18 @@ namespace oxygen\common\module\schema;
         public function __construct($yml, $owner, $moduleClassName) {
             $this->yml = $yml;
             $this->owner = $owner;
-            $this->root = $yml['root'];
+            $this->namespace = $yml['namespace'];
             $this->databases = $yml['databases'];
             $this->moduleClassName = $moduleClassName;
+            $ns = explode('\\', $moduleClassName);
+            unset($ns[count($ns)-1]);
+            $this->originNamespace = implode('\\', $ns);
         }
 
         public function resolveUsings() {
             if(isset($this->yml['uses'])) {
                 foreach ($this->yml['uses'] as $alias => $use) {
-                    $class = str_replace('/', '_', $this->root . $use);
-                    $this->uses[$alias] = $this->owner->loadSchemaFor($class);
+                    $this->uses[$alias] = $this->owner->loadSchemaFor($use);
                 }
             }
         }
@@ -35,7 +37,7 @@ namespace oxygen\common\module\schema;
             if(count($parts) > 1) {
                 $schemaAlias = $parts[0];
                 $shortName = $parts[1];
-                if(!isset($this->uses[$schemaAlias])) throw new Exception("unrecognized schema alias $schemaAlias");
+                if(!isset($this->uses[$schemaAlias])) throw new \Exception("unrecognized schema alias $schemaAlias");
                 return $this->uses[$schemaAlias]->getClass($shortName);
             } else {
                 return $this->classes[$shortName];
@@ -50,14 +52,14 @@ namespace oxygen\common\module\schema;
             } else {
                 $dbAlias = 'default';
             }
-            if(!isset($this->databases[$dbAlias])) throw new Exception("unrecognized db alias $dbAlias");
+            if(!isset($this->databases[$dbAlias])) throw new \Exception("unrecognized db alias $dbAlias");
             return $this->databases[$dbAlias].'/'.$shortName;
         }
 
         public function initializeModels() {
             if(isset($this->yml['classes'])) {
                 foreach ($this->yml['classes'] as $className => $classDef) {
-                    $this->classes[$className] = $this->scope->Oxygen_Common_Module_ClassHandler(
+                    $this->classes[$className] = $this->scope->{'oxygen\\common\\module\\class_handler\\ClassHandler'}(
                         $className,
                         $classDef, 
                         $this

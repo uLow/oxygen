@@ -1,6 +1,7 @@
-<?='<?'?>
+<?='<?php'?>
+namespace <?=$args['namespace']?>;
 
-    class <?=$args['className']?> extends <?=$args['className']?>_ {
+    class <?=$args['className']?> extends <?=$args['className']?> {
 
     }
 

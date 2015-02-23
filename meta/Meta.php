@@ -9,9 +9,9 @@ namespace oxygen\meta;
 
         const FIELDS = 'fields';
         const FIELD_TYPE = 'type';
-        const DEFAULT_MODEL_PARENT = 'Oxygen_Model';
+        const DEFAULT_MODEL_PARENT = 'oxygen\\model\\Model';
 
-        const TYPE_CLASS = 'Oxygen_Field_{0}';
+        //const TYPE_CLASS = 'Oxygen_Field_{0}';
         const TYPE_IS_MISSING = 'There is not type for field {0}->{1}';
         const FIELDS_PART_MISSING = 'Fileds part missing for class {0} in schema file';
 
@@ -33,9 +33,9 @@ namespace oxygen\meta;
                 if(!isset($field_def[self::FIELD_TYPE])) $this->throwException(
                     Text::format(self::TYPE_IS_MISSING, $class, $name)
                 );
-                $class = Loader::correctCase(
+                $class = Text::ns(Loader::correctCase(
                     Text::format(self::TYPE_CLASS, ucfirst($field_def[self::FIELD_TYPE]))
-                );
+                ));
                 $this->fields[$name] = $this->scope->$class($this,$name,$field_def);
             }
         }

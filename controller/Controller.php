@@ -661,7 +661,7 @@ namespace oxygen\controller;
 
 		public function ensureConfigured() {
 			if(!$this->configured){
-				$routes = Scope::getRoot()->Routes($this);
+				$routes = $this->scope->Routes($this);
 				$this->configure($routes);
 			    $this->postConfigure();
 			}

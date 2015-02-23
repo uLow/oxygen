@@ -52,7 +52,7 @@ namespace oxygen\common\file_upload;
 		public function getFileFormats() {
 
 			$ff = $this->scope->connection['intranet/file_upload_formats'];
-			$ff->scope->register('Row','TPRO_File');
+			$ff->scope->register('Row','tpro\\file\\File');
 			$data = $ff->getData('ff');
 			return $data;
 		}
@@ -62,7 +62,7 @@ namespace oxygen\common\file_upload;
 		}
 
 		public function configure($x) {
-			$x['{id:int}']->TPRO_File($this->getFakeHistory());
+			$x['{id:int}']->{'tpro\\file\\File'}($this->getFakeHistory());
 		}
 
 

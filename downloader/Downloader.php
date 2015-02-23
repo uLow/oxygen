@@ -94,7 +94,7 @@ namespace oxygen\downloader;
             $result = trim($this->get($url, $params));
             $result = json_decode($result);
             if ($result === false) {
-                throw $this->scope->Oxygen_Downloader_Excpetion('Invalid JSON');
+                throw $this->scope->{'oxygen\\downloader\\excpetion\\Excpetion'}('Invalid JSON');
             }
             return $result;
         }

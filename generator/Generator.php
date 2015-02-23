@@ -26,13 +26,13 @@ namespace oxygen\generator;
 
         public function generate() {
             $paths = $this->collectPaths(Loader::CLASS_PATH . DIRECTORY_SEPARATOR);
-            $tpltime = filemtime(Loader::pathFor('Oxygen_Meta','model_base.php'));
+            $tpltime = filemtime(Loader::pathFor('oxygen\\meta\\Meta','model_base.php'));
             foreach($paths as $path) {
                 try {
                     $class = Loader::classFor(dirname($path));
                     $yaml  = YAML::load($path);
                     $time  = filemtime($path);
-                    $meta  = $this->scope->Oxygen_Meta($class,$yaml,max($time,$tpltime));
+                    $meta  = $this->scope->{'oxygen\\meta\\Meta'}($class,$yaml,max($time,$tpltime));
                 } catch (\oxygen\exception\Exception $e) {
                     $this->throwException('YAML Error',0,$e);
                 } catch (\Exception $e) {

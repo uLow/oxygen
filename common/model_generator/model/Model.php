@@ -58,7 +58,7 @@ namespace oxygen\common\model_generator\model;
             foreach ($this->model['fields'] as $fieldName => $fieldDef) {
                 $fieldClass = $this->resolveFieldClass($fieldDef['type']);
                 $f = $this->scope->$fieldClass($this->model['className'], $fieldName, $fieldDef);
-                $x[$fieldName]->Oxygen_Common_ModelGenerator_Field($f);
+                $x[$fieldName]->{'oxygen\\common\\model_generator\\field\\Field'}($f);
             }
         }
     }

@@ -33,8 +33,8 @@ namespace oxygen\controller\iterator;
 		public function current() {
 			$key = $this->key();
 			if(!$this->controller->tryOffsetCache($key,$current)) {
-	            $current = $this->internal->current();
-    	        $current->setPath($this->controller, $key,'');
+				$current = $this->internal->current();
+				$current->setPath($this->controller, $key,'');
     	        $this->controller->setOffsetCache($key,$current);
 			}
 			return $current;

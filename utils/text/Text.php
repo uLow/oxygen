@@ -43,6 +43,28 @@ namespace oxygen\utils\text;
             return ucfirst($x);
         }
 
+        static public function ns($name){
+            $parts = explode('_', $name);
+            $last = $parts[count($parts)-1];
+		    return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', implode('\\', $parts))) . '\\' . $last;
+        }
+
+        static public function snakeify($input){
+            preg_match_all('!([A-Z][A-Z0-9]*(?=$|[A-Z][a-z0-9])|[A-Za-z][a-z0-9]+)!', $input, $matches);
+            $ret = $matches[0];
+            foreach ($ret as &$match) {
+                $match = $match == strtoupper($match) ? strtolower($match) : lcfirst($match);
+            }
+            return implode('_', $ret);
+        }
+
+        static public function classToNamespace($namespace, $className, $snakeify = true){
+            if($snakeify === true){
+                $className = self::snakeify($className);
+            }
+            return $namespace.'\\'.$className;
+        }
+
     }
 
 ?>

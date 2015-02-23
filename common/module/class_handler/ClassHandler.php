@@ -2,6 +2,7 @@
 namespace oxygen\common\module\class_handler;
     use Exception;
     use oxygen\object\Object;
+    use oxygen\utils\text\Text;
 
     class ClassHandler extends Object {
 
@@ -24,10 +25,11 @@ namespace oxygen\common\module\class_handler;
             $this->schema = $schema;
             $this->readonly = isset($yml['readonly']) && $yml['readonly']===true;
             $this->string = isset($yml['string']) ? $yml['string'] : '';
+            $this->namespace = isset($schema->yml['namespace']) ? $schema->yml['namespace'] : '';
         }
 
         public function getClassFor($kind, $pluralize = false) {
-            return $this->schema->moduleClassName . '_' . $kind .'_' . 
+            return $this->schema->originNamespace . '_' . $kind .'_' .
                 ($pluralize ? $this->pluralize($this->name) : $this->name);
         }
 
@@ -126,7 +128,7 @@ namespace oxygen\common\module\class_handler;
                             || $fieldDef['type'] === 'cross' 
                             || $fieldDef['type'] === 'object') {
                             $fieldDef['data'] = $this->relations[$fieldName]['join'];
-                            $fieldDef['entity-class'] = $this->relations[$fieldName]['class']->getClassFor('Entity');
+                            $fieldDef['entity-class'] = Text::ns($this->relations[$fieldName]['class']->getClassFor('Entity'));
                         }
                         $field = preg_replace_callback(
                             '/(_|^)([a-z])/', 
@@ -135,7 +137,7 @@ namespace oxygen\common\module\class_handler;
                             },
                             $fieldDef['type']
                         );
-                        $this->fields[$fieldName] = $this->scope->{'Oxygen_Field_' . $field}($this, $fieldName, $fieldDef);
+                        $this->fields[$fieldName] = $this->scope->{Text::ns('Oxygen_Field_' . $field)}($this, $fieldName, $fieldDef);
                     } catch(Exception $e) {
                         $this->throw_ClassException($e);
                     }
@@ -151,22 +153,50 @@ namespace oxygen\common\module\class_handler;
         public function generate() {
             $this->initFields();
             foreach (array('Entity','Form') as $kind) {
-                foreach(array('','_') as $base) {
+                foreach(array('','Base') as $base) {
+                    echo "<hr>".$this->name.$base.'<br>';
                     foreach(array(true,false) as $plural) {
                         $name = $this->name;
                         if ($plural) $name = self::pluralize($name);
-                        $className = $this->schema->moduleClassName . '_' . $kind . '_' . $name . $base;
-                        $fileName = $this->scope->loader->pathFor($className, false, false);
+                        //$className = Text::classToNamespace($this->namespace, $name).'\\'.$name;
+                        //$className = $name . $base;
+                        echo $kind."::".$name."<br>";
+//                        $fileName = $this->scope->loader->pathFor($className, false, false);
+                        $fileName = $this->buildCacheClassPath($name, $kind, $base);
                         if($base === '' && file_exists($fileName)) continue;
                         $dir = dirname($fileName);
                         self::getWritableDir($dir);
                         $template = $base === '' ? 'final' : strtolower($kind);
                         if ($plural) $template = self::pluralize($template);
-                        file_put_contents($fileName, $this->get_($template,array('className'=>$className)));
+                        $className = ($name . $base);
+                        file_put_contents(
+                            $fileName,
+                            $this->get_($template,array(
+                                'className'=>$className,
+                                'namespace'=>Text::classToNamespace($this->namespace.'\\'.Text::snakeify($kind),  $name)
+                            ))
+                        );
+                        echo '<font style="color: maroon">'.$fileName.' generated</font><br>';
                         //chmod($fileName, 0777);
                     }
                 }
             }
+        }
+
+        private function buildCacheClassPath($className, $kind, $base)
+        {
+            $cachePrefix = '';
+            if($base !== ''){
+                $cachePrefix = 'cache' . DIRECTORY_SEPARATOR;
+            }
+
+            return CURRENT_ROOT_PATH . DIRECTORY_SEPARATOR . $cachePrefix . implode(
+                DIRECTORY_SEPARATOR,
+                explode(
+                    '\\',
+                    Text::classToNamespace($this->namespace.'\\'.Text::snakeify($kind),  $className) . '\\' . $className
+                )
+            ) . $base . '.php';
         }
     }
 ?>

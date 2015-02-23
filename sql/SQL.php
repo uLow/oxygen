@@ -40,7 +40,7 @@ namespace oxygen\sql;
             switch($type){
             case 'int': if (preg_match("/^\-?[0-9]+$/",$value)) return $value; else return 0;
             case 'dbl': return doubleval($value);
-            case 'str': return "'" . mysqli_real_escape_string($value) . "'";
+            case 'str': return "'" . mysqli_real_escape_string($value, $this->link) . "'";
             }
         }
 
@@ -48,7 +48,7 @@ namespace oxygen\sql;
             if ($scope === false) $scope = $this->scope;
             if($text === false) {
                 if(!$this->link) {
-                    $scope->throw_Oxygen_SQL_Exception(mysqli_error());
+                    $scope->throw_Oxygen_SQL_Exception(mysqli_error(null));
                 } else {
                     $scope->throw_Oxygen_SQL_Exception(mysqli_error($this->link));
                 }

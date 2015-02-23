@@ -1,6 +1,9 @@
-<?='<?'?>
+<?='<?php'?>
+
+<?$this->put_warning()?>
+
+namespace cache\<?=$args['namespace']?>;
 use oxygen\entity\Entity;
-    <?$this->put_warning()?>
 
     class <?=$args['className']?> extends Entity {
 
@@ -29,10 +32,8 @@ use oxygen\entity\Entity;
             <?if(is_array($this->key)){?>return array('<?=implode("','", $this->key)?>');<?}else{?>return '<?=$this->key?>';<?}?>
 
         }else{
-        
             return '<?=$this->pattern?>';
         }
-    
     }
 
     public function __getField($name) {
@@ -44,9 +45,11 @@ use oxygen\entity\Entity;
     }
 
 <?if($this->string):?>
-    public function __toString() {
-        <?$str = preg_replace_callback("/\{([a-z0-9]+)/", function($m){ return '{'.ucfirst($m[1]);}, $this->string);?>
-        <?$str2 = preg_replace_callback("/_([a-z0-9])/", function($m){ return ucfirst($m[1]);}, $str);?>
+    public function __toString() {<?
+        $str = preg_replace_callback("/\{([a-z0-9]+)/", function($m){ return '{'.ucfirst($m[1]);}, $this->string);
+        $str2 = preg_replace_callback("/_([a-z0-9])/", function($m){ return ucfirst($m[1]);}, $str);
+    ?>
+
         return '<?=preg_replace('/{([A-Za-z0-9_]+)}/','\'.(($x = $this->get$1()) === "" ? "not-set" : $x).\'', $str2)?>';
     }
 <?endif?>
@@ -57,14 +60,14 @@ use oxygen\entity\Entity;
 
     public static function __class_construct($scope) {
         self::$data_set = $scope->connection['<?=$this->source?>'];
-        self::$data_set->scope->register('Row','<?=$this->schema->moduleClassName . '_Entity_' . $this->name?>');
+        self::$data_set->scope->register('Row','<?=addslashes(\oxygen\utils\text\Text::classToNamespace($this->schema->yml['namespace'] . '\\entity', $this->name).'\\'.$this->name)?>');
         <?if(isset($this->yml['order'])):?>
         self::$data_source = self::$data_set->getData('_')->order(<?var_export($this->yml['order'])?>);
         <?else:?>
         self::$data_source = self::$data_set->getData('_');
         <?endif?>
 <?foreach ($this->fields as $field):?>    
-        self::$fields['<?=$field->name?>'] = self::$field_<?=$field->name?> = $scope-><?$field->put_new()?>;
+        self::$fields['<?=$field->name?>'] = self::$field_<?=$field->name?> = $scope-><?$field->put_new(array('namespace'=>$args['namespace']))?>;
 <?endforeach?>      
         self::extendedConstructor();  
     }

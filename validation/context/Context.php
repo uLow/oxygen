@@ -7,13 +7,13 @@ namespace oxygen\validation\context;
         private $items = array();
 
         public function Error($owner,$message,$data = null) {
-            $this->Add($this->scope->Oxygen_Validation_Error($owner, $message, $data));
+            $this->Add($this->scope->{'oxygen\\validation\\error\\Error'}($owner, $message, $data));
         }
         public function Warning($owner, $message, $data = null) {
-            $this->Add($this->scope->Oxygen_Validation_Warning($owner, $message, $data));
+            $this->Add($this->scope->{'oxygen\\validation\\warning\\Warning'}($owner, $message, $data));
         }
         public function Notice($owner, $message, $data = null) {
-            $this->Add($this->scope->Oxygen_Validation_Notice($owner, $message, $data));
+            $this->Add($this->scope->{'oxygen\\validation\\notice\\Notice'}($owner, $message, $data));
         }
         public function Add($item) {
             $severity = $item->getSeverity();

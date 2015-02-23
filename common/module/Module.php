@@ -51,8 +51,8 @@ namespace oxygen\common\module;
                 $this->scope->lib->load('yaml-php/lib/sfYaml.php');
                 try {
                     $file = $this->scope->loader->pathFor($className,'schema.yml');
-                    $yml = sfYaml::load($file);
-                    $s = $this->schemata[$className] = $this->scope->Oxygen_Common_Module_Schema(
+                    $yml = \sfYaml::load($file);
+                    $s = $this->schemata[$className] = $this->scope->{'oxygen\\common\\module\\schema\\Schema'}(
                         $yml, 
                         $this, 
                         $className
@@ -66,7 +66,7 @@ namespace oxygen\common\module;
         }
 
         public function rpc_Generate() {
-            return $this->generateClasses('TPRO_AMS');
+            return $this->generateClasses('tpro\\ams\\AMS');
         }
 
     }

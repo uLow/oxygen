@@ -6,8 +6,9 @@ use oxygen\object\Object;
 class Loader extends Object {
 
         const UPPERCASE_FILE     = '.uppercase';
-        const CLASS_EXTENSION    = '.class.php';
-        const BASE_EXTENSION     = '.base.php';
+//        const CLASS_EXTENSION    = '.class.php';
+        const CLASS_EXTENSION    = '.php';
+        const BASE_EXTENSION     = '.php';
         const TEMPLATE_EXTENSION = '.php';
 
         const BASE_SUFFIX        = '_';
@@ -93,7 +94,6 @@ class Loader extends Object {
 
 //                require_once $path;
                 $path = CURRENT_ROOT_PATH . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, explode('\\', $class)).'.php';
-                //echo $path." - ".$class."<br>";
                 try {
                     require_once $path;
                 }catch (\Exception $e){
@@ -234,7 +234,7 @@ class Loader extends Object {
             return file_exists($path);
         }
 
-        private function parse($class) {
+        public function parse($class) {
 //            $len = max(0, strlen($class) - strlen(self::BASE_SUFFIX));
 //            $base = substr($class, $len) === self::BASE_SUFFIX;
 //            if ($base) $class = substr($class, 0, $len);
