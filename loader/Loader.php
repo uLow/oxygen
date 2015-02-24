@@ -136,7 +136,7 @@ class Loader extends Object {
             $resource = false
         ) {
             $path = $this->pathFor($class, $resource, false);
-            $oxygeRealPath = realpath("oxygen/..");
+            $oxygeRealPath = CURRENT_ROOT_PATH;
             $url = str_replace($oxygeRealPath, '', $path);
             //$url = str_replace($this->scope->DOCUMENT_ROOT, '', $path);
             $url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
