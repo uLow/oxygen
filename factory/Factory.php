@@ -3,7 +3,7 @@ namespace oxygen\factory;
 use oxygen\object\Object;
 
 abstract class Factory extends Object {
-        private $definition = null;
+    private $definition = null;
         public final function __construct($definition) {
             $this->definition = $definition;
         }

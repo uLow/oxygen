@@ -94,10 +94,14 @@ class Loader extends Object {
 
 //                require_once $path;
                 $path = CURRENT_ROOT_PATH . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, explode('\\', $class)).'.php';
-                try {
+                if(file_exists($path)){
                     require_once $path;
-                }catch (\Exception $e){
-                    echo "<pre>".$path.'::'.$e->getMessage()."</pre>";
+                }else{
+                    if(defined('TESTS_ENV')){
+                        return;
+                    }else {
+                        throw new \Exception($path . ' does not exist.');
+                    }
                 }
             }
             $this->scope->__introduce($class);

@@ -14,7 +14,7 @@ class FactoryHandler extends Factory {
         public $depend    = false;
         public $complete  = false;
         public $oxygen    = false;
-        private $reflected = false;
+        public $reflected = false;
 
         const DEPENDENCY_METHOD = '__depend';
         const COMPLETION_METHOD = '__complete';
