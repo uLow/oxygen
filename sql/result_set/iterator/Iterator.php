@@ -8,6 +8,7 @@ namespace oxygen\sql\result_set\iterator;
         private $current    = null;
         private $data       = null;
         private $result     = null;
+        /* @var \oxygen\sql\connection\Connection $connection */
         private $connection = null;
         private $sql        = '';
         private $wrapper    = false;

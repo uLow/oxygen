@@ -1,4 +1,4 @@
-<?
+<?php
 namespace oxygen;
     use oxygen\controller\Controller;
     use oxygen\scope\Scope;

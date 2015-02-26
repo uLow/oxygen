@@ -7,7 +7,9 @@ use oxygen\entity\Entity;
 
     class <?=$args['className']?> extends Entity {
 
+    /* @var \oxygen\sql\table\Table $data_set */
     private static $data_set = null;
+    /* @var \oxygen\sql\data_set\DataSet $data_source */
     private static $data_source = null;
 
 <?$sources = explode("/", $this->source);?>
@@ -15,10 +17,11 @@ use oxygen\entity\Entity;
     public $table = '<?=$sources[1]?>';
 
 <?foreach ($this->fields as $field):?>
+    /* @var \<?=get_class($field)?> $field_<?=$field->name?> */
     public static $field_<?=$field->name?> = null;
 <?endforeach?>
 
-    private static $fields = array();
+private static $fields = array();
     public static function __getFields() {
         return self::$fields;
     }
@@ -58,6 +61,9 @@ use oxygen\entity\Entity;
         // meant to add extra fields (non-database-based) in entity
     }
 
+    /**
+    * @param \oxygen\scope\Scope $scope
+    */
     public static function __class_construct($scope) {
         self::$data_set = $scope->connection['<?=$this->source?>'];
         self::$data_set->scope->register('Row','<?=addslashes(\oxygen\utils\text\Text::classToNamespace($this->schema->yml['namespace'] . '\\entity', $this->name).'\\'.$this->name)?>');
