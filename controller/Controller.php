@@ -320,6 +320,10 @@ class Controller extends Object
         return null;
     }
 
+    public function redirectTo($url){
+        throw new RedirectException($url);
+    }
+
     public function makeCurrent()
     {
         $this->getCurrent()->deactivate();
@@ -595,6 +599,7 @@ class Controller extends Object
         else $this->path = $path;
         $this->parseArgs();
         $this->__routed();
+        $this->complete();
         // in case if we are rebased - update all existing children;
         if ($prevPath !== $this->path) {
             foreach ($this->children as $route => $child) {
@@ -603,6 +608,8 @@ class Controller extends Object
         }
         return $match[2];
     }
+
+    public function complete(){}
 
     public function parseArgs()
     {
