@@ -90,7 +90,7 @@ namespace oxygen\downloader;
             return $result;
         }
 
-        public function getJSON($url, $params = array(), $method, $assoc) {
+        public function getJSON($url, $params = array(), $method = 'get', $assoc = false) {
             $result = trim($this->{$method}($url, $params));
             $result = json_decode($result, $assoc);
             if ($result === false) {
