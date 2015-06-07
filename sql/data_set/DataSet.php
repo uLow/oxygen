@@ -143,11 +143,28 @@ class DataSet extends Object
         return $this->scope->DataSet($this->builder->addWhere($this->meta, $condition));
     }
 
+    /**
+     * @param $order
+     * @return DataSet
+     */
     public function order($order)
     {
         return $this->scope->DataSet($this->builder->addOrderBy($this->meta, $order));
     }
 
+    /**
+     * @param $group
+     * @return DataSet
+     */
+    public function group($group)
+    {
+        return $this->scope->DataSet($this->builder->addGroupBy($this->meta, $group));
+    }
+
+    /**
+     * @param $order
+     * @return DataSet
+     */
     public function orderSelfish($order)
     {
         return $this->scope->DataSet($this->builder->replaceOrderBy($this->meta, $order));

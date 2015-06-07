@@ -24,12 +24,12 @@ use ReflectionMethod;
  * @property \oxygen\common\auth\Auth auth
  * @property string SERVER
  * @property \oxygen\session\Session|string SESSION
- * @property string REQUEST
- * @property string GET
- * @property string POST
- * @property string COOKIE
- * @property string FILES
- * @property string ENV
+ * @property array REQUEST
+ * @property array GET
+ * @property array POST
+ * @property array COOKIE
+ * @property array FILES
+ * @property array ENV
  * @property string TMP_DIR
  * @property Scope scope
  * @property string temp_path

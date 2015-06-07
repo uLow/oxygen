@@ -287,7 +287,14 @@ namespace oxygen\sql\builder;
 			return $meta;
 		}
 
-		public function addGroupBy($base, $newKey, $aggregates) {
+		public function addGroupBy($meta, $group) {
+            if(is_string($group)) $group = array($group);
+            if($meta['group'] === false){
+                $meta['group'] = $group;
+            }else{
+                $meta['group'] = array_merge($meta['group'], $group);
+            }
+            return $meta;
 		}
 
 		public function addOrderBy($meta, $order, $stable = false) {

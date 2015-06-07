@@ -3,20 +3,20 @@ namespace oxygen\uploader;
 
     use oxygen\object\Object;
 
-    class Uploader extends Object{
+    class Uploader extends Object {
         private $uploadPath = null;
         private $uploadPathMin = null;
+        private $hasExtentionRestriction = true;
+        private $hasMimeTypeRestriction = true;
         private $allowedExt = array("gif", "jpeg", "jpg", "png");
         private $allowedMime = array("image/gif","image/jpeg","image/jpg","image/pjpeg","image/x-png","image/png");
-        private $maxSize = 1048576;#1MB
+        private $maxSize = 21474836480;#20MB
         private $files = array();
 
         public $errors = array();
 
         public function __complete(){
-            // ja izmantot DIRECTORY_SEPARATOR tad vinsh liek \ nevis /
-            //$this->uploadPathMin = DIRECTORY_SEPARATOR."images".DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR;
-            $this->uploadPathMin = "/images/uploads/";
+            $this->uploadPathMin = "/uploads/";
             $this->uploadPath = $this->scope->DOCUMENT_ROOT.$this->uploadPathMin;
         }
 
@@ -39,7 +39,10 @@ namespace oxygen\uploader;
             $return = array();
             foreach($this->files as $_file){
                 foreach($_file as $file){
-                    $return[] = $this->saveFile($file);
+                    $filenameParts = explode('.', $file["name"]);
+                    unset($filenameParts[count($filenameParts)-1]);
+                    $filename = implode('.', $filenameParts);
+                    $return[] = $this->saveFile($file, $filename.'-'.substr(sha1(microtime().mt_rand(0,100)), -6));
                 }
             }
             return $return;
@@ -54,8 +57,8 @@ namespace oxygen\uploader;
             $filePath = $this->uploadPath . $filename;
             $filePathMin = $this->uploadPathMin . $filename;
             if($file["size"] < $this->maxSize
-                && in_array($file["type"], $this->allowedMime)
-                && in_array($ext, $this->allowedExt)
+                && $this->isAllowedMimeType($file["type"])
+                && $this->isAllowedExtension($ext)
             ){
                 if($file["error"] > 0){
                     $this->errors[] = "Return Code: " . $file["error"];
@@ -72,5 +75,61 @@ namespace oxygen\uploader;
             }
 
             if(empty($this->errors)){return $filePathMin;}else{return "error";}
+        }
+
+        /**
+         * @param array $allowedExt
+         */
+        public function setAllowedExt($allowedExt)
+        {
+            $this->allowedExt = $allowedExt;
+        }
+
+        /**
+         * @param array $allowedMime
+         */
+        public function setAllowedMime($allowedMime)
+        {
+            $this->allowedMime = $allowedMime;
+        }
+
+        /**
+         * @param int $maxSize
+         */
+        public function setMaxSize($maxSize)
+        {
+            $this->maxSize = $maxSize;
+        }
+
+        /**
+         * @param boolean $hasExtentionRestriction
+         */
+        public function setHasExtentionRestriction($hasExtentionRestriction)
+        {
+            $this->hasExtentionRestriction = $hasExtentionRestriction;
+        }
+
+        /**
+         * @param boolean $hasMimeTypeRestriction
+         */
+        public function setHasMimeTypeRestriction($hasMimeTypeRestriction)
+        {
+            $this->hasMimeTypeRestriction = $hasMimeTypeRestriction;
+        }
+
+        /**
+         * @param string $extension
+         * @return boolean
+         */
+        public function isAllowedExtension($extension){
+            return $this->hasExtentionRestriction === false || in_array($extension, $this->allowedExt);
+        }
+
+        /**
+         * @param string $mime
+         * @return boolean
+         */
+        public function isAllowedMimeType($mime){
+            return $this->hasMimeTypeRestriction === false || in_array($mime, $this->allowedMime);
         }
     }

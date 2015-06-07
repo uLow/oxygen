@@ -16,7 +16,7 @@ use oxygen\utils\text\Text;
 /**
  * show off @method
  * @property int paginatorPage
- * @property \oxygen\sql\data_set\DataSet $model
+ * @property \oxygen\sql\data_set\DataSet|\oxygen\entity\Entity $model
  * @property Controller $parent
  * @property Controller $child
  * @property Scope scope
@@ -716,12 +716,17 @@ class Controller extends Object
         }
     }
 
+    /**
+     * @param string $route
+     * @param \oxygen\controller\Controller $model
+     * @return \oxygen\controller\Controller
+     */
     public function addExplicit($route, $model)
     {
         $index = count($this->routes) + 1;
         $this->index[$index] = $route;
         $this->__assert(
-            $model instanceof Controller,
+            $model instanceof \oxygen\controller\Controller,
             'Explicit child should be instance of oxygen\\controller\\Controller'
         );
         $model->setPath($this, $route);

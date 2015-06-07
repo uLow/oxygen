@@ -13,6 +13,9 @@ class Routes extends Object implements ArrayAccess
 {
     public $controller = null;
 
+    /**
+     * @param \oxygen\controller\Controller $controller
+     */
     public function __construct($controller)
     {
         $this->controller = $controller;

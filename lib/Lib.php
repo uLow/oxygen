@@ -21,14 +21,6 @@ namespace oxygen\lib;
         	$url = str_replace(DIRECTORY_SEPARATOR, '/', $url);
         	return $url;
         }
-
-        public function addJS($name){
-            return '<script src="'.$this->url($name).'"></script>';
-        }
-
-        public function addCSS($name){
-            return '<link rel="stylesheet" type="text/css" href="'.$this->url($name).'">';
-        }
         
         public static function __class_construct($scope) {
             $scope->LIB_PATH = CURRENT_ROOT_PATH . DIRECTORY_SEPARATOR . "oxygen" . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR;

@@ -90,9 +90,9 @@ namespace oxygen\downloader;
             return $result;
         }
 
-        public function getJSON($url, $params = array(), $method = 'get', $assoc = false) {
-            $result = trim($this->{$method}($url, $params));
-            $result = json_decode($result, $assoc);
+        public function getJSON($url, $params = array()) {
+            $result = trim($this->get($url, $params));
+            $result = json_decode($result);
             if ($result === false) {
                 throw $this->scope->{'oxygen\\downloader\\excpetion\\Excpetion'}('Invalid JSON');
             }
